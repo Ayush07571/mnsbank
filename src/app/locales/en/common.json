@@ -1,0 +1,58 @@
+{
+  "site": {
+    "title": "MNS Bank Bhopal",
+    "description": "Mahanagar Nagrik Sahakari Bank Bhopal - Your trusted cooperative banking partner"
+  },
+  "navigation": {
+    "home": "Home",
+    "personalBanking": "Personal Banking",
+    "businessBanking": "Business Banking",
+    "accounts": "Accounts",
+    "deposits": "Deposits",
+    "loans": "Loans",
+    "services": "Services",
+    "stayConnected": "Stay Connected",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us",
+    "netBanking": "Net Banking",
+    "language": "Language"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "applyNow": "Apply Now",
+    "contactUs": "Contact Us",
+    "moreInfo": "More Information",
+    "close": "Close",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "search": "Search",
+    "menu": "Menu",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous"
+  },
+  "footer": {
+    "copyright": "© {{year}} MNS Bank Bhopal. All rights reserved.",
+    "links": {
+      "privacyPolicy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "disclaimer": "Disclaimer",
+      "sitemap": "Sitemap"
+    },
+    "social": {
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn",
+      "youtube": "YouTube"
+    },
+    "trust": {
+      "dicgc": "Insured by DICGC",
+      "rbi": "Regulated by RBI"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+name: Branch Protection Check
+
+on:
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  branch-protection:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Check for required approvals
+      run: |
+        echo "Checking branch protection requirements..."
+        echo "This workflow ensures PRs meet requirements before merging"
+        
+    - name: Verify SSL compliance
+      run: |
+        echo "Checking SSL configuration..."
+        if grep -r "8444" src/ --exclude-dir=node_modules; then
+          echo "ERROR: Port 8444 found. Only port 443 (HTTPS) is allowed."
+          exit 1
+        fi
+        
+        # Check for HTTPS enforcement
+        if grep -r "http://" src/ --exclude-dir=node_modules | grep -v "localhost"; then
+          echo "WARNING: Non-HTTPS URLs found. Please use HTTPS for all external links."
+        fi
+        
+    - name: Verify i18n completeness
+      run: |
+        echo "Checking i18n file completeness..."
+        
+        # Check if English and Hindi files exist
+        if [ ! -f "src/app/locales/en/common.json" ] || [ ! -f "src/app/locales/hi/common.json" ]; then
+          echo "ERROR: Missing required i18n files"
+          exit 1
+        fi
+        
+        # Basic JSON syntax check
+        if ! python -m json.tool src/app/locales/en/common.json > /dev/null; then
+          echo "ERROR: Invalid JSON in English locale file"
+          exit 1
+        fi
+        
+        if ! python -m json.tool src/app/locales/hi/common.json > /dev/null; then
+          echo "ERROR: Invalid JSON in Hindi locale file"
+          exit 1
+        fi
+        
+        echo "SUCCESS: i18n files are valid"

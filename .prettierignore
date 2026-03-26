@@ -1,0 +1,8 @@
+node_modules
+.next
+dist
+build
+.env*.local
+*.log
+coverage
+.nyc_output

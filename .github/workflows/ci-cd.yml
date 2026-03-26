@@ -1,0 +1,70 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run linting
+      run: npm run lint
+    
+    - name: Check formatting
+      run: npm run format:check
+    
+    - name: Run tests
+      run: npm test
+    
+    - name: Build project
+      run: npm run build
+      env:
+        NEXT_PUBLIC_RECAPTCHA_SITE_KEY: ${{ secrets.RECAPTCHA_SITE_KEY }}
+        NEXT_PUBLIC_GA_ID: ${{ secrets.GA_ID }}
+
+  security:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Audit dependencies
+      run: npm audit --audit-level moderate
+    
+    - name: Check for port 8444 usage
+      run: |
+        if grep -r "8444" src/ --exclude-dir=node_modules; then
+          echo "ERROR: Port 8444 found in codebase. This port is forbidden."
+          exit 1
+        else
+          echo "SUCCESS: No port 8444 usage found."
+        fi
+
+  deploy:
+    needs: [test, security]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Deploy to Vercel
+      uses: amondnet/vercel-action@v25
+      with:
+        vercel-token: ${{ secrets.VERCEL_TOKEN }}
+        vercel-org-id: ${{ secrets.ORG_ID }}
+        vercel-project-id: ${{ secrets.PROJECT_ID }}
+        vercel-args: '--prod'

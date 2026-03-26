@@ -1,0 +1,47 @@
+{
+  "hero": {
+    "title": "Welcome to MNS Bank Bhopal",
+    "subtitle": "Your trusted cooperative banking partner for all your financial needs",
+    "cta": "Explore Our Services"
+  },
+  "carousel": {
+    "slide1": {
+      "title": "Personal Banking Solutions",
+      "description": "Comprehensive banking services tailored for individuals"
+    },
+    "slide2": {
+      "title": "Business Banking Excellence",
+      "description": "Specialized financial solutions for your business growth"
+    },
+    "slide3": {
+      "title": "Digital Banking Services",
+      "description": "Bank anytime, anywhere with our secure digital platforms"
+    }
+  },
+  "sections": {
+    "whatsNew": {
+      "title": "What's New",
+      "viewAll": "View All Updates"
+    },
+    "products": {
+      "title": "Our Products",
+      "personal": "Personal Banking",
+      "business": "Business Banking",
+      "viewAll": "View All Products"
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "emiCalculator": "EMI Calculator",
+      "interestRates": "Interest Rates",
+      "branchLocator": "Branch Locator",
+      "downloadForms": "Download Forms",
+      "contact": "Contact Us",
+      "grievance": "Grievance Redressal"
+    },
+    "fraudBanner": {
+      "title": "Fraud Awareness",
+      "message": "Beware of fraudulent calls and messages. MNS Bank never asks for sensitive information.",
+      "dismiss": "Dismiss"
+    }
+  }
+}

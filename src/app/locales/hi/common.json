@@ -1,0 +1,58 @@
+{
+  "site": {
+    "title": "एमएनएस बैंक भोपाल",
+    "description": "महानगर नागरिक सहकारी बैंक भोपाल - आपका विश्वसनीय सहकारी बैंकिंग साथी"
+  },
+  "navigation": {
+    "home": "होम",
+    "personalBanking": "व्यक्तिगत बैंकिंग",
+    "businessBanking": "व्यवसायिक बैंकिंग",
+    "accounts": "खाते",
+    "deposits": "जमा",
+    "loans": "ऋण",
+    "services": "सेवाएं",
+    "stayConnected": "जुड़े रहें",
+    "aboutUs": "हमारे बारे में",
+    "contactUs": "संपर्क करें",
+    "netBanking": "नेट बैंकिंग",
+    "language": "भाषा"
+  },
+  "common": {
+    "loading": "लोड हो रहा है...",
+    "error": "त्रुटि",
+    "success": "सफलता",
+    "readMore": "और पढ़ें",
+    "learnMore": "और जानें",
+    "applyNow": "अभी आवेदन करें",
+    "contactUs": "संपर्क करें",
+    "moreInfo": "अधिक जानकारी",
+    "close": "बंद करें",
+    "cancel": "रद्द करें",
+    "submit": "जमा करें",
+    "search": "खोजें",
+    "menu": "मेनू",
+    "back": "पीछे",
+    "next": "अगला",
+    "previous": "पिछला"
+  },
+  "footer": {
+    "copyright": "© {{year}} एमएनएस बैंक भोपाल। सभी अधिकार सुरक्षित।",
+    "links": {
+      "privacyPolicy": "गोपनीयता नीति",
+      "terms": "सेवा की शर्तें",
+      "disclaimer": "अस्वीकरण",
+      "sitemap": "साइटमैप"
+    },
+    "social": {
+      "facebook": "फेसबुक",
+      "twitter": "ट्विटर",
+      "instagram": "इंस्टाग्राम",
+      "linkedin": "लिंक्डइन",
+      "youtube": "यूट्यूब"
+    },
+    "trust": {
+      "dicgc": "डीआईसीजीसी द्वारा बीमित",
+      "rbi": "आरबीआई द्वारा विनियमित"
+    }
+  }
+}

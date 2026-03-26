@@ -1,0 +1,146 @@
+[
+  {
+    "category": "SAVINGS",
+    "tenure": "Daily Balance",
+    "baseRate": 2.75,
+    "seniorCitizenRate": 3.25,
+    "staffRate": 4.00,
+    "effectiveDate": "2024-01-01"
+  },
+  {
+    "category": "TERM_DEPOSIT",
+    "tenure": "7 days to 14 days",
+    "baseRate": 4.50,
+    "seniorCitizenRate": 5.00,
+    "staffRate": 5.50,
+    "effectiveDate": "2024-01-01"
+  },
+  {
+    "category": "TERM_DEPOSIT",
+    "tenure": "15 days to 30 days",
+    "baseRate": 4.75,
+    "seniorCitizenRate": 5.25,
+    "staffRate": 5.75,
+    "effectiveDate": "2024-01-01"
+  },
+  {
+    "category": "TERM_DEPOSIT",
+    "tenure": "31 days to 45 days",
+    "baseRate": 5.25,
+    "seniorCitizenRate": 5.75,
+    "staffRate": 6.25,
+    "effectiveDate": "2024-01-01"
+  },
+  {
+    "category": "TERM_DEPOSIT",
+    "tenure": "46 days to 90 days",
+    "baseRate": 5.75,
+    "seniorCitizenRate": 6.25,
+    "staffRate": 6.75,
+    "effectiveDate": "2024-01-01"
+  },
+  {
+    "category": "TERM_DEPOSIT",
+    "tenure": "91 days to 180 days",
+    "baseRate": 6.25,
+    "seniorCitizenRate": 6.75,
+    "staffRate": 7.25,
+    "effectiveDate": "2024-01-01"
+  },
+  {
+    "category": "TERM_DEPOSIT",
+    "tenure": "181 days to 270 days",
+    "baseRate": 6.75,
+    "seniorCitizenRate": 7.25,
+    "staffRate": 7.75,
+    "effectiveDate": "2024-01-01"
+  },
+  {
+    "category": "TERM_DEPOSIT",
+    "tenure": "271 days to 364 days",
+    "baseRate": 7.00,
+    "seniorCitizenRate": 7.50,
+    "staffRate": 8.00,
+    "effectiveDate": "2024-01-01"
+  },
+  {
+    "category": "TERM_DEPOSIT",
+    "tenure": "1 Year to 2 Years",
+    "baseRate": 7.25,
+    "seniorCitizenRate": 7.75,
+    "staffRate": 8.25,
+    "effectiveDate": "2024-01-01"
+  },
+  {
+    "category": "TERM_DEPOSIT",
+    "tenure": "Above 2 Years",
+    "baseRate": 7.50,
+    "seniorCitizenRate": 8.00,
+    "staffRate": 8.50,
+    "effectiveDate": "2024-01-01"
+  },
+  {
+    "category": "RECURRING_DEPOSIT",
+    "tenure": "6 months",
+    "baseRate": 6.25,
+    "seniorCitizenRate": 6.75,
+    "staffRate": 7.25,
+    "effectiveDate": "2024-01-01"
+  },
+  {
+    "category": "RECURRING_DEPOSIT",
+    "tenure": "12 months",
+    "baseRate": 6.75,
+    "seniorCitizenRate": 7.25,
+    "staffRate": 7.75,
+    "effectiveDate": "2024-01-01"
+  },
+  {
+    "category": "RECURRING_DEPOSIT",
+    "tenure": "24 months",
+    "baseRate": 7.00,
+    "seniorCitizenRate": 7.50,
+    "staffRate": 8.00,
+    "effectiveDate": "2024-01-01"
+  },
+  {
+    "category": "LOAN",
+    "tenure": "Gold Loan",
+    "baseRate": 9.50,
+    "seniorCitizenRate": 9.50,
+    "staffRate": 8.50,
+    "effectiveDate": "2024-01-01"
+  },
+  {
+    "category": "LOAN",
+    "tenure": "Personal Loan",
+    "baseRate": 12.50,
+    "seniorCitizenRate": 12.50,
+    "staffRate": 11.50,
+    "effectiveDate": "2024-01-01"
+  },
+  {
+    "category": "LOAN",
+    "tenure": "Car Loan",
+    "baseRate": 11.00,
+    "seniorCitizenRate": 11.00,
+    "staffRate": 10.00,
+    "effectiveDate": "2024-01-01"
+  },
+  {
+    "category": "LOAN",
+    "tenure": "Home Loan",
+    "baseRate": 10.50,
+    "seniorCitizenRate": 10.50,
+    "staffRate": 9.50,
+    "effectiveDate": "2024-01-01"
+  },
+  {
+    "category": "LOAN",
+    "tenure": "Education Loan",
+    "baseRate": 11.50,
+    "seniorCitizenRate": 11.50,
+    "staffRate": 10.50,
+    "effectiveDate": "2024-01-01"
+  }
+]
