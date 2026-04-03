@@ -198,41 +198,43 @@ export class GoogleAnalytics {
 // Export singleton instance
 export const ga4 = GoogleAnalytics.getInstance();
 
+import { useCallback, useMemo } from 'react';
+
 // Custom hook for React components
 export function useGA4() {
-  const trackPageView = (pagePath?: string, pageTitle?: string) => {
+  const trackPageView = useCallback((pagePath?: string, pageTitle?: string) => {
     ga4.trackPageView(pagePath, pageTitle);
-  };
+  }, []);
 
-  const trackFormSubmit = (formName: string, success?: boolean) => {
+  const trackFormSubmit = useCallback((formName: string, success?: boolean) => {
     ga4.trackFormSubmit(formName, success);
-  };
+  }, []);
 
-  const trackLanguageToggle = (fromLang: string, toLang: string) => {
+  const trackLanguageToggle = useCallback((fromLang: string, toLang: string) => {
     ga4.trackLanguageToggle(fromLang, toLang);
-  };
+  }, []);
 
-  const trackCalculatorUse = (calculatorType: string, amount?: number, tenure?: number) => {
+  const trackCalculatorUse = useCallback((calculatorType: string, amount?: number, tenure?: number) => {
     ga4.trackCalculatorUse(calculatorType, amount, tenure);
-  };
+  }, []);
 
-  const trackCTAClick = (ctaText: string, destination: string) => {
+  const trackCTAClick = useCallback((ctaText: string, destination: string) => {
     ga4.trackCTAClick(ctaText, destination);
-  };
+  }, []);
 
-  const trackBranchSearch = (branchName: string) => {
+  const trackBranchSearch = useCallback((branchName: string) => {
     ga4.trackBranchSearch(branchName);
-  };
+  }, []);
 
-  const trackProductView = (productName: string, productCategory: string) => {
+  const trackProductView = useCallback((productName: string, productCategory: string) => {
     ga4.trackProductView(productName, productCategory);
-  };
+  }, []);
 
-  const trackDownload = (fileName: string, fileType: string) => {
+  const trackDownload = useCallback((fileName: string, fileType: string) => {
     ga4.trackDownload(fileName, fileType);
-  };
+  }, []);
 
-  return {
+  return useMemo(() => ({
     trackPageView,
     trackFormSubmit,
     trackLanguageToggle,
@@ -241,5 +243,14 @@ export function useGA4() {
     trackBranchSearch,
     trackProductView,
     trackDownload,
-  };
+  }), [
+    trackPageView,
+    trackFormSubmit,
+    trackLanguageToggle,
+    trackCalculatorUse,
+    trackCTAClick,
+    trackBranchSearch,
+    trackProductView,
+    trackDownload,
+  ]);
 }

@@ -1,0 +1,96 @@
+{
+  "personalBanking": "Personal Banking",
+  "businessBanking": "Business Banking",
+  "netBanking": "Net Banking",
+  "personal": "Personal",
+  "business": "Business",
+  "aboutUs": "About Us",
+  "categories": {
+    "accounts": "Accounts",
+    "deposits": "Deposits", 
+    "loans": "Loans",
+    "services": "Services",
+    "stayConnected": "Stay Connected",
+    "about": "About",
+    "compliance": "Compliance"
+  },
+  "accounts": {
+    "savings": "Savings Account",
+    "current": "Current Account",
+    "doubleDeposit": "Double Deposit Scheme",
+    "timeDeposit": "Time Deposit (FD)",
+    "recurringDeposit": "Recurring Deposit (RD)",
+    "bizDouble": "Business Double Deposit"
+  },
+  "deposits": {
+    "fixed": "Fixed Deposit (Time)",
+    "recurring": "Recurring Deposit", 
+    "double": "Double Deposit Scheme",
+    "rates": "Interest Rates",
+    "locker": "Locker Facility"
+  },
+  "loans": {
+    "personal": "Personal Loan",
+    "home": "Home Loan",
+    "car": "Car Loan",
+    "education": "Education Loan",
+    "gold": "Gold Loan",
+    "construction": "House Construction Loan",
+    "consumer": "Consumer Loan",
+    "festival": "Festival Loan",
+    "overdraft": "Overdraft Facility",
+    "workingCapital": "Working Capital Loan",
+    "professional": "Professional Loan",
+    "transport": "Transport Vehicle Loan",
+    "selfEmployed": "Self Employed Loan",
+    "againstFD": "Loan Against Fixed Deposit",
+    "againstNSC": "Loan Against NSC",
+    "againstProperty": "Loan Against Property"
+  },
+  "services": {
+    "netBanking": "Net Banking",
+    "mobileBanking": "Mobile Banking",
+    "upi": "UPI & QR Services",
+    "cards": "ATM / Debit Card",
+    "atm": "ATM Services",
+    "debitCards": "Debit Cards",
+    "locker": "Locker Facility",
+    "insurance": "Insurance Services",
+    "demat": "Demat Services",
+    "asba": "ASBA Services",
+    "bbps": "BBPS Bill Payment",
+    "imps": "IMPS Transfer",
+    "kyc": "KYC / CKYC"
+  },
+  "stayConnected": {
+    "branches": "Branch Locator",
+    "atms": "ATM Locator",
+    "calculator": "EMI Calculator",
+    "contact": "Contact Us",
+    "feedback": "Feedback",
+    "forms": "Download Forms"
+  },
+  "about": {
+    "us": "About Us",
+    "aboutUs": "About Us",
+    "board": "Board of Directors",
+    "management": "Management Team",
+    "committees": "Committees",
+    "careers": "Careers",
+    "tenders": "Tenders",
+    "reports": "Annual Reports"
+  },
+  "compliance": {
+    "grievance": "Grievance Redressal",
+    "policy": "Policy Centre",
+    "kyc": "KYC / CKYC",
+    "privacy": "Privacy Policy"
+  },
+  "investor": {
+    "reports": "Annual Reports",
+    "deaf": "DEAF Deposits",
+    "grievance": "Grievance Redressal",
+    "cyber": "Cyber Awareness",
+    "unclaimed": "Unclaimed Deposits"
+  }
+}

@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
@@ -19,7 +19,7 @@ export default function ManagementPage() {
               Management Team
             </h1>
             <p className="text-xl mb-8 text-white/90 max-w-3xl mx-auto">
-              Meet the experienced management team that drives MNS Bank's growth and innovation in banking services.
+              Meet the experienced management team that drives MNS Bank&apos;s growth and innovation in banking services.
             </p>
           </div>
         </div>

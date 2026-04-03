@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent } from '@/components/ui/Card';
 
@@ -111,8 +112,8 @@ export function WhatsNew() {
     <div className="py-16 bg-gray-50">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-text-primary mb-4">
-            What's New at MNS Bank
+          <h2 className="font-heading text-3xl md:text-4xl text-text-primary mb-4">
+            What&apos;s New at MNS Bank
           </h2>
           <p className="text-xl text-text-secondary max-w-2xl mx-auto">
             Stay updated with our latest announcements, promotions, and service updates
@@ -133,7 +134,7 @@ export function WhatsNew() {
                       {categoryLabels[featuredEntry.category]}
                     </span>
                   </div>
-                  <h3 className="font-heading text-2xl font-bold text-text-primary mb-4">
+                  <h3 className="font-heading text-2xl text-text-primary mb-4">
                     {featuredEntry.title}
                   </h3>
                   <p className="text-text-secondary mb-6">
@@ -150,13 +151,14 @@ export function WhatsNew() {
                     </Button>
                   </div>
                 </div>
-                <div className="relative">
-                  <div className="w-full h-64 bg-gradient-to-br from-brand-primary/10 to-brand-accent/10 rounded-lg flex items-center justify-center">
-                    <svg className="w-16 h-16 text-brand-primary" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2 10a8 8 0 018-8v8h8a8 8 0 01-16 0z" />
-                      <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
-                    </svg>
-                  </div>
+                <div className="relative h-64 overflow-hidden rounded-lg shadow-inner">
+                  <Image 
+                    src="/images/news-featured.png" 
+                    alt="Featured News" 
+                    fill
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                 </div>
               </div>
             </CardContent>
@@ -192,7 +194,7 @@ export function WhatsNew() {
 
         {/* News Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          {displayedEntries.map((entry, index) => (
+          {displayedEntries.map((entry) => (
             <Card key={entry.id} className="hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-4">
@@ -203,7 +205,7 @@ export function WhatsNew() {
                     {formatDate(entry.date)}
                   </span>
                 </div>
-                <h3 className="font-heading text-lg font-semibold text-text-primary mb-3">
+                <h3 className="font-heading text-lg text-text-primary mb-3">
                   {entry.title}
                 </h3>
                 <p className="text-text-secondary mb-4 line-clamp-3">

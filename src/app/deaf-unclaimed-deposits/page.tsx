@@ -107,6 +107,3 @@ export default function DEAFUnclaimedDepositsPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

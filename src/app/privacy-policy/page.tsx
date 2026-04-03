@@ -58,7 +58,7 @@ export default function PrivacyPolicyPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-text-secondary">
-                MNS Bank ("we," "our," or "us") is committed to protecting your privacy and ensuring the 
+                MNS Bank (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy and ensuring the 
                 security of your personal information. This Privacy Policy explains how we collect, use, disclose, 
                 and safeguard your personal data when you interact with our banking services.
               </p>
@@ -100,7 +100,7 @@ export default function PrivacyPolicyPage() {
                 <div>
                   <h4 className="font-semibold text-text-primary mb-2">Consent</h4>
                   <p className="text-text-secondary text-sm">
-                    Any freely given, specific, informed, and unambiguous indication of the data principal's wishes.
+                    Any freely given, specific, informed, and unambiguous indication of the data principal&apos;s wishes.
                   </p>
                 </div>
               </div>

@@ -11,6 +11,3 @@ export default function PolicyCentrePage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

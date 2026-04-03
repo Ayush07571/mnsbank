@@ -1,0 +1,66 @@
+{
+  "home": {
+    "title": "Home",
+    "description": "Welcome to MNS Bank Bhopal - Your trusted banking partner"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Learn about MNS Bank's history, mission, and values"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Get in touch with MNS Bank for all your banking needs"
+  },
+  "loans": {
+    "title": "Loans",
+    "description": "Explore our wide range of loan products"
+  },
+  "deposits": {
+    "title": "Deposits",
+    "description": "Secure your future with our deposit schemes"
+  },
+  "services": {
+    "title": "Services",
+    "description": "Comprehensive banking services for all your needs"
+  },
+  "netBanking": {
+    "title": "Net Banking",
+    "description": "Bank online with our secure net banking services"
+  },
+  "careers": {
+    "title": "Careers",
+    "description": "Join the MNS Bank team and grow your career"
+  },
+  "grievance": {
+    "title": "Grievance Redressal",
+    "description": "We value your feedback and are here to help"
+  },
+  "interestRates": {
+    "title": "Interest Rates",
+    "description": "View current interest rates for all our products"
+  },
+  "branchLocator": {
+    "title": "Branch Locator",
+    "description": "Find your nearest MNS Bank branch"
+  },
+  "emiCalculator": {
+    "title": "EMI Calculator",
+    "description": "Calculate your loan EMIs instantly"
+  },
+  "feedback": {
+    "title": "Feedback",
+    "description": "Share your experience and help us improve"
+  },
+  "sitemap": {
+    "title": "Sitemap",
+    "description": "Complete site map of MNS Bank website"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "description": "Your privacy is important to us"
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "description": "Terms and conditions for using our services"
+  }
+}

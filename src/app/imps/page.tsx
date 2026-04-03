@@ -416,6 +416,3 @@ export default function IMPSPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

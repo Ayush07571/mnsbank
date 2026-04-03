@@ -300,6 +300,3 @@ export default function InterestRatesPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

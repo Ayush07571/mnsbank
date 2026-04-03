@@ -446,6 +446,3 @@ export default function DebitCardsPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

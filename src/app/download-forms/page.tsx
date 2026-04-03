@@ -11,6 +11,3 @@ export default function DownloadFormsPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

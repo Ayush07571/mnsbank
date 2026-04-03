@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
@@ -363,7 +363,7 @@ export default function ATMPage() {
               </div>
               <div>
                 <h3 className="font-semibold text-text-primary mb-2">How do I change my ATM PIN?</h3>
-                <p className="text-text-secondary">You can change your ATM PIN at any MNS Bank ATM using the 'PIN Change' option.</p>
+                <p className="text-text-secondary">You can change your ATM PIN at any MNS Bank ATM using the &apos;PIN Change&apos; option.</p>
               </div>
             </div>
           </CardContent>

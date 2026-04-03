@@ -453,6 +453,3 @@ export default function LockerPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

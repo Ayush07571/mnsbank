@@ -152,7 +152,7 @@ export default function CyberAwarenessPage() {
                     <svg className="w-4 h-4 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span>Verify sender's email address carefully</span>
+                    <span>Verify sender&apos;s email address carefully</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <svg className="w-4 h-4 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -221,19 +221,19 @@ export default function CyberAwarenessPage() {
                     <svg className="w-4 h-4 text-red-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
-                    <span>"Your account will be blocked if you don't share OTP"</span>
+                    <span>&quot;Your account will be blocked if you don&apos;t share OTP&quot;</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <svg className="w-4 h-4 text-red-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
-                    <span>"We are updating our systems, please provide OTP"</span>
+                    <span>&quot;We are updating our systems, please provide OTP&quot;</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <svg className="w-4 h-4 text-red-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
-                    <span>"You have won a prize, share OTP to claim"</span>
+                    <span>&quot;You have won a prize, share OTP to claim&quot;</span>
                   </li>
                 </ul>
               </div>
@@ -406,7 +406,7 @@ export default function CyberAwarenessPage() {
             <div className="space-y-6">
               <div>
                 <h3 className="font-semibold text-text-primary mb-2">How do I know if an email is really from MNS Bank?</h3>
-                <p className="text-text-secondary">Check the sender's email address carefully. Official emails will end with @mnsbank.com. Look for grammar errors and urgent requests for personal information.</p>
+                <p className="text-text-secondary">Check the sender&apos;s email address carefully. Official emails will end with @mnsbank.com. Look for grammar errors and urgent requests for personal information.</p>
               </div>
               <div>
                 <h3 className="font-semibold text-text-primary mb-2">What should I do if I shared my OTP accidentally?</h3>

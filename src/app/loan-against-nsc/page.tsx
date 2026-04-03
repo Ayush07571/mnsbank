@@ -299,6 +299,3 @@ export default function LoanAgainstNSCPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

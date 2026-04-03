@@ -92,7 +92,7 @@ export default function MembershipPage() {
                   </svg>
                 </div>
                 <h3 className="font-semibold text-text-primary mb-2">Voting Rights</h3>
-                <p className="text-text-secondary">Participate in bank's decision-making process</p>
+                <p className="text-text-secondary">Participate in bank&apos;s decision-making process</p>
               </div>
               <div className="text-center">
                 <div className="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -418,7 +418,7 @@ export default function MembershipPage() {
                     <svg className="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                     </svg>
-                    <span>Support bank's growth initiatives</span>
+                    <span>Support bank&apos;s growth initiatives</span>
                   </li>
                 </ul>
               </div>
@@ -441,14 +441,14 @@ export default function MembershipPage() {
               </div>
               <div>
                 <h3 className="font-semibold text-text-primary mb-2">Can I sell my shares later?</h3>
-                <p className="text-text-secondary">Yes, shares can be transferred to other eligible members with approval from the bank's board of directors.</p>
+                <p className="text-text-secondary">Yes, shares can be transferred to other eligible members with approval from the bank&apos;s board of directors.</p>
               </div>
               <div>
                 <h3 className="font-semibold text-text-primary mb-2">When are dividends paid?</h3>
                 <p className="text-text-secondary">Dividends are declared annually and paid after the Annual General Meeting, typically within 30 days of approval.</p>
               </div>
               <div>
-                <h3 className="font-semibold text-text-primary mb-2">What happens if I don't pay for my shares?</h3>
+                <h3 className="font-semibold text-text-primary mb-2">What happens if I don&apos;t pay for my shares?</h3>
                 <p className="text-text-secondary">Non-payment may lead to forfeiture of membership rights and possible cancellation of shareholding after due process.</p>
               </div>
             </div>

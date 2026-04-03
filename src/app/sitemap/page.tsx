@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
@@ -32,7 +33,7 @@ export default function SitemapPage() {
           <div>
             <h2 className="font-heading text-xl font-bold text-text-primary mb-6">Home & About</h2>
             <ul className="space-y-3">
-              <li><a href="/" className="text-text-secondary hover:text-brand-primary transition-colors">Home</a></li>
+              <li><Link href="/" className="text-text-secondary hover:text-brand-primary transition-colors">Home</Link></li>
               <li><a href="/about-us" className="text-text-secondary hover:text-brand-primary transition-colors">About Us</a></li>
               <li><a href="/membership" className="text-text-secondary hover:text-brand-primary transition-colors">Membership</a></li>
               <li><a href="/board-of-directors" className="text-text-secondary hover:text-brand-primary transition-colors">Board of Directors</a></li>
@@ -124,7 +125,6 @@ export default function SitemapPage() {
               <li><a href="/emi-calculator" className="text-text-secondary hover:text-brand-primary transition-colors">EMI Calculator</a></li>
               <li><a href="/kyc-ckyc" className="text-text-secondary hover:text-brand-primary transition-colors">KYC/CKYC</a></li>
               <li><a href="/deaf-unclaimed-deposits" className="text-text-secondary hover:text-brand-primary transition-colors">Unclaimed Deposits</a></li>
-              <li><a href="/deaf-upload" className="text-text-secondary hover:text-brand-primary transition-colors">DEAF Upload</a></li>
             </ul>
           </div>
 
@@ -211,7 +211,7 @@ export default function SitemapPage() {
               Need Help Finding Something?
             </h2>
             <p className="text-text-secondary mb-8 max-w-2xl mx-auto">
-              Can't find what you're looking for? Our customer service team is here to help you navigate our website and services.
+              Can&apos;t find what you&apos;re looking for? Our customer service team is here to help you navigate our website and services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="primary" size="lg" className="px-8">
@@ -229,6 +229,3 @@ export default function SitemapPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

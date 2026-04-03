@@ -451,6 +451,3 @@ export default function SMSBankingPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

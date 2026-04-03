@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from '@/hooks/useTranslation';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
@@ -220,7 +220,7 @@ export function DEAFTable({
             <div className="flex-1">
               <Input
                 type="text"
-                placeholder={t('deaf.table.searchPlaceholder', 'Search by name, account number, or address...')}
+                placeholder={t('deaf.table.searchPlaceholder', 'Search by name, account number, or address...') as string}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full"

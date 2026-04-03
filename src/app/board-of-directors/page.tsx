@@ -369,6 +369,3 @@ export default function BoardOfDirectorsPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

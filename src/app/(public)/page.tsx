@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { createPageMetadata, SEO_CONFIGS } from '@/lib/page-metadata';
 import { Carousel } from '@/components/home/Carousel';
 import { WhatsNew } from '@/components/home/WhatsNew';
@@ -9,9 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
 export const metadata: Metadata = createPageMetadata(SEO_CONFIGS.HOME);
 
-export const unstable_instant = {
-  prefetch: 'static',
-};
+
 
 export default function HomePage() {
   return (
@@ -26,7 +25,7 @@ export default function HomePage() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-text-primary mb-4">
+            <h2 className="font-heading text-3xl md:text-4xl text-text-primary mb-4">
               Quick Banking Services
             </h2>
             <p className="text-xl text-text-secondary max-w-2xl mx-auto">
@@ -45,12 +44,12 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-semibold text-text-primary mb-2">Open Account</h3>
                 <p className="text-text-secondary text-sm mb-4">Start your banking journey</p>
-                <Button variant="outline" size="sm" className="w-full">
-                  Apply Now
-                </Button>
+                <Link href="/savings-account">
+                  <Button variant="outline" size="sm" className="w-full">Apply Now</Button>
+                </Link>
               </CardContent>
             </Card>
-            
+
             <Card className="hover:shadow-lg transition-shadow">
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -60,12 +59,12 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-semibold text-text-primary mb-2">Apply for Loan</h3>
                 <p className="text-text-secondary text-sm mb-4">Quick loan approval</p>
-                <Button variant="outline" size="sm" className="w-full">
-                  Apply Now
-                </Button>
+                <Link href="/personal-loan">
+                  <Button variant="outline" size="sm" className="w-full">Apply Now</Button>
+                </Link>
               </CardContent>
             </Card>
-            
+
             <Card className="hover:shadow-lg transition-shadow">
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -75,12 +74,12 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-semibold text-text-primary mb-2">Net Banking</h3>
                 <p className="text-text-secondary text-sm mb-4">Secure online banking</p>
-                <Button variant="outline" size="sm" className="w-full">
-                  Login
-                </Button>
+                <Link href="/net-banking">
+                  <Button variant="outline" size="sm" className="w-full">Login</Button>
+                </Link>
               </CardContent>
             </Card>
-            
+
             <Card className="hover:shadow-lg transition-shadow">
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -90,9 +89,9 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-semibold text-text-primary mb-2">Calculate EMI</h3>
                 <p className="text-text-secondary text-sm mb-4">Check loan eligibility</p>
-                <Button variant="outline" size="sm" className="w-full">
-                  Calculate
-                </Button>
+                <Link href="/emi-calculator">
+                  <Button variant="outline" size="sm" className="w-full">Calculate</Button>
+                </Link>
               </CardContent>
             </Card>
           </div>
@@ -228,9 +227,9 @@ export default function HomePage() {
           </div>
           
           <div className="text-center mt-8">
-            <Button variant="primary" size="lg" className="px-8">
-              Explore All Services
-            </Button>
+            <Link href="/sitemap">
+              <Button variant="primary" size="lg" className="px-8">Explore All Services</Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -245,12 +244,12 @@ export default function HomePage() {
             Join thousands of satisfied customers who trust MNS Bank for their banking needs
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="secondary" size="lg" className="px-8">
-              Open Account Now
-            </Button>
-            <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary">
-              Visit Branch
-            </Button>
+            <Link href="/savings-account">
+              <Button variant="secondary" size="lg" className="px-8">Open Account Now</Button>
+            </Link>
+            <Link href="/branch-locator">
+              <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary">Visit Branch</Button>
+            </Link>
           </div>
         </div>
       </section>

@@ -1,0 +1,45 @@
+{
+  "inquiry": {
+    "title": "Get in Touch",
+    "subtitle": "Fill out the form below and our team will contact you shortly.",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "Enter your full name",
+    "mobile": "Mobile Number",
+    "mobilePlaceholder": "Enter 10-digit mobile number",
+    "email": "Email Address",
+    "emailPlaceholder": "Enter your email address",
+    "branch": "Preferred Branch",
+    "message": "Message",
+    "messagePlaceholder": "Tell us how we can help you...",
+    "submit": "Submit Inquiry",
+    "submitting": "Submitting...",
+    "success": "Thank you for your inquiry! We will contact you shortly.",
+    "error": "Something went wrong. Please try again."
+  },
+  "validation": {
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email address",
+    "invalidMobile": "Please enter a valid 10-digit mobile number",
+    "minLength": "Must be at least {{min}} characters",
+    "maxLength": "Must be no more than {{max}} characters"
+  },
+  "feedback": {
+    "title": "Share Your Feedback",
+    "subtitle": "Help us improve our services with your valuable feedback",
+    "name": "Your Name",
+    "namePlaceholder": "Enter your name",
+    "email": "Email Address",
+    "emailPlaceholder": "Enter your email address",
+    "phone": "Phone Number",
+    "phonePlaceholder": "Enter your phone number",
+    "subject": "Subject",
+    "subjectPlaceholder": "Enter feedback subject",
+    "message": "Your Feedback",
+    "messagePlaceholder": "Share your detailed feedback here...",
+    "rating": "Rate your experience",
+    "submit": "Submit Feedback",
+    "submitting": "Submitting...",
+    "success": "Thank you for your feedback! We appreciate your input.",
+    "error": "Something went wrong. Please try again."
+  }
+}

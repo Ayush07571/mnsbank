@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { useTranslation } from 'next-i18next';
+import { useState, useMemo, useEffect } from 'react';
+import { useTranslation } from '@/hooks/useTranslation';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
@@ -30,7 +30,7 @@ interface EMICalculatorProps {
 export function EMICalculator({
   className,
   defaultRate = 10.5,
-  maxAmount = 5000000,
+  maxAmount = 50000000, // Default to 5 Crores
   showAmortization = true,
 }: EMICalculatorProps) {
   const { t } = useTranslation('products');
@@ -39,7 +39,7 @@ export function EMICalculator({
   const [loanAmount, setLoanAmount] = useState(1000000);
   const [interestRate, setInterestRate] = useState(defaultRate);
   const [loanTenure, setLoanTenure] = useState(120); // in months
-  const [calculation, setCalculation] = useState<EMICalculation | null>(null);
+
   const [showDetails, setShowDetails] = useState(false);
 
   // RBI EMI Calculation Formula
@@ -80,15 +80,16 @@ export function EMICalculator({
     };
   };
 
+  const calculation = useMemo(() => {
+    return calculateEMI(loanAmount, interestRate, loanTenure);
+  }, [loanAmount, interestRate, loanTenure]);
+
+  // Track analytics separately — no setState needed
   useEffect(() => {
-    const result = calculateEMI(loanAmount, interestRate, loanTenure);
-    setCalculation(result);
-    
-    // Track calculator usage
-    if (result) {
+    if (calculation) {
       trackCalculatorUse('emi_calculator', loanAmount, loanTenure);
     }
-  }, [loanAmount, interestRate, loanTenure, trackCalculatorUse]);
+  }, [loanAmount, loanTenure, trackCalculatorUse, calculation]);
 
   const formatCurrency = (amount: number): string => {
     return new Intl.NumberFormat('en-IN', {
@@ -99,8 +100,17 @@ export function EMICalculator({
   };
 
   const handleAmountChange = (value: string) => {
-    const num = parseInt(value.replace(/,/g, '')) || 0;
-    if (num <= maxAmount) {
+    // If the input is empty or just the currency symbol, set to 0
+    if (!value || value === '₹' || value === '₹ ') {
+      setLoanAmount(0);
+      return;
+    }
+
+    const num = parseInt(value.replace(/[^0-9]/g, '')) || 0;
+    
+    // Limit to 10 Crores hard limit if maxAmount is not set higher
+    const hardLimit = Math.max(maxAmount, 100000000);
+    if (num <= hardLimit) {
       setLoanAmount(num);
     }
   };

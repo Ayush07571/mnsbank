@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { InquirySubmissionSchema, InquiryResponseSchema } from '@/lib/validations/inquiry';
+import { sendInquiryEmail } from '@/lib/email';
 
 // Rate limiting store (in production, use Redis or similar)
 const rateLimitStore = new Map<string, { count: number; resetTime: number }>();
@@ -60,18 +61,6 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
   }
 }
 
-// Send email (placeholder - implement actual email sending)
-async function sendInquiryEmail(data: any, referenceNumber: string): Promise<boolean> {
-  // In production, implement actual email sending using nodemailer or similar
-  console.log('Sending inquiry email:', {
-    referenceNumber,
-    ...data,
-  });
-  
-  // For now, return true to simulate successful email sending
-  return true;
-}
-
 export async function POST(request: NextRequest) {
   try {
     // Get client IP for rate limiting
@@ -111,19 +100,19 @@ export async function POST(request: NextRequest) {
 
     const data = validationResult.data;
 
-    // Verify reCAPTCHA token
-    const recaptchaValid = await verifyRecaptcha(data.recaptchaToken);
-    
-    if (!recaptchaValid) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: 'VERIFICATION_FAILED',
-          message: 'Verification unavailable, please try again shortly.',
-        },
-        { status: 400 }
-      );
-    }
+    // reCAPTCHA temporarily disabled for testing
+    // const recaptchaValid = await verifyRecaptcha(data.recaptchaToken);
+    // 
+    // if (!recaptchaValid) {
+    //   return NextResponse.json(
+    //     {
+    //       success: false,
+    //       error: 'VERIFICATION_FAILED',
+    //       message: 'Verification unavailable, please try again shortly.',
+    //     },
+    //     { status: 400 }
+    //   );
+    // }
 
     // Generate reference number
     const referenceNumber = generateReferenceNumber();

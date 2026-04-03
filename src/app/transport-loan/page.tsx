@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
@@ -19,7 +19,7 @@ export default function TransportLoanPage() {
                 Transport Loan
               </h1>
               <p className="text-xl mb-8 text-white/90">
-                Drive your transport business forward with MNS Bank's transport loans. Get competitive interest rates, quick approval, and flexible repayment options for all your vehicle financing needs.
+                Drive your transport business forward with MNS Bank&apos;s transport loans. Get competitive interest rates, quick approval, and flexible repayment options for all your vehicle financing needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="secondary" size="lg" className="px-8">

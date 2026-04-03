@@ -456,6 +456,3 @@ export default function PMSurakshaPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

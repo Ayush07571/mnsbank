@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
@@ -19,7 +19,7 @@ export default function EMICalculatorPage() {
                 EMI Calculator
               </h1>
               <p className="text-xl mb-8 text-white/90">
-                Calculate your loan EMI instantly with MNS Bank's online EMI calculator. Plan your finances better with accurate monthly payment calculations for all types of loans.
+                Calculate your loan EMI instantly with MNS Bank&apos;s online EMI calculator. Plan your finances better with accurate monthly payment calculations for all types of loans.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="secondary" size="lg" className="px-8">

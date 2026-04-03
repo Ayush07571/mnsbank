@@ -43,7 +43,7 @@ export default function InsurancePage() {
                   </svg>
                 </div>
                 <h3 className="font-semibold text-text-primary mb-2">Life Insurance</h3>
-                <p className="text-text-secondary text-sm">Secure your family's future</p>
+                <p className="text-text-secondary text-sm">Secure your family&apos;s future</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">

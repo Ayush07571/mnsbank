@@ -1,5 +1,9 @@
 "use client";
 
 export function CurrentYear() {
-  return new Date().getFullYear();
+  return (
+    <span suppressHydrationWarning>
+      {new Date().getFullYear()}
+    </span>
+  );
 }

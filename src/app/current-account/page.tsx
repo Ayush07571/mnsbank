@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
@@ -19,7 +19,7 @@ export default function CurrentAccountPage() {
                 Current Account
               </h1>
               <p className="text-xl mb-8 text-white/90">
-                Manage your business finances with MNS Bank's current account. Enjoy unlimited transactions, overdraft facility, and comprehensive business banking services.
+                Manage your business finances with MNS Bank&apos;s current account. Enjoy unlimited transactions, overdraft facility, and comprehensive business banking services.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="secondary" size="lg" className="px-8">

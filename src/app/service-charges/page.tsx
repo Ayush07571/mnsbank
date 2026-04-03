@@ -377,6 +377,3 @@ export default function ServiceChargesPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

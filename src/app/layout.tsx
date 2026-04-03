@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
+import { LanguageProvider } from "@/context/LanguageContext";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -158,12 +159,14 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased">
-        <Suspense fallback={null}>
-          <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID} />
-        </Suspense>
-        <div id="root">
-          {children}
-        </div>
+        <LanguageProvider>
+          <Suspense fallback={null}>
+            <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID} />
+          </Suspense>
+          <div id="root">
+            {children}
+          </div>
+        </LanguageProvider>
       </body>
     </html>
   );

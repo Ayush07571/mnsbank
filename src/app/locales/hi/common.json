@@ -15,7 +15,27 @@
     "aboutUs": "हमारे बारे में",
     "contactUs": "संपर्क करें",
     "netBanking": "नेट बैंकिंग",
-    "language": "भाषा"
+    "language": "भाषा",
+    "categories": {
+      "accounts": "खाते",
+      "deposits": "जमा",
+      "loans": "ऋण",
+      "services": "सेवाएं",
+      "stayConnected": "जुड़े रहें"
+    },
+    "deposit": {
+      "calculatorTitle": "जमा कैलकुलेटर",
+      "fd": "सावधि जमा (FD)",
+      "rd": "आवर्ती जमा (RD)",
+      "principal": "मूल राशि",
+      "monthlyInst": "मासिक किस्त",
+      "rate": "ब्याज दर",
+      "tenure": "अवधि",
+      "totalInvestment": "कुल निवेश",
+      "totalInterest": "कमाया गया ब्याज",
+      "maturityAmount": "परिपक्वता राशि",
+      "disclaimer": "आरबीआई मानदंडों के अनुसार त्रैमासिक चक्रवृद्धि आधार पर गणना की गई। वास्तविक लाभ भिन्न हो सकते हैं।"
+    }
   },
   "common": {
     "loading": "लोड हो रहा है...",
@@ -33,15 +53,18 @@
     "menu": "मेनू",
     "back": "पीछे",
     "next": "अगला",
-    "previous": "पिछला"
+    "previous": "पिछला",
+    "months": "महीने",
+    "years": "वर्ष",
+    "rightsReserved": "सर्वाधिकार सुरक्षित।"
   },
   "footer": {
-    "copyright": "© {{year}} एमएनएस बैंक भोपाल। सभी अधिकार सुरक्षित।",
+    "copyright": "© {{year}} एमएनएस बैंक भोपाल। सर्वाधिकार सुरक्षित।",
     "links": {
-      "privacyPolicy": "गोपनीयता नीति",
-      "terms": "सेवा की शर्तें",
-      "disclaimer": "अस्वीकरण",
-      "sitemap": "साइटमैप"
+      "about": "हमारे बारे में",
+      "services": "सेवाएं",
+      "legal": "कानूनी",
+      "contact": "संपर्क"
     },
     "social": {
       "facebook": "फेसबुक",
@@ -54,5 +77,66 @@
       "dicgc": "डीआईसीजीसी द्वारा बीमित",
       "rbi": "आरबीआई द्वारा विनियमित"
     }
+  },
+  "buttons": {
+    "applyNow": "अभी आवेदन करें",
+    "checkEmi": "ईएमआई जांचें",
+    "calculate": "गणना करें"
+  },
+  "breadcrumb": {
+    "home": "होम",
+    "about-us": "हमारे बारे में",
+    "board-of-directors": "निदेशक मंडल",
+    "annual-reports": "वार्षिक रिपोर्ट",
+    "branch-locator": "शाखा लोकेटर",
+    "atm-locator": "एटीएम लोकेटर",
+    "locate-us": "हमें खोजें",
+    "contact-us": "संपर्क करें",
+    "grievance-redressal": "शिकायत निवारण",
+    "deaf-unclaimed-deposits": "DEAF लावारिस जमा",
+    "net-banking": "नेट बैंकिंग",
+    "mobile-banking": "मोबाइल बैंकिंग",
+    "interest-rates": "ब्याज दरें",
+    "service-charges": "सेवा शुल्क",
+    "download-forms": "फॉर्म डाउनलोड करें",
+    "privacy-policy": "गोपनीयता नीति",
+    "policy-centre": "पॉलिसी सेंटर",
+    "kyc-ckyc": "केवाईसी/सीकेवाईसी",
+    "cyber-awareness": "साइबर जागरूकता",
+    "positive-pay": "पॉजिटिव पे",
+    "ifsc-codes": "आईएफएससी कोड",
+    "savings-account": "बचत खाता",
+    "current-account": "चालू खाता",
+    "personal-loan": "पर्सनल लोन",
+    "home-loan": "होम लोन",
+    "car-loan": "कार लोन",
+    "gold-loan": "गोल्ड लोन",
+    "education-loan": "एजुकेशन लोन",
+    "house-construction-loan": "घर निर्माण ऋण",
+    "business-loan": "बिज़नेस लोन",
+    "emi-calculator": "ईएमआई कैलकुलेटर",
+    "upi-qr": "यूपीआई और क्यूआर",
+    "bbps": "बीबीपीएस",
+    "imps": "आईएमपीएस",
+    "neft-rtgs": "एनईएफटी/आरटीजीएस",
+    "sms-banking": "एसएमएस बैंकिंग",
+    "debit-cards": "डेबिट कार्ड",
+    "pan": "पैन सेवाएं",
+    "locker": "लॉकर सुविधा",
+    "pm-jeevan-yojana": "पीएम जीवन योजना",
+    "pm-suraksha-yojana": "पीएम सुरक्षा योजना",
+    "mutual-funds": "म्यूचुअल फंड",
+    "insurance": "बीमा",
+    "demat": "डीमैट सेवाएं",
+    "asba": "एएसबीए सेवाएं",
+    "careers": "करियर",
+    "tenders": "निविदाएं",
+    "membership": "सदस्यता",
+    "management": "प्रबंधन",
+    "committees": "समितियां",
+    "feedback": "फीडबैक",
+    "sitemap": "साइटमैप",
+    "time-deposit": "मीयादी जमा (FD)",
+    "recurring-deposit": "आवर्ती जमा (RD)"
   }
 }

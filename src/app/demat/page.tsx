@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
@@ -376,7 +376,7 @@ export default function DematPage() {
               </div>
               <div>
                 <h3 className="font-semibold text-text-primary mb-2">Can I have multiple demat accounts?</h3>
-                <p className="text-text-secondary">Yes, you can open multiple demat accounts with different depository participants. However, it's recommended to maintain one for simplicity.</p>
+                <p className="text-text-secondary">Yes, you can open multiple demat accounts with different depository participants. However, it&apos;s recommended to maintain one for simplicity.</p>
               </div>
               <div>
                 <h3 className="font-semibold text-text-primary mb-2">Is there any minimum balance requirement?</h3>

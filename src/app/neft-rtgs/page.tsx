@@ -406,6 +406,3 @@ export default function NeftrtgsPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

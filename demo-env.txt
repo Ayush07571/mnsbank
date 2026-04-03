@@ -1,0 +1,25 @@
+# Demo Environment Configuration
+# Safe for development, testing, and demo deployments
+
+# reCAPTCHA v3 (Demo/Test Keys - Safe for development)
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY=6LeIxAcTAAAAAJcZVRqyHh71UMIEbQjVQyB8C_Zk
+RECAPTCHA_SECRET_KEY=6LeIxAcTAAAAAGbq6qjI4bQ4kTcY8kY8kY8kY8kY
+
+# Google Analytics (Demo Account - Safe for testing)
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+
+# Email Configuration (Demo SMTP - Safe for development)
+SMTP_HOST=smtp.mailtrap.io
+SMTP_PORT=2525
+SMTP_USER=your_mailtrap_username
+SMTP_PASS=your_mailtrap_password
+BANK_EMAIL=demo@mnsbankbhopal.com
+
+# Development Mode
+NODE_ENV=development
+
+# Optional: For demo deployments
+NEXT_PUBLIC_DEMO_MODE=true
+NEXT_PUBLIC_BANK_NAME="MNS Bank Bhopal"
+NEXT_PUBLIC_BANK_PHONE="+91-0755-1234567"
+NEXT_PUBLIC_BANK_EMAIL="info@mnsbankbhopal.com"

@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
@@ -407,7 +407,7 @@ export default function CareersPage() {
               Start Your Career Journey
             </h2>
             <p className="text-text-secondary mb-8 max-w-2xl mx-auto">
-              Join our team and be part of a growing banking institution. We're looking for talented individuals who share our passion for excellence.
+              Join our team and be part of a growing banking institution. We&apos;re looking for talented individuals who share our passion for excellence.
             </p>
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <div>

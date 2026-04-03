@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import IfscCodesTable from '@/components/IfscCodesTable';
@@ -149,7 +149,7 @@ export default function IfscCodesPage() {
               </div>
               <div>
                 <h3 className="font-semibold text-text-primary mb-2">Is IFSC code mandatory for fund transfers?</h3>
-                <p className="text-text-secondary">Yes, IFSC code is mandatory for NEFT, RTGS, and IMPS transfers to identify the beneficiary's bank branch.</p>
+                <p className="text-text-secondary">Yes, IFSC code is mandatory for NEFT, RTGS, and IMPS transfers to identify the beneficiary&apos;s bank branch.</p>
               </div>
               <div>
                 <h3 className="font-semibold text-text-primary mb-2">Can I transfer funds without IFSC code?</h3>

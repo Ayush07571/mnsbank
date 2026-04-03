@@ -428,6 +428,3 @@ export default function TendersPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import FeedbackForm from '@/components/FeedbackForm';
@@ -138,7 +138,7 @@ export default function FeedbackPage() {
                 <p className="text-text-secondary">Yes, you will receive an email confirmation with a reference number to track your feedback status.</p>
               </div>
               <div>
-                <h3 className="font-semibold text-text-primary mb-2">What if I'm not satisfied with the resolution?</h3>
+                <h3 className="font-semibold text-text-primary mb-2">What if I&apos;m not satisfied with the resolution?</h3>
                 <p className="text-text-secondary">You can escalate the issue to our grievance redressal cell or contact the Banking Ombudsman.</p>
               </div>
               <div>

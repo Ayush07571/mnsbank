@@ -393,6 +393,3 @@ export default function MobileBankingPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

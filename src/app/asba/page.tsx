@@ -474,6 +474,3 @@ export default function AsbaPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

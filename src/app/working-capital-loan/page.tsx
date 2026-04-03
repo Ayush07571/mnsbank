@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
@@ -19,7 +19,7 @@ export default function WorkingCapitalLoanPage() {
                 Working Capital Loan
               </h1>
               <p className="text-xl mb-8 text-white/90">
-                Fuel your business growth with MNS Bank's working capital loans. Get competitive interest rates, quick approval, and flexible repayment options for your business needs.
+                Fuel your business growth with MNS Bank&apos;s working capital loans. Get competitive interest rates, quick approval, and flexible repayment options for your business needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="secondary" size="lg" className="px-8">

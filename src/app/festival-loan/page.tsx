@@ -216,6 +216,3 @@ export default function FestivalLoanPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

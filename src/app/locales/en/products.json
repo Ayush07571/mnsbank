@@ -1,0 +1,450 @@
+{
+  "carLoan": {
+    "title": "Car Loan",
+    "description": "Drive home your dream car with MNS Bank's affordable car loans. Get competitive interest rates and flexible repayment options.",
+    "features": [
+      { "title": "Quick Approval", "desc": "Get loan approved within 24 hours" },
+      { "title": "High LTV", "desc": "Get up to 85% of car value" },
+      { "title": "Low Interest", "desc": "Competitive rates starting from 10.5%" }
+    ],
+    "details": [
+      "Loan Amount: ₹1 Lakh to ₹50 Lakhs",
+      "Interest Rate: 10.5% to 14.5% p.a.",
+      "Loan Tenure: 1 to 7 years",
+      "Processing Fee: 1% of loan amount"
+    ],
+    "benefits": [
+      "100% on-road financing",
+      "Flexible repayment options",
+      "Prepayment facility available",
+      "No hidden charges"
+    ],
+    "eligibility": {
+      "individuals": [
+        "Age: 21 to 65 years",
+        "Minimum annual income: ₹3 Lakhs",
+        "Stable employment for at least 2 years",
+        "Good credit score (650+)",
+        "Valid driving license"
+      ],
+      "businesses": [
+        "Business existence: Minimum 3 years",
+        "Annual turnover: Minimum ₹10 Lakhs",
+        "Profitable for last 2 years",
+        "Good banking relationship",
+        "Required business documents"
+      ]
+    },
+    "documents": {
+      "salaried": [
+        "Identity proof (Aadhaar, PAN, Voter ID)",
+        "Address proof (Utility bill, rent agreement)",
+        "Income proof (salary slips, Form 16)",
+        "Bank statements (last 6 months)",
+        "Passport size photographs"
+      ],
+      "selfEmployed": [
+        "Business registration documents",
+        "Income tax returns (last 2 years)",
+        "Financial statements (balance sheet, P&L)",
+        "Bank statements (last 6 months)",
+        "Business address proof"
+      ]
+    }
+  },
+  "homeLoan": {
+    "title": "Home Loan",
+    "description": "Turn your dream home into reality with MNS Bank's affordable home loans. Get competitive interest rates, flexible repayment options, and quick approval.",
+    "features": [
+      { "title": "Quick Approval", "desc": "Get loan approved within 48 hours" },
+      { "title": "High LTV", "desc": "Get up to 80% of property value" },
+      { "title": "Low Interest", "desc": "Competitive rates starting from 10.5%" }
+    ],
+    "details": [
+      "Loan Amount: ₹5 Lakhs to ₹2 Crores",
+      "Interest Rate: 10.5% to 13.5% p.a.",
+      "Loan Tenure: 5 to 30 years",
+      "Processing Fee: 0.5% of loan amount"
+    ],
+    "benefits": [
+      "100% property cost financing",
+      "Flexible repayment options",
+      "Prepayment facility available",
+      "Tax benefits on interest"
+    ],
+    "eligibility": {
+      "individuals": [
+        "Age: 21 to 65 years",
+        "Minimum monthly income: ₹30,000",
+        "Work experience: Minimum 2 years",
+        "Good credit score (650+)",
+        "Stable employment"
+      ],
+      "coApplicants": [
+        "Spouse can be co-applicant",
+        "Parents can be co-applicant",
+        "Children can be co-applicants",
+        "Siblings can be co-applicants",
+        "Helps increase loan eligibility"
+      ]
+    },
+    "documents": {
+      "salaried": [
+        "Identity proof (Aadhaar, PAN, Voter ID)",
+        "Address proof (Utility bill, rent agreement)",
+        "Income proof (salary slips, Form 16)",
+        "Bank statements (last 6 months)",
+        "Property documents"
+      ],
+      "selfEmployed": [
+        "Business registration documents",
+        "Income tax returns (last 3 years)",
+        "Financial statements (balance sheet, P&L)",
+        "Bank statements (last 6 months)",
+        "Property documents"
+      ]
+    }
+  },
+  "personalLoan": {
+    "title": "Personal Loan",
+    "description": "Quick and easy personal loans for your personal needs. Minimal documentation and attractive interest rates.",
+    "features": [
+      { "title": "Quick Process", "desc": "Competitive rates starting from 12.5%" },
+      { "title": "No Collateral", "desc": "Unsecured loan facility" }
+    ],
+    "details": [
+      "Loan Amount: ₹50,000 to ₹10 Lakhs",
+      "Interest Rate: 12.5% to 18.5% p.a.",
+      "Loan Tenure: 1 to 5 years",
+      "Processing Fee: 2% of loan amount"
+    ],
+    "benefits": [
+      "No collateral required",
+      "Minimal documentation",
+      "Flexible repayment options",
+      "Part payment facility"
+    ],
+    "eligibility": {
+      "salaried": [
+        "Age: 21 to 60 years",
+        "Minimum monthly income: ₹25,000",
+        "Work experience: Minimum 1 year",
+        "Good credit score (650+)",
+        "Stable employment"
+      ],
+      "selfEmployed": [
+        "Age: 21 to 65 years",
+        "Minimum annual income: ₹3 Lakhs",
+        "Business stability: Minimum 2 years",
+        "Good credit history",
+        "Required business documents"
+      ]
+    },
+    "documents": {
+      "salaried": [
+        "Identity proof (Aadhaar, PAN, Voter ID)",
+        "Address proof (Utility bill, rent agreement)",
+        "Income proof (salary slips, Form 16)",
+        "Bank statements (last 6 months)",
+        "Passport size photographs"
+      ],
+      "selfEmployed": [
+        "Business registration documents",
+        "Income tax returns (last 2 years)",
+        "Financial statements (balance sheet, P&L)",
+        "Bank statements (last 6 months)",
+        "Business address proof"
+      ]
+    }
+  },
+  "goldLoan": {
+    "title": "Gold Loan",
+    "description": "Get instant cash against your gold ornaments with MNS Bank's gold loans. Secure and fast processing.",
+    "features": [
+      { "title": "Instant Cash", "desc": "Get loan approval within minutes" },
+      { "title": "High LTV", "desc": "Get up to 75% of gold value" },
+      { "title": "Simple Process", "desc": "Competitive rates starting from 9.5%" }
+    ],
+    "details": [
+      "Loan Amount: ₹10,000 to ₹50 Lakhs",
+      "Interest Rate: 9.5% to 14.5% p.a.",
+      "Loan Tenure: 1 month to 3 years",
+      "Processing Fee: 1% of loan amount"
+    ],
+    "benefits": [
+      "No credit history required",
+      "Minimal documentation",
+      "Secure gold storage facilities",
+      "Part payment facility available"
+    ],
+    "eligibility": {
+      "requirements": [
+        "Age: 18 to 70 years",
+        "Indian resident",
+        "Gold ornaments should be 18-22 carat",
+        "Gold should be free from encumbrances",
+        "Valid identity and address proof"
+      ]
+    },
+    "documents": {
+      "required": [
+        "Identity proof (Aadhaar, PAN, Voter ID)",
+        "Address proof (Utility bill, rent agreement)",
+        "Passport size photographs",
+        "Gold ornaments for valuation",
+        "Proof of ownership of gold"
+      ]
+    },
+    "process": [
+      { "title": "Visit Branch", "desc": "Visit any MNS Bank branch with gold ornaments" },
+      { "title": "Gold Valuation", "desc": "Our experts will value your gold ornaments" },
+      { "title": "Documentation", "desc": "Submit required documents and application form" },
+      { "title": "Loan Disbursement", "desc": "Get instant loan amount credited to your account" }
+    ]
+  },
+  "educationLoan": {
+    "title": "Education Loan",
+    "description": "Fuel your academic dreams with MNS Bank's education loans. Competitive rates for studies in India and abroad.",
+    "features": [
+      { "title": "Moratorium Facility", "desc": "Repayment after course completion" },
+      { "title": "Low Interest", "desc": "Affordable rates for your education" },
+      { "title": "Long Tenure", "desc": "Extended repayment options available" },
+      { "title": "Global Reach", "desc": "Complete education expenses covered" }
+    ],
+    "details": [
+      "Loan Amount: ₹50,000 to ₹40 Lakhs",
+      "Interest Rate: 11.5% to 15.5% p.a.",
+      "Loan Tenure: Up to 15 years",
+      "Processing Fee: 1% of loan amount"
+    ],
+    "benefits": [
+      "Moratorium during study period",
+      "Tax benefits under Section 80E",
+      "Flexible repayment options",
+      "No collateral for loans up to ₹7.5 Lakhs"
+    ],
+    "moratorium": {
+      "course": [
+        "No EMI during course period",
+        "Simple interest during moratorium",
+        "Focus on studies without financial pressure"
+      ],
+      "postCourse": [
+        "6 months moratorium after course completion",
+        "12 months for professional courses",
+        "Time to secure employment"
+      ]
+    },
+    "expenses": [
+      { "title": "Tuition Fees", "desc": "College and university fees" },
+      { "title": "Living Expenses", "desc": "Hostel and accommodation costs" },
+      { "title": "Study Materials", "desc": "Books and equipment" },
+      { "title": "Travel Expenses", "desc": "Airfare and travel costs" },
+      { "title": "Exam Fees", "desc": "Test and examination costs" }
+    ],
+    "eligibility": {
+      "student": [
+        "Age: 16 to 35 years",
+        "Indian citizen",
+        "Admission to recognized course",
+        "Good academic record",
+        "Confirmed admission letter"
+      ],
+      "parent": [
+        "Minimum annual income: ₹3 Lakhs",
+        "Good credit score (650+)",
+        "Stable income source",
+        "Co-applicant mandatory",
+        "Required documents"
+      ]
+    },
+    "documents": {
+      "student": [
+        "Admission letter and fee structure",
+        "Academic mark sheets (10th, 12th, graduation)",
+        "Identity proof (Aadhaar, PAN, Voter ID)",
+        "Passport size photographs",
+        "Entrance exam score card (if applicable)"
+      ],
+      "parent": [
+        "Identity and address proof",
+        "Income proof (salary slips, Form 16)",
+        "Bank statements (last 6 months)",
+        "Property documents (if collateral)",
+        "PAN card (mandatory)"
+      ]
+    },
+    "process": [
+      { "title": "Submit Application", "desc": "Fill application form with course details" },
+      { "title": "Document Verification", "desc": "Submit all required documents" },
+      { "title": "Loan Approval", "desc": "Get loan approval based on eligibility" },
+      { "title": "Disbursement", "desc": "Amount paid directly to institution" }
+    ]
+  },
+  "constructionLoan": {
+    "title": "House Construction Loan",
+    "description": "Build your dream home with MNS Bank's construction loans. Get competitive interest rates and expert guidance.",
+    "features": [
+      { "title": "Flexible Disbursement", "desc": "Funds released as construction progresses" },
+      { "title": "Expert Guidance", "desc": "Up to 20 years repayment period" },
+      { "title": "Low Interest", "desc": "Competitive rates starting from 10.5%" }
+    ],
+    "details": [
+      "Loan Amount: ₹10 Lakhs to ₹3 Crores",
+      "Interest Rate: 10.5% to 14.5% p.a.",
+      "Loan Tenure: 5 to 20 years",
+      "Processing Fee: 0.5% of loan amount"
+    ],
+    "benefits": [
+      "Step-by-step disbursement",
+      "Interest paid only on utilized amount",
+      "Flexible repayment options",
+      "Tax benefits on interest"
+    ],
+    "stages": [
+      { "title": "Foundation", "desc": "20% of loan amount" },
+      { "title": "Structure", "desc": "30% of loan amount" },
+      { "title": "Finishing", "desc": "30% of loan amount" },
+      { "title": "Completion", "desc": "20% of loan amount" }
+    ],
+    "eligibility": {
+      "individuals": [
+        "Age: 21 to 65 years",
+        "Minimum monthly income: ₹35,000",
+        "Work experience: Minimum 3 years",
+        "Good credit score (650+)",
+        "Own land or property for construction"
+      ],
+      "property": [
+        "Clear title of the land",
+        "Approved construction plan",
+        "Building permits and approvals",
+        "Location within bank's service area",
+        "Property valuation report"
+      ]
+    },
+    "documents": {
+      "personal": [
+        "Identity proof (Aadhaar, PAN, Voter ID)",
+        "Address proof (Utility bill, rent agreement)",
+        "Income proof (salary slips, Form 16)",
+        "Bank statements (last 6 months)",
+        "Passport size photographs"
+      ],
+      "property": [
+        "Land title deed and registration",
+        "Approved construction plan",
+        "Building permits and NOC",
+        "Property tax receipts",
+        "Estimate from certified architect"
+      ]
+    },
+    "process": [
+      { "title": "Apply Online", "desc": "Submit application with property details" },
+      { "title": "Property Verification", "desc": "Our team verifies property documents" },
+      { "title": "Loan Approval", "desc": "Get loan approval based on eligibility" },
+      { "title": "Disbursement", "desc": "Funds released as construction progresses" }
+    ]
+  },
+  "emi": {
+    "calculatorTitle": "EMI Calculator",
+    "loanAmount": "Loan Amount",
+    "interestRate": "Interest Rate",
+    "loanTenure": "Loan Tenure",
+    "months": "months",
+    "year": "year",
+    "years": "years",
+    "oneYear": "1 Year",
+    "thirtyYears": "30 Years",
+    "calculationResult": "EMI Calculation Result",
+    "monthlyEMI": "Monthly EMI",
+    "totalInterest": "Total Interest",
+    "totalAmount": "Total Amount",
+    "showDetails": "Show Details",
+    "hideDetails": "Hide Details",
+    "applyNow": "Apply Now",
+    "amortizationSchedule": "Amortization Schedule",
+    "month": "Month",
+    "principal": "Principal",
+    "interest": "Interest",
+    "balance": "Balance",
+    "disclaimerTitle": "Important Note",
+    "disclaimer": "The EMI calculator is for illustrative purposes only. Actual EMIs may vary based on bank policies, processing fees, and other charges. Please contact the bank for exact calculations."
+  },
+  "deposit": {
+    "calculatorTitle": "Deposit Calculator",
+    "fd": "Fixed Deposit (FD)",
+    "rd": "Recurring Deposit (RD)",
+    "principal": "Principal Amount",
+    "monthlyInst": "Monthly Installment",
+    "rate": "Interest Rate",
+    "tenure": "Tenure",
+    "months": "Months",
+    "totalInvestment": "Total Investment",
+    "totalInterest": "Interest Earned",
+    "maturityAmount": "Maturity Amount",
+    "disclaimer": "Interest calculated on quarterly compounding basis as per RBI norms. Actual returns may vary.",
+    "timeDeposit": "Time Deposit (FD)",
+    "recurringDeposit": "Recurring Deposit (RD)",
+    "quarterly": "Quarterly",
+    "monthly": "Monthly",
+    "atMaturity": "At Maturity",
+    "calculate": "Calculate"
+  },
+  "hero": {
+    "homeLoan": "Home Loan",
+    "homeLoanDesc": "Turn your dream home into reality with MNS Bank's affordable home loans. Get competitive interest rates and quick approval.",
+    "personalLoan": "Personal Loan",
+    "personalLoanDesc": "Quick and easy personal loans for your personal needs. Minimal documentation and attractive interest rates.",
+    "carLoan": "Car Loan",
+    "carLoanDesc": "Drive home your dream car with MNS Bank's affordable car loans. Get competitive interest rates and flexible repayment options.",
+    "goldLoan": "Gold Loan",
+    "goldLoanDesc": "Get instant cash against your gold ornaments with MNS Bank's gold loans. Secure and fast processing.",
+    "educationLoan": "Education Loan",
+    "educationLoanDesc": "Fuel your academic dreams with MNS Bank's education loans. Competitive rates for studies in India and abroad.",
+    "constructionLoan": "House Construction Loan",
+    "constructionLoanDesc": "Build your dream home with MNS Bank's construction loans. Get competitive interest rates, flexible disbursement options, and expert guidance throughout your construction journey.",
+    "timeDeposit": "Time Deposit (FD)",
+    "timeDepositDesc": "Grow your savings with MNS Bank's Time Deposits. Secure investments with attractive interest rates.",
+    "recurringDeposit": "Recurring Deposit (RD)",
+    "recurringDepositDesc": "Build your wealth month by month with our Recurring Deposits. Start with small amounts and earn high interest."
+  },
+  "sections": {
+    "features": "Product Features",
+    "eligibility": "Eligibility Criteria",
+    "documents": "Required Documents",
+    "ctaTitle": "Ready to Get Started?",
+    "ctaDesc": "Apply for MNS Bank products today and get competitive interest rates with quick approval.",
+    "applyNow": "Apply Now",
+    "checkEmi": "Check EMI",
+    "calculate": "Calculate",
+    "downloadForms": "Download Forms",
+    "details": "Loan Details",
+    "benefits": "Benefits",
+    "salaried": "For Salaried Individuals",
+    "selfEmployed": "For Self-Employed",
+    "forIndividuals": "For Individuals",
+    "forBusinesses": "For Businesses",
+    "forCoApplicants": "For Co-applicants",
+    "requirements": "Eligibility Requirements",
+    "process": "Application Process",
+    "expenses": "Expenses Covered",
+    "moratorium": "Moratorium Facility Details",
+    "stages": "Construction Stages & Disbursement",
+    "student": "For Students",
+    "parent": "For Parents/Guardians",
+    "property": "Property Requirements",
+    "personal": "Personal Documents",
+    "propertyDocs": "Property Documents",
+    "courseMoratorium": "Course Period Moratorium",
+    "postCourseMoratorium": "Post-Course Moratorium"
+  },
+  "loans": {
+    "home": "Home Loan",
+    "personal": "Personal Loan",
+    "car": "Car Loan",
+    "gold": "Gold Loan",
+    "education": "Education Loan",
+    "house": "House Construction Loan"
+  }
+}

@@ -403,6 +403,3 @@ export default function PANPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

@@ -194,13 +194,13 @@ export default function NetBankingPage() {
                 <h3 className="font-semibold text-text-primary mb-3">Quick Links</h3>
                 <div className="space-y-2">
                   <Button variant="outline" size="sm" className="w-full justify-start" asChild>
-                    <a href="/forgot-password">Forgot Password?</a>
+                    <a href="/contact-us">Contact Net Banking Support</a>
                   </Button>
                   <Button variant="outline" size="sm" className="w-full justify-start" asChild>
-                    <a href="/register">New User Registration</a>
+                    <a href="/cyber-awareness">Security &amp; Cyber Awareness</a>
                   </Button>
                   <Button variant="outline" size="sm" className="w-full justify-start" asChild>
-                    <a href="/security-tips">Security Tips</a>
+                    <a href="/mobile-banking">Mobile Banking</a>
                   </Button>
                 </div>
               </div>
@@ -213,6 +213,3 @@ export default function NetBankingPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

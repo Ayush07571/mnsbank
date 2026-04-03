@@ -522,6 +522,3 @@ export default function BBPSPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

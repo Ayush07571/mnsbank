@@ -523,6 +523,3 @@ export default function ATMLocatorPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

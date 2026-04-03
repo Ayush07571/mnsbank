@@ -312,6 +312,3 @@ export default function LocateUsPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

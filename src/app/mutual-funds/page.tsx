@@ -430,6 +430,3 @@ export default function MutualFundsPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

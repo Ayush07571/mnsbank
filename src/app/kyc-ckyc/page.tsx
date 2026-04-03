@@ -11,6 +11,3 @@ export default function KYCCKYCPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

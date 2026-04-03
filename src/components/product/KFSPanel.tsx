@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from '@/hooks/useTranslation';
 import { cn } from '@/lib/utils';
 
 interface KFSData {
@@ -187,7 +187,7 @@ export function KFSPanel({ data, className, variant = 'default' }: KFSPanelProps
             {t('kfs.regulatory2', 'For any queries, please contact our branch or call our customer service.')}
           </p>
           <p>
-            {t('kfs.lastUpdated', 'Last updated')}: {new Date().toLocaleDateString('en-IN')}
+            {t('kfs.lastUpdated', 'Last updated')}: 01/01/2026
           </p>
         </div>
       </div>

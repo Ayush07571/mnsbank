@@ -468,6 +468,3 @@ export default function BranchLocatorPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

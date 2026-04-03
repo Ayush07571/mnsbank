@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useTranslation } from 'next-i18next';
-import { CurrentYear } from '@/components/common/CurrentYear';
+import { ReactNode } from 'react';
+import { useTranslation } from '@/hooks/useTranslation';
 import { cn } from '@/lib/utils';
 
 interface SocialLink {
@@ -12,12 +12,12 @@ interface SocialLink {
 }
 
 interface FooterLink {
-  label: string;
+  label: string | ReactNode;
   href: string;
 }
 
 interface FooterColumn {
-  title: string;
+  title: string | ReactNode;
   links: FooterLink[];
 }
 
@@ -87,6 +87,7 @@ export function Footer({ className }: { className?: string }) {
         { label: 'Policy Centre', href: '/policy-centre' },
         { label: 'Grievance Redressal', href: '/grievance-redressal' },
         { label: 'Careers', href: '/careers' },
+        { label: 'Admin Portal', href: '/admin' },
       ],
     },
     {
@@ -108,7 +109,7 @@ export function Footer({ className }: { className?: string }) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {footerColumns.map((column, index) => (
               <div key={index} className="space-y-4">
-                <h3 className="font-heading text-text-primary font-semibold">
+                <h3 className="font-heading text-text-primary">
                   {column.title}
                 </h3>
                 <ul className="space-y-2">
@@ -194,7 +195,7 @@ export function Footer({ className }: { className?: string }) {
         <div className="border-t border-border py-4">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0">
             <p className="text-sm text-text-secondary">
-              {t('footer.copyright', { year: <CurrentYear /> })}
+              {t('footer.copyright', '© {year} MNS Bank. All rights reserved.', { year: '2026' })}
             </p>
             <div className="flex items-center space-x-4 text-sm">
               <Link
@@ -212,10 +213,10 @@ export function Footer({ className }: { className?: string }) {
               </Link>
               <span className="text-text-secondary">|</span>
               <Link
-                href="/download-forms"
+                href="/privacy-policy"
                 className="text-text-secondary hover:text-brand-accent transition-colors"
               >
-                {t('footer.links.disclaimer')}
+                {t('footer.links.disclaimer', 'Disclaimer')}
               </Link>
             </div>
           </div>

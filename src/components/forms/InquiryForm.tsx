@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from '@/hooks/useTranslation';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { InquirySubmissionSchema } from '@/lib/validations/inquiry';
@@ -29,16 +29,12 @@ export default function InquiryForm({
   const { t } = useTranslation('forms');
   const { trackFormSubmit } = useGA4();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
     setValue,
-    watch,
-    trigger,
   } = useForm<FormData>({
     resolver: zodResolver(InquirySubmissionSchema),
     defaultValues: {
@@ -47,57 +43,27 @@ export default function InquiryForm({
     },
   });
 
-  // Load reCAPTCHA script
-  useEffect(() => {
-    const loadReCAPTCHA = () => {
-      if (typeof window === 'undefined') return;
-      
-      const script = document.createElement('script');
-      script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
-      script.async = true;
-      script.onload = () => {
-        setRecaptchaLoaded(true);
-      };
-      script.onerror = () => {
-        console.error('Failed to load reCAPTCHA');
-      };
-      document.head.appendChild(script);
-    };
-
-    loadReCAPTCHA();
-  }, []);
-
+  // reCAPTCHA temporarily disabled for testing
+  // useEffect(() => {
+  //   const loadReCAPTCHA = () => {
+  //     if (typeof window === 'undefined') return;
+  //       
+  //     const script = document.createElement('script');
+  //     script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
+  //     script.async = true;
+  //     script.onload = () => {
+  //       setRecaptchaLoaded(true);
+  //       };
+  //     script.onerror = () => {
+  //       console.error('Failed to load reCAPTCHA');
+  //       };
+  //     document.head.appendChild(script);
   const onSubmit = async (data: FormData) => {
-    if (!recaptchaLoaded) {
-      onError?.('reCAPTCHA not loaded. Please refresh the page.');
-      return;
-    }
-
     setIsSubmitting(true);
 
     try {
-      // Execute reCAPTCHA v3
-      const token = await new Promise<string>((resolve, reject) => {
-        if (!window.grecaptcha) {
-          reject(new Error('reCAPTCHA not loaded'));
-          return;
-        }
-        window.grecaptcha.ready(() => {
-          if (!window.grecaptcha) {
-            reject(new Error('reCAPTCHA not available'));
-            return;
-          }
-          window.grecaptcha
-            .execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!, { action: 'submit' })
-            .then((token: string) => resolve(token))
-            .catch(reject);
-        });
-      });
+      const submissionData = { ...data };
 
-      // Add reCAPTCHA token to form data
-      const submissionData = { ...data, recaptchaToken: token };
-
-      // Submit form
       const response = await fetch('/api/submit-inquiry', {
         method: 'POST',
         headers: {
@@ -121,14 +87,13 @@ export default function InquiryForm({
         trackFormSubmit('inquiry_form', false);
         onError?.(result.message || 'Submission failed');
       }
-    } catch (error) {
+    } catch {
       onError?.('An unexpected error occurred');
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const mobileValue = watch('mobile');
   const [mobileError, setMobileError] = useState('');
 
   const validateMobile = (value: string) => {
@@ -164,7 +129,7 @@ export default function InquiryForm({
           <Input
             id="fullName"
             {...register('fullName')}
-            placeholder={t('inquiry.fullNamePlaceholder', 'Enter your full name')}
+            placeholder={t('inquiry.fullNamePlaceholder', 'Enter your full name') as string}
             className={cn(errors.fullName && 'border-error')}
           />
           {errors.fullName && (
@@ -180,7 +145,7 @@ export default function InquiryForm({
           <Input
             id="mobile"
             {...register('mobile')}
-            placeholder={t('inquiry.mobilePlaceholder', 'Enter 10-digit mobile number')}
+            placeholder={t('inquiry.mobilePlaceholder', 'Enter 10-digit mobile number') as string}
             className={cn((errors.mobile || mobileError) && 'border-error')}
             maxLength={10}
             onChange={(e) => {
@@ -205,7 +170,7 @@ export default function InquiryForm({
             id="email"
             type="email"
             {...register('email')}
-            placeholder={t('inquiry.emailPlaceholder', 'Enter your email address')}
+            placeholder={t('inquiry.emailPlaceholder', 'Enter your email address') as string}
             className={cn(errors.email && 'border-error')}
           />
           {errors.email && (
@@ -244,7 +209,7 @@ export default function InquiryForm({
             id="message"
             {...register('message')}
             rows={4}
-            placeholder={t('inquiry.messagePlaceholder', 'Tell us how we can help you...')}
+            placeholder={t('inquiry.messagePlaceholder', 'Tell us how we can help you...') as string}
             className={cn(
               'flex min-h-[80px] w-full rounded-input border border-border bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
               errors.message && 'border-error'
@@ -262,7 +227,7 @@ export default function InquiryForm({
           variant="primary"
           size="lg"
           className="w-full"
-          disabled={isSubmitting || !recaptchaLoaded}
+          disabled={isSubmitting}
         >
           {isSubmitting ? (
             <>
@@ -292,29 +257,6 @@ export default function InquiryForm({
             t('inquiry.submit', 'Submit Inquiry')
           )}
         </Button>
-
-        {/* reCAPTCHA Notice */}
-        <p className="text-xs text-text-secondary text-center">
-          {t('inquiry.recaptchaNotice', 'This site is protected by reCAPTCHA and the Google ')}
-          <a
-            href="https://policies.google.com/privacy"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-brand-accent hover:underline"
-          >
-            {t('inquiry.privacyPolicy', 'Privacy Policy')}
-          </a>
-          {' '}{t('inquiry.and', 'and ')}
-          <a
-            href="https://policies.google.com/terms"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-brand-accent hover:underline"
-          >
-            {t('inquiry.termsOfService', 'Terms of Service')}
-          </a>
-          {'.'}
-        </p>
       </form>
     </div>
   );

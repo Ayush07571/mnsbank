@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
@@ -19,7 +19,7 @@ export default function OverdraftFacilityPage() {
                 Overdraft Facility
               </h1>
               <p className="text-xl mb-8 text-white/90">
-                Get flexible working capital with MNS Bank's overdraft facility. Enjoy competitive interest rates, flexible withdrawals, and pay interest only on utilized amount.
+                Get flexible working capital with MNS Bank&apos;s overdraft facility. Enjoy competitive interest rates, flexible withdrawals, and pay interest only on utilized amount.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="secondary" size="lg" className="px-8">

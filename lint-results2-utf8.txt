@@ -1,0 +1,198 @@
+﻿
+> mnsbank@0.1.0 lint
+> eslint
+
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\scripts\security-check.js
+  8:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  9:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\admin\deaf-upload\page.tsx
+  96:14  warning  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\annual-reports\page.tsx
+  459:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\api\admin\deaf-upload\route.ts
+   31:40  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   41:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  101:39  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  109:14  warning  'error' is defined but never used         @typescript-eslint/no-unused-vars
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\api\deaf-records\route.ts
+   1:10  warning  'NextRequest' is defined but never used  @typescript-eslint/no-unused-vars
+  17:14  warning  'error' is defined but never used        @typescript-eslint/no-unused-vars
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\api\submit-inquiry\route.ts
+  38:16  warning  'verifyRecaptcha' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\atm\page.tsx
+  371:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\biz-double-deposit\page.tsx
+  26:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\biz-recurring-deposit\page.tsx
+  26:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\biz-time-deposit\page.tsx
+  26:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\board-of-directors\page.tsx
+  2:10  warning  'Button' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\careers\page.tsx
+  414:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\committees\page.tsx
+  86:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\consumer-loan\page.tsx
+  26:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\current-account\page.tsx
+  26:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\cyber-awareness\page.tsx
+  160:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\deaf-unclaimed-deposits\page.tsx
+  2:10  warning  'redirect' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\demat\page.tsx
+  384:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\double-deposit\page.tsx
+  26:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\emi-calculator\page.tsx
+  26:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\feedback\page.tsx
+  145:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\ifsc-codes\page.tsx
+  158:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\insurance\page.tsx
+  51:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\kyc-ckyc\KYCCKYCContent.tsx
+   10:52  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  204:69  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\loan-against-property\page.tsx
+  26:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\locker\page.tsx
+  125:66  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  125:71  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  125:76  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  134:67  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  134:72  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  134:77  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  143:67  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  143:73  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  143:79  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  152:67  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  152:73  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  152:79  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\management\page.tsx
+  26:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\membership\page.tsx
+  100:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\micro-finance\page.tsx
+  26:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\mortgage-overdraft\page.tsx
+  26:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\overdraft-facility\page.tsx
+  26:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\pm-jeevan-yojana\page.tsx
+  27:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\positive-pay\page.tsx
+  408:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\privacy-policy\page.tsx
+  106:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\professional-loan\page.tsx
+  26:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\savings-account\page.tsx
+  26:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\self-employed-loan\page.tsx
+  26:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\transport-loan\page.tsx
+  26:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\upi-qr\page.tsx
+  291:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\app\working-capital-loan\page.tsx
+  26:7  error  Parsing error: '}' expected
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\components\FeedbackForm.tsx
+  75:14  warning  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\components\IfscCodesTable.tsx
+  201:22  warning  'setSearchTerm' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  202:25  warning  'setSelectedState' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  223:9   warning  'states' is assigned a value but never used            @typescript-eslint/no-unused-vars
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\components\common\DemoMode.tsx
+  3:25  warning  'showDemoBadge' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\components\compliance\EscalationMatrix.tsx
+  103:9  warning  'formatTimeline' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\components\maps\LocatorMap.tsx
+  166:34  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  180:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  208:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  209:39  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  221:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\components\maps\LocatorMapWrapper.tsx
+  4:10  warning  'Card' is defined but never used         @typescript-eslint/no-unused-vars
+  4:16  warning  'CardContent' is defined but never used  @typescript-eslint/no-unused-vars
+  4:29  warning  'CardHeader' is defined but never used   @typescript-eslint/no-unused-vars
+  4:41  warning  'CardTitle' is defined but never used    @typescript-eslint/no-unused-vars
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\components\product\PageShell.tsx
+  229:3  warning  'productSlug' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\components\ui\Button.tsx
+  36:32  warning  'asChild' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\lib\analytics.ts
+    6:38  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+   45:16  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+   45:39  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+   46:19  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+   46:44  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+   46:68  error    Use the rest parameters instead of 'arguments'  prefer-rest-params
+   48:16  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+   48:41  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+  105:70  warning  'tenure' is defined but never used              @typescript-eslint/no-unused-vars
+  130:48  warning  'productCategory' is defined but never used     @typescript-eslint/no-unused-vars
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\lib\email.ts
+  51:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\src\lib\validations\inquiry.ts
+  21:10  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Ayush Karan\OneDrive\Desktop\mnsbank\test-smtp.js
+  1:20  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+Γ£û 87 problems (66 errors, 21 warnings)
+

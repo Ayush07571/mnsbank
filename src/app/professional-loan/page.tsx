@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
@@ -19,7 +19,7 @@ export default function ProfessionalLoanPage() {
                 Professional Loan
               </h1>
               <p className="text-xl mb-8 text-white/90">
-                Advance your professional practice with MNS Bank's professional loans. Get competitive interest rates, quick approval, and flexible repayment options for doctors, lawyers, architects, and other professionals.
+                Advance your professional practice with MNS Bank&apos;s professional loans. Get competitive interest rates, quick approval, and flexible repayment options for doctors, lawyers, architects, and other professionals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="secondary" size="lg" className="px-8">

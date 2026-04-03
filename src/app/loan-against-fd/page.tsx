@@ -299,6 +299,3 @@ export default function LoanAgainstFDPage() {
 }
 
 
-export const unstable_instant = {
-  prefetch: 'static',
-};

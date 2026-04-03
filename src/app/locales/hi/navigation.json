@@ -1,92 +1,96 @@
 {
+  "personalBanking": "व्यक्तिगत बैंकिंग",
+  "businessBanking": "व्यवसायिक बैंकिंग",
+  "netBanking": "नेट बैंकिंग",
+  "personal": "व्यक्तिगत",
+  "business": "व्यवसायिक",
+  "aboutUs": "हमारे बारे में",
+  "categories": {
+    "accounts": "खाते",
+    "deposits": "जमा",
+    "loans": "ऋण",
+    "services": "सेवाएं",
+    "stayConnected": "संपर्क में रहें",
+    "about": "हमारे बारे में",
+    "compliance": "अनुपालन"
+  },
+  "accounts": {
+    "savings": "बचत खाता",
+    "current": "चालू खाता",
+    "doubleDeposit": "डबल जमा योजना",
+    "timeDeposit": "समय जमा (एफडी)",
+    "recurringDeposit": "आवर्ती जमा (आरडी)",
+    "bizDouble": "व्यवसाय डबल जमा"
+  },
+  "deposits": {
+    "fixed": "सावधि जमा (समय)",
+    "recurring": "आवर्ती जमा",
+    "double": "डबल जमा योजना",
+    "rates": "ब्याज दरें",
+    "locker": "लॉकर सुविधा"
+  },
   "loans": {
-    "title": "ऋण",
     "personal": "व्यक्तिगत ऋण",
     "home": "होम लोन",
     "car": "कार लोन",
     "education": "शिक्षा ऋण",
     "gold": "गोल्ड लोन",
-    "business": "व्यवसाय ऋण",
-    "agriculture": "कृषि ऋण",
-    "againstProperty": "संपत्ति के विरुद्ध ऋण",
+    "construction": "घर निर्माण ऋण",
     "consumer": "उपभोक्ता ऋण",
-    "professional": "पेशेवर ऋण",
-    "selfEmployed": "स्व-रोजगार ऋण",
-    "transport": "परिवहन ऋण",
     "festival": "त्योहार ऋण",
-    "houseConstruction": "घर निर्माण ऋण",
-    "againstFd": "एफडी के विरुद्ध ऋण",
-    "againstNsc": "एनएससी के विरुद्ध ऋण",
-    "workingCapital": "कार्यशील पूंजी ऋण",
     "overdraft": "ओवरड्राफ्ट सुविधा",
-    "mortgage": "बंधक ओवरड्राफ्ट",
-    "microFinance": "सूक्ष्म वित्त"
-  },
-  "accounts": {
-    "title": "खाते",
-    "savings": "बचत खाता",
-    "current": "चालू खाता",
-    "doubleDeposit": "डबल जमा",
-    "recurringDeposit": "आवर्ती जमा",
-    "timeDeposit": "समय जमा",
-    "bizDoubleDeposit": "व्यवसाय डबल जमा",
-    "bizRecurringDeposit": "व्यवसाय आवर्ती जमा",
-    "bizTimeDeposit": "व्यवसाय समय जमा",
-    "locker": "लॉकर सुविधा"
+    "workingCapital": "कार्यशील पूंजी ऋण",
+    "professional": "पेशेवर ऋण",
+    "transport": "परिवहन वाहन ऋण",
+    "selfEmployed": "स्व-रोजगार ऋण",
+    "againstFD": "सावधि जमा के विरुद्ध ऋण",
+    "againstNSC": "एनएससी के विरुद्ध ऋण",
+    "againstProperty": "संपत्ति के विरुद्ध ऋण"
   },
   "services": {
-    "title": "सेवाएं",
-    "mobileBanking": "मोबाइल बैंकिंग",
     "netBanking": "नेट बैंकिंग",
-    "upiQr": "UPI और QR सेवाएं",
-    "bbps": "बीबीपीएस",
+    "mobileBanking": "मोबाइल बैंकिंग",
+    "upi": "UPI और QR सेवाएं",
+    "cards": "एटीएम / डेबिट कार्ड",
     "atm": "एटीएम सेवाएं",
     "debitCards": "डेबिट कार्ड",
-    "imps": "आईएमपीएस",
-    "smsBanking": "एसएमएस बैंकिंग",
-    "neftRtgs": "एनईएफटी/आरटीजीएस",
-    "pan": "पैन सेवाएं",
-    "pmJeevanYojana": "प्रधानमंत्री जीवन योजना",
-    "pmSurakshaYojana": "प्रधानमंत्री सुरक्षा योजना",
-    "positivePay": "पॉजिटिव पे सिस्टम",
+    "locker": "लॉकर सुविधा",
     "insurance": "बीमा सेवाएं",
-    "mutualFunds": "म्यूचुअल फंड",
     "demat": "डीमैट सेवाएं",
-    "asba": "एएसबीए सेवाएं"
+    "asba": "एएसबीए सेवाएं",
+    "bbps": "बीबीपीएस बिल भुगतान",
+    "imps": "आईएमपीएस ट्रांसफर",
+    "kyc": "केवाईसी / सीकेवाईसी"
   },
-  "corporate": {
-    "title": "कॉर्पोरेट",
+  "stayConnected": {
+    "branches": "शाखा लोकेटर",
+    "atms": "एटीएम लोकेटर",
+    "calculator": "ईएमआई कैलकुलेटर",
+    "contact": "संपर्क करें",
+    "feedback": "प्रतिपुष्टि",
+    "forms": "फॉर्म डाउनलोड करें"
+  },
+  "about": {
+    "us": "हमारे बारे में",
     "aboutUs": "हमारे बारे में",
-    "boardOfDirectors": "निदेशक मंडल",
+    "board": "निदेशक मंडल",
+    "management": "प्रबंधन टीम",
     "committees": "समितियां",
-    "management": "प्रबंधन",
     "careers": "करियर",
     "tenders": "निविदाएं",
-    "annualReports": "वार्षिक रिपोर्ट",
-    "membership": "सदस्यता",
-    "cyberAwareness": "साइबर जागरूकता",
-    "feedback": "प्रतिपुष्टि",
-    "sitemap": "साइटमैप",
-    "ifscCodes": "IFSC कोड"
+    "reports": "वार्षिक रिपोर्ट"
   },
-  "information": {
-    "title": "जानकारी",
-    "interestRates": "ब्याज दरें",
-    "serviceCharges": "सेवा शुल्क",
-    "downloadForms": "फॉर्म डाउनलोड करें",
-    "policyCentre": "नीति केंद्र",
-    "grievanceRedressal": "शिकायत निवारण",
-    "privacyPolicy": "गोपनीयता नीति",
-    "emiCalculator": "ईएमआई कैलकुलेटर",
-    "kycCkyc": "केवाईसी/सीकेवाईसी",
-    "deafUnclaimedDeposits": "दावा न किए गए जमा",
-    "deafUpload": "डीएएएफ अपलोड"
+  "compliance": {
+    "grievance": "शिकायत निवारण",
+    "policy": "नीति केंद्र",
+    "kyc": "केवाईसी / सीकेवाईसी",
+    "privacy": "गोपनीयता नीति"
   },
-  "locations": {
-    "title": "स्थान",
-    "branchLocator": "शाखा लोकेटर",
-    "atmLocator": "एटीएम लोकेटर",
-    "locateUs": "हमें ढूंढें",
-    "contactUs": "संपर्क करें"
+  "investor": {
+    "reports": "वार्षिक रिपोर्ट",
+    "deaf": "डीएएफ जमा",
+    "grievance": "शिकायत निवारण",
+    "cyber": "साइबर जागरूकता",
+    "unclaimed": "दावा न किए गए जमा"
   }
 }
