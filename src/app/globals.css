@@ -1,54 +1,90 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 :root {
-  --brand-primary: #1A3A6B;
-  --brand-accent: #C8A84B;
-  --text-primary: #1A1A1A;
+  --brand-primary: #1a3a6b;
+  --brand-accent: #c8a84b;
+  --text-primary: #1a1a1a;
   --text-secondary: #555555;
-  --background: #FFFFFF;
-  --surface: #F5F7FA;
-  --border: #E0E4EC;
-  --success: #2E7D32;
-  --error: #C62828;
+  --background: #ffffff;
+  --surface: #f5f7fa;
+  --border: #e0e4ec;
+  --success: #2e7d32;
+  --error: #c62828;
 }
 
 .dark {
-  --brand-primary: #3B82F6;
-  --brand-accent: #EAB308;
-  --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --background: #0F172A;
-  --surface: #1E293B;
+  --brand-primary: #3b82f6;
+  --brand-accent: #eab308;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --background: #0f172a;
+  --surface: #1e293b;
   --border: #334155;
-  --success: #4ADE80;
-  --error: #F87171;
+  --success: #4ade80;
+  --error: #f87171;
 }
 
 .high-contrast {
-  --brand-primary: #FFFF00;
-  --brand-accent: #FFFFFF;
-  --text-primary: #FFFF00;
-  --text-secondary: #FFFFFF;
+  --brand-primary: #ffff00;
+  --brand-accent: #ffffff;
+  --text-primary: #ffff00;
+  --text-secondary: #ffffff;
   --background: #000000;
   --surface: #000000;
-  --border: #FFFFFF;
-  --success: #00FF00;
-  --error: #FF0000;
+  --border: #ffffff;
+  --success: #00ff00;
+  --error: #ff0000;
+}
+
+.high-contrast body {
+  background-color: var(--background) !important;
+  background: var(--background) !important;
+  color: var(--text-primary) !important;
 }
 
 .high-contrast * {
-  border-color: #FFFFFF !important;
-  outline-color: #FFFF00 !important;
+  border-color: #ffffff !important;
+  outline-color: #ffff00 !important;
 }
 
-.high-contrast button, 
+.high-contrast button,
 .high-contrast a.button,
 .high-contrast input,
 .high-contrast select,
 .high-contrast textarea {
-  border: 2px solid #FFFFFF !important;
+  border: 2px solid #ffffff !important;
+  color: #000000 !important;
+  background-color: #ffff00 !important;
+}
+
+.high-contrast button:hover,
+.high-contrast a.button:hover {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.high-contrast section,
+.high-contrast main,
+.high-contrast .bg-white,
+.high-contrast .bg-gray-50,
+.high-contrast .bg-gray-100 {
+  background-color: var(--background) !important;
+  background: var(--background) !important;
+}
+
+.high-contrast img,
+.high-contrast svg,
+.high-contrast [style*='background-image'] {
+  filter: contrast(1.2) brightness(1.1) !important;
+}
+
+.high-contrast .text-gray-900,
+.high-contrast .text-gray-800,
+.high-contrast .text-gray-700,
+.high-contrast .text-gray-600 {
+  color: var(--text-primary) !important;
 }
 
 @layer base {
@@ -57,10 +93,17 @@
     font-weight: 400;
     color: var(--text-primary);
     background-color: var(--background);
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-weight: 700;
     color: var(--text-primary);
   }
@@ -73,50 +116,103 @@
    ============================================= */
 
 /* Backgrounds */
-.dark .bg-white          { background-color: var(--surface) !important; }
-.dark .bg-gray-50        { background-color: #1a2236 !important; }
-.dark .bg-gray-100       { background-color: #1e293b !important; }
-.dark .bg-gray-200       { background-color: #253148 !important; }
-.dark .bg-gray-800       { background-color: #0f172a !important; }
-.dark .bg-gray-900       { background-color: #090e1a !important; }
+.dark .bg-white {
+  background-color: var(--surface) !important;
+}
+.dark .bg-gray-50 {
+  background-color: #1a2236 !important;
+}
+.dark .bg-gray-100 {
+  background-color: #1e293b !important;
+}
+.dark .bg-gray-200 {
+  background-color: #253148 !important;
+}
+.dark .bg-gray-800 {
+  background-color: #0f172a !important;
+}
+.dark .bg-gray-900 {
+  background-color: #090e1a !important;
+}
 
 /* Text */
-.dark .text-gray-900     { color: #f1f5f9 !important; }
-.dark .text-gray-800     { color: #e2e8f0 !important; }
-.dark .text-gray-700     { color: #cbd5e1 !important; }
-.dark .text-gray-600     { color: #94a3b8 !important; }
-.dark .text-gray-500     { color: #64748b !important; }
-.dark .text-gray-400     { color: #475569 !important; }
-.dark .text-black        { color: #f8fafc !important; }
+.dark .text-gray-900 {
+  color: #f1f5f9 !important;
+}
+.dark .text-gray-800 {
+  color: #e2e8f0 !important;
+}
+.dark .text-gray-700 {
+  color: #cbd5e1 !important;
+}
+.dark .text-gray-600 {
+  color: #94a3b8 !important;
+}
+.dark .text-gray-500 {
+  color: #64748b !important;
+}
+.dark .text-gray-400 {
+  color: #475569 !important;
+}
+.dark .text-black {
+  color: #f8fafc !important;
+}
 
 /* Borders */
-.dark .border-gray-100   { border-color: #1e293b !important; }
-.dark .border-gray-200   { border-color: #253148 !important; }
-.dark .border-gray-300   { border-color: #334155 !important; }
+.dark .border-gray-100 {
+  border-color: #1e293b !important;
+}
+.dark .border-gray-200 {
+  border-color: #253148 !important;
+}
+.dark .border-gray-300 {
+  border-color: #334155 !important;
+}
 
 /* Cards / Surfaces */
-.dark .bg-background     { background-color: var(--background) !important; }
-.dark .bg-surface        { background-color: var(--surface) !important; }
+.dark .bg-background {
+  background-color: var(--background) !important;
+}
+.dark .bg-surface {
+  background-color: var(--surface) !important;
+}
 
 /* Hover states for gray backgrounds */
-.dark .hover\:bg-gray-50:hover  { background-color: #1a2236 !important; }
-.dark .hover\:bg-gray-100:hover { background-color: #1e293b !important; }
+.dark .hover\:bg-gray-50:hover {
+  background-color: #1a2236 !important;
+}
+.dark .hover\:bg-gray-100:hover {
+  background-color: #1e293b !important;
+}
 
 /* Tables: thead/tbody rows */
-.dark thead { background-color: #1e293b !important; }
-.dark tbody tr:hover { background-color: #1a2236 !important; }
-.dark .hover\:bg-gray-50:hover { background-color: #1a2236 !important; }
+.dark thead {
+  background-color: #1e293b !important;
+}
+.dark tbody tr:hover {
+  background-color: #1a2236 !important;
+}
+.dark .hover\:bg-gray-50:hover {
+  background-color: #1a2236 !important;
+}
 
 /* Inputs, selects, textareas */
-.dark input:not([class*="bg-"]),
-.dark select:not([class*="bg-"]),
-.dark textarea:not([class*="bg-"]) {
+.dark input:not([class*='bg-']),
+.dark select:not([class*='bg-']),
+.dark textarea:not([class*='bg-']) {
   background-color: var(--surface) !important;
   color: var(--text-primary) !important;
   border-color: var(--border) !important;
 }
 
 /* Scrollbar (Webkit) */
-.dark ::-webkit-scrollbar-track  { background: #0f172a; }
-.dark ::-webkit-scrollbar-thumb  { background: #334155; border-radius: 4px; }
-.dark ::-webkit-scrollbar-thumb:hover { background: #475569; }
+.dark ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
