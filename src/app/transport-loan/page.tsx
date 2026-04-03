@@ -22,10 +22,10 @@ export default function TransportLoanPage() {
                 Drive your transport business forward with MNS Bank&apos;s transport loans. Get competitive interest rates, quick approval, and flexible repayment options for all your vehicle financing needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="px-8">
+                <Button variant="secondary" size="lg" className="px-8" onClick={() => window.location.href = '/contact-us'}>
                   Apply Now
                 </Button>
-                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary">
+                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary" onClick={() => window.location.href = '/contact-us'}>
                   Check Eligibility
                 </Button>
               </div>
@@ -249,7 +249,7 @@ export default function TransportLoanPage() {
               Apply for MNS Bank transport loan today and get competitive interest rates, quick approval, and flexible repayment options for your vehicle financing needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
+              <Button variant="primary" size="lg" className="px-8" onClick={() => window.location.href = '/contact-us'}>
                 Apply Now
               </Button>
               <Button variant="outline" size="lg" className="px-8" asChild>

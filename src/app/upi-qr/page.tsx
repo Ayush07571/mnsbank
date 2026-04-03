@@ -23,10 +23,10 @@ export default function UPIQRPage() {
                 Experience the future of banking with instant digital payments. Send money, pay bills, and shop seamlessly using UPI and QR codes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="px-8">
+                <Button variant="secondary" size="lg" className="px-8" onClick={() => window.location.href = '/mobile-app-coming-soon'}>
                   Create UPI ID
                 </Button>
-                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary">
+                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary" onClick={() => window.location.href = '/mobile-app-coming-soon'}>
                   Download App
                 </Button>
               </div>
@@ -288,7 +288,7 @@ export default function UPIQRPage() {
             </div>
             <div className="text-center mt-8">
               <p className="text-text-secondary mb-4">And many more UPI apps supporting MNS Bank</p>
-              <Button variant="outline">View All Apps</Button>
+              <Button variant="outline" onClick={() => window.location.href = '/mobile-app-coming-soon'}>View All Apps</Button>
             </div>
           </CardContent>
         </Card>
@@ -427,10 +427,10 @@ export default function UPIQRPage() {
               Join millions of users who are already enjoying the benefits of instant, secure, and free digital payments with MNS Bank UPI.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
+              <Button variant="primary" size="lg" className="px-8" onClick={() => window.location.href = '/mobile-app-coming-soon'}>
                 Create UPI ID Now
               </Button>
-              <Button variant="outline" size="lg" className="px-8">
+              <Button variant="outline" size="lg" className="px-8" onClick={() => window.location.href = '/mobile-app-coming-soon'}>
                 Download Mobile App
               </Button>
             </div>

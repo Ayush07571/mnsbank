@@ -22,10 +22,10 @@ export default function ConsumerLoanPage() {
                 Fulfill all your dreams with MNS Bank&apos;s consumer loans. Get competitive interest rates, quick approval, and flexible repayment options for all your needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="px-8">
+                <Button variant="secondary" size="lg" className="px-8" onClick={() => window.location.href = '/contact-us'}>
                   Apply Now
                 </Button>
-                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary">
+                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary" onClick={() => window.location.href = '/contact-us'}>
                   Check Eligibility
                 </Button>
               </div>
@@ -242,7 +242,7 @@ export default function ConsumerLoanPage() {
               Apply for MNS Bank consumer loan today and get competitive interest rates with quick approval and flexible repayment options.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
+              <Button variant="primary" size="lg" className="px-8" onClick={() => window.location.href = '/contact-us'}>
                 Apply Now
               </Button>
               <Button variant="outline" size="lg" className="px-8" asChild>

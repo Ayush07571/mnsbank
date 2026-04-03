@@ -23,10 +23,10 @@ export default function MembershipPage() {
                 Join MNS Bank as a member and become a shareholder. Enjoy exclusive benefits, voting rights, and be part of our growth story.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="px-8">
+                <Button variant="secondary" size="lg" className="px-8" onClick={() => window.location.href = '/contact-us'}>
                   Apply for Membership
                 </Button>
-                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary">
+                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary" onClick={() => window.location.href = '/contact-us'}>
                   Check Eligibility
                 </Button>
               </div>
@@ -465,10 +465,10 @@ export default function MembershipPage() {
               Join MNS Bank as a member and become part of our growth story. Enjoy ownership rights, voting privileges, and share in our success.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
+              <Button variant="primary" size="lg" className="px-8" onClick={() => window.location.href = '/contact-us'}>
                 Apply for Membership
               </Button>
-              <Button variant="outline" size="lg" className="px-8">
+              <Button variant="outline" size="lg" className="px-8" onClick={() => window.location.href = '/contact-us'}>
                 Check Eligibility
               </Button>
             </div>

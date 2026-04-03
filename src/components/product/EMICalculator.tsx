@@ -296,7 +296,7 @@ export function EMICalculator({
                 : t('emi.showDetails', 'Show Details')
               }
             </Button>
-            <Button variant="outline" size="lg" className="flex-1">
+            <Button variant="outline" size="lg" className="flex-1" onClick={() => window.location.href = '/contact-us'}>
               {t('emi.applyNow', 'Apply Now')}
             </Button>
           </div>

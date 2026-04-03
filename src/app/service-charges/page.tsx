@@ -22,10 +22,10 @@ export default function ServiceChargesPage() {
                 View complete schedule of service charges and fees for all MNS Bank products and services. Transparent pricing with no hidden costs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="px-8">
+                <Button variant="secondary" size="lg" className="px-8" onClick={() => window.location.href = '/download-forms'}>
                   Download Fee Schedule
                 </Button>
-                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary">
+                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary" onClick={() => window.location.href = '/contact-us'}>
                   Calculate Charges
                 </Button>
               </div>
@@ -362,10 +362,10 @@ export default function ServiceChargesPage() {
               Contact our customer service team or visit your nearest MNS Bank branch for detailed information about service charges and fees.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
+              <Button variant="primary" size="lg" className="px-8" onClick={() => window.location.href = '/contact-us'}>
                 Contact Us
               </Button>
-              <Button variant="outline" size="lg" className="px-8">
+              <Button variant="outline" size="lg" className="px-8" onClick={() => window.location.href = '/branch-locator'}>
                 Find Branch
               </Button>
             </div>

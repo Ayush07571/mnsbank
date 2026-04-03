@@ -93,7 +93,7 @@ export default function TendersPage() {
                     <p className="text-brand-accent font-semibold mb-2">Services</p>
                     <p className="text-text-secondary text-sm mb-2">Cash replenishment and maintenance services for ATMs</p>
                   </div>
-                  <Button variant="outline" size="sm">View Details</Button>
+                  <Button variant="outline" size="sm" onClick={() => window.location.href = '/contact-us'}>View Details</Button>
                 </div>
                 <div className="grid md:grid-cols-3 gap-4 text-sm">
                   <div>
@@ -118,7 +118,7 @@ export default function TendersPage() {
                     <p className="text-brand-accent font-semibold mb-2">Goods</p>
                     <p className="text-text-secondary text-sm mb-2">Supply of bank stationery, forms, and marketing materials</p>
                   </div>
-                  <Button variant="outline" size="sm">View Details</Button>
+                  <Button variant="outline" size="sm" onClick={() => window.location.href = '/contact-us'}>View Details</Button>
                 </div>
                 <div className="grid md:grid-cols-3 gap-4 text-sm">
                   <div>
@@ -143,7 +143,7 @@ export default function TendersPage() {
                     <p className="text-brand-accent font-semibold mb-2">Works</p>
                     <p className="text-text-secondary text-sm mb-2">Network infrastructure and server upgradation at branches</p>
                   </div>
-                  <Button variant="outline" size="sm">View Details</Button>
+                  <Button variant="outline" size="sm" onClick={() => window.location.href = '/contact-us'}>View Details</Button>
                 </div>
                 <div className="grid md:grid-cols-3 gap-4 text-sm">
                   <div>
@@ -168,7 +168,7 @@ export default function TendersPage() {
                     <p className="text-brand-accent font-semibold mb-2">Services</p>
                     <p className="text-text-secondary text-sm mb-2">Security guard services for bank branches and ATMs</p>
                   </div>
-                  <Button variant="outline" size="sm">View Details</Button>
+                  <Button variant="outline" size="sm" onClick={() => window.location.href = '/contact-us'}>View Details</Button>
                 </div>
                 <div className="grid md:grid-cols-3 gap-4 text-sm">
                   <div>

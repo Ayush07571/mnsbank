@@ -22,10 +22,10 @@ export default function WorkingCapitalLoanPage() {
                 Fuel your business growth with MNS Bank&apos;s working capital loans. Get competitive interest rates, quick approval, and flexible repayment options for your business needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="px-8">
+                <Button variant="secondary" size="lg" className="px-8" onClick={() => window.location.href = '/contact-us'}>
                   Apply Now
                 </Button>
-                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary">
+                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary" onClick={() => window.location.href = '/contact-us'}>
                   Check Eligibility
                 </Button>
               </div>
@@ -302,7 +302,7 @@ export default function WorkingCapitalLoanPage() {
               Apply for MNS Bank working capital loan today and get competitive interest rates, quick approval, and flexible repayment options for your business growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
+              <Button variant="primary" size="lg" className="px-8" onClick={() => window.location.href = '/contact-us'}>
                 Apply Now
               </Button>
               <Button variant="outline" size="lg" className="px-8" asChild>

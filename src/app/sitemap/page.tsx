@@ -214,10 +214,10 @@ export default function SitemapPage() {
               Can&apos;t find what you&apos;re looking for? Our customer service team is here to help you navigate our website and services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
+              <Button variant="primary" size="lg" className="px-8" onClick={() => window.location.href = '/contact-us'}>
                 Contact Support
               </Button>
-              <Button variant="outline" size="lg" className="px-8">
+              <Button variant="outline" size="lg" className="px-8" onClick={() => window.location.href = '/contact-us'}>
                 Send Feedback
               </Button>
             </div>

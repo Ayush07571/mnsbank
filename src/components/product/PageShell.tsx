@@ -245,7 +245,7 @@ export function ApplyTab({
         <p className="text-text-secondary mb-6">
           {ctaDescription || t('apply.description', 'Take the first step towards your financial goals with MNS Bank.')}
         </p>
-        <Button variant="primary" size="lg" className="px-8">
+        <Button variant="primary" size="lg" className="px-8" onClick={() => window.location.href = '/contact-us'}>
           {ctaText || t('apply.cta', 'Apply Now')}
         </Button>
       </div>

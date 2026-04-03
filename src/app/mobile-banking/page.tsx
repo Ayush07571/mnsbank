@@ -23,10 +23,10 @@ export default function MobileBankingPage() {
                 Experience banking at your fingertips with our secure mobile banking app. Transfer funds, pay bills, and manage accounts anytime, anywhere.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="px-8">
+                <Button variant="secondary" size="lg" className="px-8" onClick={() => window.location.href = '/mobile-app-coming-soon'}>
                   Download App
                 </Button>
-                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary">
+                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary" onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}>
                   View Features
                 </Button>
               </div>
@@ -200,7 +200,7 @@ export default function MobileBankingPage() {
                 <h3 className="font-semibold text-text-primary mb-2">iOS App</h3>
                 <p className="text-text-secondary text-sm mb-4">Available for iPhone and iPad</p>
                 <div className="space-y-2">
-                  <Button variant="primary" size="lg" className="w-full">
+                  <Button variant="primary" size="lg" className="w-full" onClick={() => window.location.href = '/mobile-app-coming-soon'}>
                     Download from App Store
                   </Button>
                   <p className="text-xs text-text-secondary">Version 3.2.1 • 4.8 ⭐</p>
@@ -218,7 +218,7 @@ export default function MobileBankingPage() {
                 <h3 className="font-semibold text-text-primary mb-2">Android App</h3>
                 <p className="text-text-secondary text-sm mb-4">Available for Android phones</p>
                 <div className="space-y-2">
-                  <Button variant="primary" size="lg" className="w-full">
+                  <Button variant="primary" size="lg" className="w-full" onClick={() => window.location.href = '/mobile-app-coming-soon'}>
                     Download from Play Store
                   </Button>
                   <p className="text-xs text-text-secondary">Version 3.2.1 • 4.7 ⭐</p>
@@ -378,10 +378,10 @@ export default function MobileBankingPage() {
               Download the MNS Bank mobile app and enjoy secure, convenient banking anytime, anywhere. Available on both iOS and Android.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
+              <Button variant="primary" size="lg" className="px-8" onClick={() => window.location.href = '/mobile-app-coming-soon'}>
                 Download App
               </Button>
-              <Button variant="outline" size="lg" className="px-8">
+              <Button variant="outline" size="lg" className="px-8" onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}>
                 View Features
               </Button>
             </div>
