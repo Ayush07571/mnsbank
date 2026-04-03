@@ -403,8 +403,3 @@ export default function InsurancePage() {
     </div>
   );
 }
-
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

@@ -395,8 +395,3 @@ export default function PMJeevanPage() {
     </div>
   );
 }
-
-
-export const unstable_instant = {
-  prefetch: 'static',
-};
