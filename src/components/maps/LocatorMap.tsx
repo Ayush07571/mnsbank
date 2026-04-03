@@ -163,6 +163,7 @@ export function LocatorMap({
   filterType = 'all'
 }: LocatorMapProps) {
   const mapRef = useRef<HTMLDivElement>(null);
+  const mapInstanceRef = useRef<any>(null);
   const [map, setMap] = useState<any>(null);
   const [selectedLocation, setSelectedLocation] = useState<Location | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -184,7 +185,20 @@ export function LocatorMap({
           shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
         });
 
+        // Check if map container is already initialized
+        if (mapInstanceRef.current) {
+          // Remove existing map instance
+          mapInstanceRef.current.remove();
+          // Clear the container
+          mapRef.current.innerHTML = '';
+          // Reset the reference
+          mapInstanceRef.current = null;
+        }
+
         const leafletMap = L.map(mapRef.current).setView([center.lat, center.lng], zoom);
+
+        // Store map reference for cleanup
+        mapInstanceRef.current = leafletMap;
 
         // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -199,6 +213,17 @@ export function LocatorMap({
     };
 
     loadMap();
+    
+    // Cleanup function
+    return () => {
+      if (mapInstanceRef.current) {
+        mapInstanceRef.current.remove();
+        mapInstanceRef.current = null;
+        if (mapRef.current) {
+          mapRef.current.innerHTML = '';
+        }
+      }
+    };
   }, [center, zoom]);
 
   useEffect(() => {
