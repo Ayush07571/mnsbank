@@ -1,10 +1,12 @@
-﻿import { Metadata } from 'next';
+import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
 export const metadata: Metadata = {
   title: 'Transport Loan | MNS Bank',
-  description: 'Get transport loans at competitive interest rates with flexible repayment options from MNS Bank Bhopal',
+  description:
+    'Get transport loans at competitive interest rates with flexible repayment options from MNS Bank Bhopal',
 };
 
 export default function TransportLoanPage() {
@@ -19,45 +21,79 @@ export default function TransportLoanPage() {
                 Transport Loan
               </h1>
               <p className="text-xl mb-8 text-white/90">
-                Drive your transport business forward with MNS Bank&apos;s transport loans. Get competitive interest rates, quick approval, and flexible repayment options for all your vehicle financing needs.
+                Drive your transport business forward with MNS Bank&apos;s
+                transport loans. Get competitive interest rates, quick approval,
+                and flexible repayment options for all your vehicle financing
+                needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="px-8" onClick={() => window.location.href = '/contact-us'}>
-                  Apply Now
+                <Button variant="secondary" size="lg" className="px-8" asChild>
+                  <Link href="/contact-us">Apply Now</Link>
                 </Button>
-                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary" onClick={() => window.location.href = '/contact-us'}>
-                  Check Eligibility
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="px-8 border-white text-white hover:bg-white hover:text-brand-primary"
+                  asChild
+                >
+                  <Link href="/contact-us">Check Eligibility</Link>
                 </Button>
               </div>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
                     <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z" />
                   </svg>
                 </div>
-                <h3 className="font-heading text-xl font-semibold mb-2">Quick Approval</h3>
-                <p className="text-white/80">Get loan approved within 48 hours</p>
+                <h3 className="font-heading text-xl font-semibold mb-2">
+                  Quick Approval
+                </h3>
+                <p className="text-white/80">
+                  Get loan approved within 48 hours
+                </p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path d="M2 10a8 8 0 018-8v8h8a8 8 0 01-16 0z" />
                     <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
                   </svg>
                 </div>
-                <h3 className="font-heading text-xl font-semibold mb-2">Low Interest</h3>
-                <p className="text-white/80">Competitive rates starting from 12.5%</p>
+                <h3 className="font-heading text-xl font-semibold mb-2">
+                  Low Interest
+                </h3>
+                <p className="text-white/80">
+                  Competitive rates starting from 12.5%
+                </p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" />
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                 </div>
-                <h3 className="font-heading text-xl font-semibold mb-2">High LTV</h3>
+                <h3 className="font-heading text-xl font-semibold mb-2">
+                  High LTV
+                </h3>
                 <p className="text-white/80">Get up to 80% of vehicle value</p>
               </div>
             </div>
@@ -70,63 +106,133 @@ export default function TransportLoanPage() {
         {/* Key Features */}
         <Card className="mb-12">
           <CardHeader>
-            <CardTitle className="text-text-primary">Transport Loan Features</CardTitle>
+            <CardTitle className="text-text-primary">
+              Transport Loan Features
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h3 className="font-semibold text-text-primary mb-4">Loan Details</h3>
+                <h3 className="font-semibold text-text-primary mb-4">
+                  Loan Details
+                </h3>
                 <ul className="space-y-3 text-text-secondary">
                   <li className="flex items-start space-x-2">
-                    <svg className="w-5 h-5 text-brand-accent mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="w-5 h-5 text-brand-accent mt-0.5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     <span>Loan Amount: ₹2 Lakhs to ₹50 Lakhs</span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <svg className="w-5 h-5 text-brand-accent mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="w-5 h-5 text-brand-accent mt-0.5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     <span>Interest Rate: 12.5% to 16.5% p.a.</span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <svg className="w-5 h-5 text-brand-accent mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="w-5 h-5 text-brand-accent mt-0.5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     <span>Loan Tenure: 1 to 7 years</span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <svg className="w-5 h-5 text-brand-accent mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="w-5 h-5 text-brand-accent mt-0.5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     <span>Processing Fee: 1.5% of loan amount</span>
                   </li>
                 </ul>
               </div>
               <div>
-                <h3 className="font-semibold text-text-primary mb-4">Benefits</h3>
+                <h3 className="font-semibold text-text-primary mb-4">
+                  Benefits
+                </h3>
                 <ul className="space-y-3 text-text-secondary">
                   <li className="flex items-start space-x-2">
-                    <svg className="w-5 h-5 text-brand-accent mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="w-5 h-5 text-brand-accent mt-0.5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     <span>100% on-road financing</span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <svg className="w-5 h-5 text-brand-accent mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="w-5 h-5 text-brand-accent mt-0.5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     <span>Flexible repayment options</span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <svg className="w-5 h-5 text-brand-accent mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="w-5 h-5 text-brand-accent mt-0.5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     <span>Prepayment facility available</span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <svg className="w-5 h-5 text-brand-accent mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="w-5 h-5 text-brand-accent mt-0.5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     <span>No hidden charges</span>
                   </li>
@@ -139,39 +245,65 @@ export default function TransportLoanPage() {
         {/* Vehicle Types */}
         <Card className="mb-12">
           <CardHeader>
-            <CardTitle className="text-text-primary">Vehicles We Finance</CardTitle>
+            <CardTitle className="text-text-primary">
+              Vehicles We Finance
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center p-6 border border-border rounded-lg">
                 <div className="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-brand-primary" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-6 h-6 text-brand-primary"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
                     <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z" />
                   </svg>
                 </div>
-                <h3 className="font-semibold text-text-primary mb-2">Commercial Vehicles</h3>
-                <p className="text-text-secondary text-sm">Trucks, buses, tempos</p>
+                <h3 className="font-semibold text-text-primary mb-2">
+                  Commercial Vehicles
+                </h3>
+                <p className="text-text-secondary text-sm">
+                  Trucks, buses, tempos
+                </p>
               </div>
               <div className="text-center p-6 border border-border rounded-lg">
                 <div className="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-brand-primary" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-6 h-6 text-brand-primary"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
                     <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z" />
                   </svg>
                 </div>
-                <h3 className="font-semibold text-text-primary mb-2">Passenger Vehicles</h3>
-                <p className="text-text-secondary text-sm">Taxis, auto-rickshaws</p>
+                <h3 className="font-semibold text-text-primary mb-2">
+                  Passenger Vehicles
+                </h3>
+                <p className="text-text-secondary text-sm">
+                  Taxis, auto-rickshaws
+                </p>
               </div>
               <div className="text-center p-6 border border-border rounded-lg">
                 <div className="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-brand-primary" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-6 h-6 text-brand-primary"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
                     <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z" />
                   </svg>
                 </div>
-                <h3 className="font-semibold text-text-primary mb-2">Special Vehicles</h3>
-                <p className="text-text-secondary text-sm">Ambulances, school vans</p>
+                <h3 className="font-semibold text-text-primary mb-2">
+                  Special Vehicles
+                </h3>
+                <p className="text-text-secondary text-sm">
+                  Ambulances, school vans
+                </p>
               </div>
             </div>
           </CardContent>
@@ -180,12 +312,16 @@ export default function TransportLoanPage() {
         {/* Eligibility */}
         <Card className="mb-12">
           <CardHeader>
-            <CardTitle className="text-text-primary">Eligibility Criteria</CardTitle>
+            <CardTitle className="text-text-primary">
+              Eligibility Criteria
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h3 className="font-semibold text-text-primary mb-4">For Individuals</h3>
+                <h3 className="font-semibold text-text-primary mb-4">
+                  For Individuals
+                </h3>
                 <ul className="space-y-2 text-text-secondary">
                   <li>• Age: 21 to 65 years</li>
                   <li>• Minimum annual income: ₹2 Lakhs</li>
@@ -195,7 +331,9 @@ export default function TransportLoanPage() {
                 </ul>
               </div>
               <div>
-                <h3 className="font-semibold text-text-primary mb-4">For Businesses</h3>
+                <h3 className="font-semibold text-text-primary mb-4">
+                  For Businesses
+                </h3>
                 <ul className="space-y-2 text-text-secondary">
                   <li>• Business existence: Minimum 2 years</li>
                   <li>• Annual turnover: Minimum ₹10 Lakhs</li>
@@ -211,12 +349,16 @@ export default function TransportLoanPage() {
         {/* Required Documents */}
         <Card className="mb-12">
           <CardHeader>
-            <CardTitle className="text-text-primary">Required Documents</CardTitle>
+            <CardTitle className="text-text-primary">
+              Required Documents
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h3 className="font-semibold text-text-primary mb-4">For Individuals</h3>
+                <h3 className="font-semibold text-text-primary mb-4">
+                  For Individuals
+                </h3>
                 <ul className="space-y-2 text-text-secondary">
                   <li>• Identity proof (Aadhaar, PAN, Voter ID)</li>
                   <li>• Address proof (Utility bill, rent agreement)</li>
@@ -226,7 +368,9 @@ export default function TransportLoanPage() {
                 </ul>
               </div>
               <div>
-                <h3 className="font-semibold text-text-primary mb-4">For Businesses</h3>
+                <h3 className="font-semibold text-text-primary mb-4">
+                  For Businesses
+                </h3>
                 <ul className="space-y-2 text-text-secondary">
                   <li>• Business registration documents</li>
                   <li>• Income tax returns (last 2 years)</li>
@@ -246,11 +390,13 @@ export default function TransportLoanPage() {
               Ready to Expand Your Transport Business?
             </h2>
             <p className="text-text-secondary mb-8 max-w-2xl mx-auto">
-              Apply for MNS Bank transport loan today and get competitive interest rates, quick approval, and flexible repayment options for your vehicle financing needs.
+              Apply for MNS Bank transport loan today and get competitive
+              interest rates, quick approval, and flexible repayment options for
+              your vehicle financing needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8" onClick={() => window.location.href = '/contact-us'}>
-                Apply Now
+              <Button variant="primary" size="lg" className="px-8" asChild>
+                <Link href="/contact-us">Apply Now</Link>
               </Button>
               <Button variant="outline" size="lg" className="px-8" asChild>
                 <a href="/download-forms">Download Forms</a>
@@ -262,4 +408,3 @@ export default function TransportLoanPage() {
     </div>
   );
 }
-
