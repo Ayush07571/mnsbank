@@ -11,8 +11,6 @@ export const metadata: Metadata = {
   robots: 'noindex, nofollow'
 };
 
-export const dynamic = 'force-dynamic';
-
 export default async function LoginPage(props: { searchParams: Promise<{ error?: string }> }) {
   // If already logged in, redirect to dashboard
   const token = (await cookies()).get('admin_session')?.value;

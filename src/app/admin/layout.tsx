@@ -2,8 +2,6 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { CurrentYear } from '@/components/common/CurrentYear';
 
-export const dynamic = 'force-dynamic';
-
 export default function AdminLayout({
   children,
 }: {

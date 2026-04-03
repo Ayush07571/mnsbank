@@ -2,9 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  cacheComponents: true,
   experimental: {
     optimizeCss: true,
-    cacheComponents: true,
   },
   async rewrites() {
     return [
