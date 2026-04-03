@@ -344,8 +344,3 @@ export default function EMICalculatorPage() {
     </div>
   );
 }
-
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

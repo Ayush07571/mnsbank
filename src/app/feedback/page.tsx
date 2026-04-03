@@ -152,8 +152,3 @@ export default function FeedbackPage() {
     </div>
   );
 }
-
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

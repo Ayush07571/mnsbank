@@ -297,8 +297,3 @@ export default function OverdraftFacilityPage() {
     </div>
   );
 }
-
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

@@ -188,8 +188,3 @@ export default function IfscCodesPage() {
     </div>
   );
 }
-
-
-export const unstable_instant = {
-  prefetch: 'static',
-};
