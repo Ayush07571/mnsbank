@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent } from '@/components/ui/Card';
 
@@ -112,43 +112,12 @@ export function LocatorMap({
   const [currentFilter, setCurrentFilter] = useState(filterType);
   const [currentZoom, setCurrentZoom] = useState(zoom);
 
-  // Load Leaflet CSS and JS
-  useEffect(() => {
-    const loadLeaflet = async () => {
-      try {
-        // Load Leaflet CSS
-        const leafletCSS = document.createElement('link');
-        leafletCSS.rel = 'stylesheet';
-        leafletCSS.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
-        document.head.appendChild(leafletCSS);
-
-        // Load Leaflet JS
-        const leafletJS = document.createElement('script');
-        leafletJS.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-        leafletJS.onload = () => {
-          setTimeout(() => initializeMap(), 100);
-        };
-        document.head.appendChild(leafletJS);
-
-        setMapLoaded(true);
-      } catch (error) {
-        console.error('Error loading Leaflet:', error);
-      }
-    };
-
-    loadLeaflet();
-
-    // Cleanup function
-    return () => {
-      if (mapInstanceRef.current) {
-        mapInstanceRef.current.remove();
-        mapInstanceRef.current = null;
-      }
-    };
-  }, []);
-
-  const initializeMap = () => {
-    if (!mapRef.current || !window.L) return;
+  // Initialize map function
+  const initializeMap = useCallback(() => {
+    if (!mapRef.current || !window.L) {
+      console.log('Map container or Leaflet not ready, retrying...');
+      return false;
+    }
 
     try {
       // Check if map container is already initialized
@@ -182,12 +151,17 @@ export function LocatorMap({
       map.on('zoomend', () => {
         setCurrentZoom(map.getZoom());
       });
+
+      console.log('Map initialized successfully');
+      return true;
     } catch (error) {
       console.error('Error initializing map:', error);
+      return false;
     }
-  };
+  }, [center, zoom]);
 
-  const addMarkers = (map: any) => {
+  // Add markers function
+  const addMarkers = useCallback((map: any) => {
     // Clear existing markers
     markersRef.current.forEach(marker => map.removeLayer(marker));
     markersRef.current = [];
@@ -257,7 +231,62 @@ export function LocatorMap({
 
       markersRef.current.push(marker);
     });
-  };
+  }, [currentFilter, locations, setSelectedLocation, onLocationSelect]);
+
+  // Load Leaflet CSS and JS
+  useEffect(() => {
+    const loadLeaflet = async () => {
+      try {
+        // Load Leaflet CSS
+        const leafletCSS = document.createElement('link');
+        leafletCSS.rel = 'stylesheet';
+        leafletCSS.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+        document.head.appendChild(leafletCSS);
+
+        // Load Leaflet JS
+        const leafletJS = document.createElement('script');
+        leafletJS.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+        leafletJS.onload = () => {
+          // Wait for DOM to be ready and container to be mounted
+          let retryCount = 0;
+          const maxRetries = 5;
+          const retryInterval = 500;
+
+          const tryInitialize = () => {
+            if (mapRef.current && window.L) {
+              const success = initializeMap();
+              if (!success && retryCount < maxRetries) {
+                retryCount++;
+                console.log(`Retrying map initialization (${retryCount}/${maxRetries})`);
+                setTimeout(tryInitialize, retryInterval);
+              }
+            } else if (retryCount < maxRetries) {
+              retryCount++;
+              console.log(`Waiting for DOM container (${retryCount}/${maxRetries})`);
+              setTimeout(tryInitialize, retryInterval);
+            }
+          };
+
+          tryInitialize();
+        };
+        document.head.appendChild(leafletJS);
+
+        setMapLoaded(true);
+      } catch (error) {
+        console.error('Error loading Leaflet:', error);
+      }
+    };
+
+    loadLeaflet();
+
+    // Cleanup function
+    return () => {
+      if (mapInstanceRef.current) {
+        mapInstanceRef.current.remove();
+        mapInstanceRef.current = null;
+      }
+    };
+  }, [initializeMap]);
 
   // Update markers when filter changes
   useEffect(() => {
