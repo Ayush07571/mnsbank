@@ -65,3 +65,58 @@
     color: var(--text-primary);
   }
 }
+
+/* =============================================
+   GLOBAL DARK MODE OVERRIDES
+   Override hardcoded Tailwind color classes
+   that bypass the CSS variable system.
+   ============================================= */
+
+/* Backgrounds */
+.dark .bg-white          { background-color: var(--surface) !important; }
+.dark .bg-gray-50        { background-color: #1a2236 !important; }
+.dark .bg-gray-100       { background-color: #1e293b !important; }
+.dark .bg-gray-200       { background-color: #253148 !important; }
+.dark .bg-gray-800       { background-color: #0f172a !important; }
+.dark .bg-gray-900       { background-color: #090e1a !important; }
+
+/* Text */
+.dark .text-gray-900     { color: #f1f5f9 !important; }
+.dark .text-gray-800     { color: #e2e8f0 !important; }
+.dark .text-gray-700     { color: #cbd5e1 !important; }
+.dark .text-gray-600     { color: #94a3b8 !important; }
+.dark .text-gray-500     { color: #64748b !important; }
+.dark .text-gray-400     { color: #475569 !important; }
+.dark .text-black        { color: #f8fafc !important; }
+
+/* Borders */
+.dark .border-gray-100   { border-color: #1e293b !important; }
+.dark .border-gray-200   { border-color: #253148 !important; }
+.dark .border-gray-300   { border-color: #334155 !important; }
+
+/* Cards / Surfaces */
+.dark .bg-background     { background-color: var(--background) !important; }
+.dark .bg-surface        { background-color: var(--surface) !important; }
+
+/* Hover states for gray backgrounds */
+.dark .hover\:bg-gray-50:hover  { background-color: #1a2236 !important; }
+.dark .hover\:bg-gray-100:hover { background-color: #1e293b !important; }
+
+/* Tables: thead/tbody rows */
+.dark thead { background-color: #1e293b !important; }
+.dark tbody tr:hover { background-color: #1a2236 !important; }
+.dark .hover\:bg-gray-50:hover { background-color: #1a2236 !important; }
+
+/* Inputs, selects, textareas */
+.dark input:not([class*="bg-"]),
+.dark select:not([class*="bg-"]),
+.dark textarea:not([class*="bg-"]) {
+  background-color: var(--surface) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border) !important;
+}
+
+/* Scrollbar (Webkit) */
+.dark ::-webkit-scrollbar-track  { background: #0f172a; }
+.dark ::-webkit-scrollbar-thumb  { background: #334155; border-radius: 4px; }
+.dark ::-webkit-scrollbar-thumb:hover { background: #475569; }
