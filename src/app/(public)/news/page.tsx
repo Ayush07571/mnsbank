@@ -168,7 +168,7 @@ export default function NewsPage() {
               placeholder="Your email address" 
               className="px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-brand-accent w-full"
             />
-            <Button variant="accent" size="lg" className="whitespace-nowrap px-8 font-bold">
+            <Button variant="primary" size="lg" className="whitespace-nowrap px-8 font-bold">
               Subscribe Now
             </Button>
           </div>
