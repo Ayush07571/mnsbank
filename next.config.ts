@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   experimental: {
     optimizeCss: true,
+    cacheComponents: true,
   },
   async rewrites() {
     return [
