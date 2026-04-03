@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTranslation } from '@/hooks/useTranslation';
 import { Button } from '@/components/ui/Button';
 import { AccessibilityToolbar } from '@/components/ui/AccessibilityToolbar';
@@ -220,12 +221,14 @@ export function Header({ className }: HeaderProps) {
           <div className="flex items-center justify-between py-3 border-b border-border">
             <div className="flex items-center space-x-4">
               <Link href="/" className="flex items-center space-x-2">
-                <div className="h-8 w-8 bg-brand-primary rounded flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">MNS</span>
-                </div>
-                <span className="font-heading text-brand-primary hidden sm:block">
-                  MNS Bank Bhopal
-                </span>
+                <Image
+                  src="/assets/logo.png"
+                  alt="MNS Bank"
+                  width={150}
+                  height={40}
+                  className="h-10 w-auto object-contain"
+                  priority
+                />
               </Link>
             </div>
 

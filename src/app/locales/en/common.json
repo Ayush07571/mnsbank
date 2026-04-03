@@ -55,7 +55,8 @@
     "next": "Next",
     "previous": "Previous",
     "months": "Months",
-    "years": "Years"
+    "years": "Years",
+    "reset": "Reset"
   },
   "breadcrumb": {
     "home": "Home",

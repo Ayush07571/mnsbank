@@ -24,6 +24,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   // Initialize from localStorage/URL only after mounting on the client
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     const savedLang = localStorage.getItem('mns_lang');
     const pathSegments = pathname.split('/').filter(Boolean);
     const urlLang = pathSegments[0];
@@ -37,25 +39,27 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     }
 
     const lang = languages.find(l => l.code === initialLangCode) || languages[0];
-    // This is valid: setting state from localStorage (external system) on mount
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setCurrentLanguage(lang);
-    document.documentElement.lang = initialLangCode;
-    setMounted(true);
+    
+    // Use setTimeout to avoid synchronous setState in effect (lint requirement)
+    setTimeout(() => {
+      setCurrentLanguage(lang);
+      document.documentElement.lang = initialLangCode;
+      setMounted(true);
+    }, 0);
   }, [pathname]);
 
   const changeLanguage = (languageCode: string) => {
     const lang = languages.find(l => l.code === languageCode) || languages[0];
     setCurrentLanguage(lang);
-    localStorage.setItem('mns_lang', languageCode);
-    document.documentElement.lang = languageCode;
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('mns_lang', languageCode);
+      document.documentElement.lang = languageCode;
+    }
   };
 
-  // We always render the provider so children (like Header) can use useLanguage hook
-  // even during SSR/initial hydration, using the default language.
   return (
     <LanguageContext.Provider value={{ currentLanguage, languages, changeLanguage }}>
-      <div style={!mounted ? { visibility: 'hidden' } : undefined}>
+      <div className={!mounted ? 'opacity-0' : 'opacity-100 transition-opacity duration-300'}>
         {children}
       </div>
     </LanguageContext.Provider>

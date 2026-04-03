@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { ReactNode } from 'react';
 import { useTranslation } from '@/hooks/useTranslation';
 import { cn } from '@/lib/utils';
@@ -135,19 +136,13 @@ export function Footer({ className }: { className?: string }) {
             <div className="flex items-center space-x-6">
               {/* DICGC Badge */}
               <div className="flex items-center space-x-2">
-                <div className="w-12 h-12 bg-success rounded-full flex items-center justify-center">
-                  <svg
-                    className="w-6 h-6 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </div>
+                <Image
+                  src="/images/dicgc-insured.png"
+                  alt="DICGC Insured"
+                  width={48}
+                  height={48}
+                  className="w-12 h-12 object-contain"
+                />
                 <div>
                   <p className="text-sm font-medium text-text-primary">
                     {t('footer.trust.dicgc')}
@@ -158,9 +153,13 @@ export function Footer({ className }: { className?: string }) {
 
               {/* RBI Badge */}
               <div className="flex items-center space-x-2">
-                <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-xs">RBI</span>
-                </div>
+                <Image
+                  src="/images/rbi-regulated.png"
+                  alt="RBI Regulated"
+                  width={48}
+                  height={48}
+                  className="w-12 h-12 object-contain"
+                />
                 <div>
                   <p className="text-sm font-medium text-text-primary">
                     {t('footer.trust.rbi')}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { ThemeProvider } from "@/context/ThemeContext";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -159,14 +160,16 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased">
-        <LanguageProvider>
-          <Suspense fallback={null}>
-            <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_ID} />
-          </Suspense>
-          <div id="root">
-            {children}
-          </div>
-        </LanguageProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <Suspense fallback={null}>
+              <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_ID} />
+            </Suspense>
+            <div id="root">
+              {children}
+            </div>
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

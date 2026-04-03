@@ -8,15 +8,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'brand-primary': '#1A3A6B',
-        'brand-accent': '#C8A84B',
-        'text-primary': '#1A1A1A',
-        'text-secondary': '#555555',
-        'background': '#FFFFFF',
-        'surface': '#F5F7FA',
-        'border': '#E0E4EC',
-        'success': '#2E7D32',
-        'error': '#C62828',
+        'brand-primary': 'var(--brand-primary)',
+        'brand-accent': 'var(--brand-accent)',
+        'text-primary': 'var(--text-primary)',
+        'text-secondary': 'var(--text-secondary)',
+        'background': 'var(--background)',
+        'surface': 'var(--surface)',
+        'border': 'var(--border)',
+        'success': 'var(--success)',
+        'error': 'var(--error)',
       },
       fontFamily: {
         'sans': ['Noto Sans', 'sans-serif'],

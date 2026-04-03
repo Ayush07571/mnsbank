@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { useTranslation } from '@/hooks/useTranslation';
 import { Input } from '@/components/ui/Input';
+import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { useGA4 } from '@/lib/analytics';
 import { cn } from '@/lib/utils';
@@ -23,8 +24,7 @@ export function DepositCalculator({ className }: { className?: string }) {
   const [tenure, setTenure] = useState(12); // months
 
   const calculateFD = useCallback((P: number, r: number, n: number) => {
-    // Standard FD: Compound Interest (Quarterly)
-    // A = P * (1 + r/400)^(n/3) where n is months
+    // ... (rest of the logic remains the same)
     const quarters = n / 3;
     const maturityAmount = P * Math.pow(1 + r / 400, quarters);
     
@@ -36,11 +36,8 @@ export function DepositCalculator({ className }: { className?: string }) {
   }, []);
 
   const calculateRD = useCallback((P: number, r: number, n: number) => {
-    // Standard RD formula: M = P * [(1+i)^n - 1] / (1 - (1+i)^(-1/3))
-    // where i = r/400 (quarterly rate)
     const i = r / 400;
     const maturityAmount = P * (Math.pow(1 + i, n / 3) - 1) / (1 - Math.pow(1 + i, -1/3));
-    
     const totalInvestment = P * n;
     
     return {
@@ -60,6 +57,13 @@ export function DepositCalculator({ className }: { className?: string }) {
     trackCalculatorUse(type === 'fd' ? 'fd_calculator' : 'rd_calculator', amount, tenure);
   }, [type, amount, tenure, trackCalculatorUse]);
 
+  const handleReset = () => {
+    setAmount(100000);
+    setInterestRate(7.5);
+    setTenure(12);
+    setType('fd');
+  };
+
   const formatCurrency = (val: number) => {
     return new Intl.NumberFormat('en-IN', {
       style: 'currency',
@@ -75,6 +79,7 @@ export function DepositCalculator({ className }: { className?: string }) {
 
   return (
     <div className={cn('space-y-6', className)}>
+      {/* ... (input section) */}
       <Card>
         <CardHeader>
           <div className="flex items-center justify-between">
@@ -104,7 +109,6 @@ export function DepositCalculator({ className }: { className?: string }) {
           </div>
         </CardHeader>
         <CardContent className="space-y-6">
-          {/* Investment Amount */}
           <div>
             <label className="block text-sm font-medium text-text-primary mb-2">
               {type === 'fd' ? t('deposit.principal', 'Principal Amount') : t('deposit.monthlyInst', 'Monthly Installment')}
@@ -126,7 +130,6 @@ export function DepositCalculator({ className }: { className?: string }) {
             />
           </div>
 
-          {/* Interest & Tenure */}
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-text-primary mb-2">
@@ -155,7 +158,6 @@ export function DepositCalculator({ className }: { className?: string }) {
         </CardContent>
       </Card>
 
-      {/* Results */}
       <Card className="bg-brand-primary text-white">
         <CardContent className="py-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
@@ -171,6 +173,15 @@ export function DepositCalculator({ className }: { className?: string }) {
               <p className="text-white/90 text-sm mb-1 font-semibold">{t('deposit.maturityAmount', 'Maturity Amount')}</p>
               <p className="text-4xl font-bold">{formatCurrency(calculation.maturityAmount)}</p>
             </div>
+          </div>
+          <div className="mt-8 flex justify-center">
+            <Button 
+              variant="outline" 
+              className="bg-white/10 border-white/20 text-white hover:bg-white/20 transition-colors"
+              onClick={handleReset}
+            >
+              {t('common:common.reset', 'Reset')}
+            </Button>
           </div>
         </CardContent>
       </Card>

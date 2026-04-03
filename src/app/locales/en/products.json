@@ -348,6 +348,7 @@
   },
   "emi": {
     "calculatorTitle": "EMI Calculator",
+    "calculate": "Calculate EMI",
     "loanAmount": "Loan Amount",
     "interestRate": "Interest Rate",
     "loanTenure": "Loan Tenure",

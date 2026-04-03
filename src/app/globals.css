@@ -2,15 +2,66 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+:root {
+  --brand-primary: #1A3A6B;
+  --brand-accent: #C8A84B;
+  --text-primary: #1A1A1A;
+  --text-secondary: #555555;
+  --background: #FFFFFF;
+  --surface: #F5F7FA;
+  --border: #E0E4EC;
+  --success: #2E7D32;
+  --error: #C62828;
+}
+
+.dark {
+  --brand-primary: #3B82F6;
+  --brand-accent: #EAB308;
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --background: #0F172A;
+  --surface: #1E293B;
+  --border: #334155;
+  --success: #4ADE80;
+  --error: #F87171;
+}
+
+.high-contrast {
+  --brand-primary: #FFFF00;
+  --brand-accent: #FFFFFF;
+  --text-primary: #FFFF00;
+  --text-secondary: #FFFFFF;
+  --background: #000000;
+  --surface: #000000;
+  --border: #FFFFFF;
+  --success: #00FF00;
+  --error: #FF0000;
+}
+
+.high-contrast * {
+  border-color: #FFFFFF !important;
+  outline-color: #FFFF00 !important;
+}
+
+.high-contrast button, 
+.high-contrast a.button,
+.high-contrast input,
+.high-contrast select,
+.high-contrast textarea {
+  border: 2px solid #FFFFFF !important;
+}
+
 @layer base {
   body {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
-    color: #1A1A1A;
-    background-color: #FFFFFF;
+    color: var(--text-primary);
+    background-color: var(--background);
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
   
   h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
+    color: var(--text-primary);
   }
 }

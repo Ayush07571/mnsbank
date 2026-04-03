@@ -348,6 +348,7 @@
   },
   "emi": {
     "calculatorTitle": "ईएमआई कैलकुलेटर",
+    "calculate": "ईएमआई की गणना करें",
     "loanAmount": "ऋण राशि",
     "interestRate": "ब्याज दर",
     "loanTenure": "ऋण अवधि",

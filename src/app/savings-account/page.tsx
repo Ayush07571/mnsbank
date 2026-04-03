@@ -1,4 +1,5 @@
-﻿import { Metadata } from 'next';
+import { Metadata } from 'next';
+import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
@@ -11,54 +12,34 @@ export default function SavingsAccountPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-brand-primary to-brand-accent text-white py-20">
+      <div className="bg-gradient-to-r from-brand-primary to-brand-accent text-white py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">
                 Savings Account
               </h1>
-              <p className="text-xl mb-8 text-white/90">
-                Start your financial journey with MNS Bank's savings account. Enjoy competitive interest rates, digital banking services, and exclusive benefits for your everyday banking needs.
+              <p className="text-xl mb-8 text-white/90 leading-relaxed">
+                Start your financial journey with MNS Bank&apos;s savings account. Enjoy competitive interest rates, digital banking services, and exclusive benefits for your everyday banking needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="px-8">
+                <Button variant="secondary" size="lg" className="px-8 font-semibold shadow-lg shadow-black/10">
                   Open Account
                 </Button>
-                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary">
+                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary font-semibold transition-all">
                   Compare Accounts
                 </Button>
               </div>
             </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2 10a8 8 0 018-8v8h8a8 8 0 01-16 0z" />
-                    <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
-                  </svg>
-                </div>
-                <h3 className="font-heading text-xl font-semibold mb-2">High Interest</h3>
-                <p className="text-white/80">Competitive rates up to 4.5% p.a.</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <h3 className="font-heading text-xl font-semibold mb-2">Zero Balance</h3>
-                <p className="text-white/80">No minimum balance required</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm1 2a1 1 0 000 2h6a1 1 0 100-2H7zm6 7a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-3 3a1 1 0 100 2h.01a1 1 0 100-2H10zm-4 1a1 1 0 011-1h.01a1 1 0 110 2H7a1 1 0 01-1-1zm1-4a1 1 0 100 2h.01a1 1 0 100-2H7zm2 1a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm4-2a1 1 0 100 2h.01a1 1 0 100-2H13z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <h3 className="font-heading text-xl font-semibold mb-2">Digital Banking</h3>
-                <p className="text-white/80">24/7 online and mobile banking</p>
-              </div>
+            <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/savings-account.png"
+                alt="Savings Account"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
           </div>
         </div>

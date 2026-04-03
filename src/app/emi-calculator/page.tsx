@@ -1,6 +1,8 @@
-﻿import { Metadata } from 'next';
+import { Metadata } from 'next';
+import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
+import { EMICalculator } from '@/components/product/EMICalculator';
 
 export const metadata: Metadata = {
   title: 'EMI Calculator | MNS Bank',
@@ -22,11 +24,11 @@ export default function EMICalculatorPage() {
                 Calculate your loan EMI instantly with MNS Bank&apos;s online EMI calculator. Plan your finances better with accurate monthly payment calculations for all types of loans.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="px-8">
-                  Calculate EMI
+                <Button variant="secondary" size="lg" className="px-8" asChild>
+                  <a href="#calculator">Calculate EMI</a>
                 </Button>
-                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary">
-                  Apply for Loan
+                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary" asChild>
+                  <Link href="/contact-us">Apply for Loan</Link>
                 </Button>
               </div>
             </div>
@@ -67,108 +69,13 @@ export default function EMICalculatorPage() {
       {/* Main Content */}
       <div className="container mx-auto px-4 max-w-6xl py-12">
         {/* EMI Calculator */}
-        <Card className="mb-12">
-          <CardHeader>
-            <CardTitle className="text-text-primary">Calculate Your EMI</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <div className="space-y-6">
-                  <div>
-                    <label className="block text-sm font-medium text-text-primary mb-2">
-                      Loan Amount
-                    </label>
-                    <div className="relative">
-                      <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-secondary">₹</span>
-                      <input
-                        type="number"
-                        className="w-full pl-8 pr-3 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary"
-                        placeholder="500000"
-                        defaultValue="500000"
-                      />
-                    </div>
-                    <input
-                      type="range"
-                      className="w-full mt-2"
-                      min="10000"
-                      max="50000000"
-                      defaultValue="500000"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-text-primary mb-2">
-                      Interest Rate (% p.a.)
-                    </label>
-                    <div className="relative">
-                      <input
-                        type="number"
-                        className="w-full pr-8 pl-3 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary"
-                        placeholder="12.5"
-                        defaultValue="12.5"
-                      />
-                      <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-text-secondary">%</span>
-                    </div>
-                    <input
-                      type="range"
-                      className="w-full mt-2"
-                      min="5"
-                      max="25"
-                      defaultValue="12.5"
-                      step="0.1"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-text-primary mb-2">
-                      Loan Tenure
-                    </label>
-                    <div className="relative">
-                      <input
-                        type="number"
-                        className="w-full pr-8 pl-3 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary"
-                        placeholder="20"
-                        defaultValue="20"
-                      />
-                      <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-text-secondary">years</span>
-                    </div>
-                    <input
-                      type="range"
-                      className="w-full mt-2"
-                      min="1"
-                      max="30"
-                      defaultValue="20"
-                    />
-                  </div>
-                  <Button variant="primary" size="lg" className="w-full">
-                    Calculate EMI
-                  </Button>
-                </div>
-              </div>
-              <div>
-                <div className="bg-brand-primary/5 border border-brand-primary/20 rounded-lg p-6">
-                  <h3 className="font-semibold text-text-primary mb-4">EMI Calculation Results</h3>
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center">
-                      <span className="text-text-secondary">Monthly EMI</span>
-                      <span className="text-2xl font-bold text-brand-accent">₹11,365</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-text-secondary">Total Interest Payable</span>
-                      <span className="font-semibold">₹2,22,760</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-text-secondary">Total Payment</span>
-                      <span className="font-semibold">₹7,22,760</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <div id="calculator">
+          <EMICalculator />
+        </div>
+
 
         {/* Loan Types */}
-        <Card className="mb-12">
+        <Card className="my-12">
           <CardHeader>
             <CardTitle className="text-text-primary">Popular Loan Types</CardTitle>
           </CardHeader>
@@ -181,9 +88,9 @@ export default function EMICalculatorPage() {
                   </svg>
                 </div>
                 <h3 className="font-semibold text-text-primary mb-2">Home Loan</h3>
-                <p className="text-text-secondary text-sm mb-4">Lowest rates starting from 11.5%</p>
-                <Button variant="outline" size="sm" className="w-full">
-                  Calculate Now
+                <p className="text-text-secondary text-sm mb-4">Lowest rates starting from 8.5%</p>
+                <Button variant="outline" size="sm" className="w-full" asChild>
+                  <Link href="/home-loan#calculator">Calculate Now</Link>
                 </Button>
               </div>
               <div className="text-center p-6 border border-border rounded-lg">
@@ -194,8 +101,8 @@ export default function EMICalculatorPage() {
                 </div>
                 <h3 className="font-semibold text-text-primary mb-2">Personal Loan</h3>
                 <p className="text-text-secondary text-sm mb-4">Quick approval, minimal documentation</p>
-                <Button variant="outline" size="sm" className="w-full">
-                  Calculate Now
+                <Button variant="outline" size="sm" className="w-full" asChild>
+                  <Link href="/personal-loan#calculator">Calculate Now</Link>
                 </Button>
               </div>
               <div className="text-center p-6 border border-border rounded-lg">
@@ -206,8 +113,8 @@ export default function EMICalculatorPage() {
                 </div>
                 <h3 className="font-semibold text-text-primary mb-2">Car Loan</h3>
                 <p className="text-text-secondary text-sm mb-4">100% on-road financing available</p>
-                <Button variant="outline" size="sm" className="w-full">
-                  Calculate Now
+                <Button variant="outline" size="sm" className="w-full" asChild>
+                  <Link href="/car-loan#calculator">Calculate Now</Link>
                 </Button>
               </div>
               <div className="text-center p-6 border border-border rounded-lg">
@@ -218,8 +125,8 @@ export default function EMICalculatorPage() {
                 </div>
                 <h3 className="font-semibold text-text-primary mb-2">Business Loan</h3>
                 <p className="text-text-secondary text-sm mb-4">Flexible terms for business needs</p>
-                <Button variant="outline" size="sm" className="w-full">
-                  Calculate Now
+                <Button variant="outline" size="sm" className="w-full" asChild>
+                  <Link href="/working-capital-loan#calculator">Calculate Now</Link>
                 </Button>
               </div>
             </div>
