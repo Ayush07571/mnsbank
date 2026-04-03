@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
 export const metadata: Metadata = {
@@ -22,11 +23,11 @@ export default function LoanAgainstNSCPage() {
                 Unlock the value of your National Savings Certificates with MNS Bank. Get competitive interest rates, quick processing, and continue earning tax benefits.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="px-8">
-                  Apply Now
+                <Button variant="secondary" size="lg" className="px-8" asChild>
+                  <Link href="/contact-us">Apply Now</Link>
                 </Button>
-                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary">
-                  Check Eligibility
+                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary" asChild>
+                  <Link href="/contact-us">Check Eligibility</Link>
                 </Button>
               </div>
             </div>
@@ -284,11 +285,11 @@ export default function LoanAgainstNSCPage() {
               Apply for MNS Bank loan against NSC today and get competitive interest rates while continuing to enjoy tax benefits on your investment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
-                Apply Now
+              <Button variant="primary" size="lg" className="px-8" asChild>
+                <Link href="/contact-us">Apply Now</Link>
               </Button>
               <Button variant="outline" size="lg" className="px-8" asChild>
-                <a href="/download-forms">Download Forms</a>
+                <Link href="/download-forms">Download Forms</Link>
               </Button>
             </div>
           </CardContent>

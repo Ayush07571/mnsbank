@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
 export const metadata: Metadata = {
@@ -23,11 +24,11 @@ export default function DebitCardsPage() {
                 Experience secure and convenient banking with our range of debit cards. Shop, dine, and travel with confidence worldwide.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="px-8">
-                  Apply Now
+                <Button variant="secondary" size="lg" className="px-8" asChild>
+                  <Link href="/contact-us">Apply Now</Link>
                 </Button>
-                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary">
-                  Compare Cards
+                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary" asChild>
+                  <Link href="/contact-us">Compare Cards</Link>
                 </Button>
               </div>
             </div>
@@ -431,11 +432,11 @@ export default function DebitCardsPage() {
               Experience secure and convenient banking with our range of debit cards. Apply now and enjoy exclusive benefits.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
-                Apply Now
+              <Button variant="primary" size="lg" className="px-8" asChild>
+                <Link href="/contact-us">Apply Now</Link>
               </Button>
-              <Button variant="outline" size="lg" className="px-8">
-                Compare Cards
+              <Button variant="outline" size="lg" className="px-8" asChild>
+                <Link href="/contact-us">Compare Cards</Link>
               </Button>
             </div>
           </CardContent>

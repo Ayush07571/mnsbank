@@ -1,5 +1,6 @@
-﻿import { Metadata } from 'next';
+import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
 export const metadata: Metadata = {
@@ -23,11 +24,11 @@ export default function CareersPage() {
                 Build a rewarding career with MNS Bank. We offer growth opportunities, competitive benefits, and a supportive work environment.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="px-8">
-                  View Openings
+                <Button variant="secondary" size="lg" className="px-8" asChild>
+                  <Link href="/contact-us">View Openings</Link>
                 </Button>
-                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary">
-                  Submit Resume
+                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary" asChild>
+                  <Link href="/contact-us">Submit Resume</Link>
                 </Button>
               </div>
             </div>
@@ -123,7 +124,9 @@ export default function CareersPage() {
                     <p className="text-brand-accent font-semibold mb-2">Retail Banking</p>
                     <p className="text-text-secondary text-sm mb-2">Multiple Locations</p>
                   </div>
-                  <Button variant="outline" size="sm">Apply Now</Button>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link href="/contact-us">Apply Now</Link>
+                  </Button>
                 </div>
                 <div className="grid md:grid-cols-3 gap-4 text-sm">
                   <div>
@@ -148,7 +151,9 @@ export default function CareersPage() {
                     <p className="text-brand-accent font-semibold mb-2">Credit Department</p>
                     <p className="text-text-secondary text-sm mb-2">Head Office</p>
                   </div>
-                  <Button variant="outline" size="sm">Apply Now</Button>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link href="/contact-us">Apply Now</Link>
+                  </Button>
                 </div>
                 <div className="grid md:grid-cols-3 gap-4 text-sm">
                   <div>
@@ -173,7 +178,9 @@ export default function CareersPage() {
                     <p className="text-brand-accent font-semibold mb-2">Digital Banking</p>
                     <p className="text-text-secondary text-sm mb-2">Multiple Locations</p>
                   </div>
-                  <Button variant="outline" size="sm">Apply Now</Button>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link href="/contact-us">Apply Now</Link>
+                  </Button>
                 </div>
                 <div className="grid md:grid-cols-3 gap-4 text-sm">
                   <div>
@@ -198,7 +205,9 @@ export default function CareersPage() {
                     <p className="text-brand-accent font-semibold mb-2">Branch Banking</p>
                     <p className="text-text-secondary text-sm mb-2">Various Branches</p>
                   </div>
-                  <Button variant="outline" size="sm">Apply Now</Button>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link href="/contact-us">Apply Now</Link>
+                  </Button>
                 </div>
                 <div className="grid md:grid-cols-3 gap-4 text-sm">
                   <div>
@@ -424,11 +433,11 @@ export default function CareersPage() {
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
-                View All Openings
+              <Button variant="primary" size="lg" className="px-8" asChild>
+                <Link href="/contact-us">View All Openings</Link>
               </Button>
-              <Button variant="outline" size="lg" className="px-8">
-                Submit Resume
+              <Button variant="outline" size="lg" className="px-8" asChild>
+                <Link href="/contact-us">Submit Resume</Link>
               </Button>
             </div>
           </CardContent>

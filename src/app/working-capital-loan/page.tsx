@@ -35,7 +35,7 @@ export default function WorkingCapitalLoanPage() {
                   className="px-8 border-white text-white hover:bg-white hover:text-brand-primary font-semibold transition-all"
                   asChild
                 >
-                  <a href="#calculator">Check EMI</a>
+                  <Link href="#calculator">Check EMI</Link>
                 </Button>
               </div>
             </div>
@@ -472,7 +472,7 @@ export default function WorkingCapitalLoanPage() {
                 <Link href="/contact-us">Apply Now</Link>
               </Button>
               <Button variant="outline" size="lg" className="px-8" asChild>
-                <a href="/download-forms">Download Forms</a>
+                <Link href="/download-forms">Download Forms</Link>
               </Button>
             </div>
           </CardContent>

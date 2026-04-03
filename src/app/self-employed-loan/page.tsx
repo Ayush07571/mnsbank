@@ -1,5 +1,6 @@
-﻿import { Metadata } from 'next';
+import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
 export const metadata: Metadata = {
@@ -22,11 +23,11 @@ export default function SelfEmployedLoanPage() {
                 Fuel your entrepreneurial journey with MNS Bank&apos;s self-employed loans. Get competitive interest rates, quick approval, and flexible repayment options for your business growth.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="px-8">
-                  Apply Now
+                <Button variant="secondary" size="lg" className="px-8" asChild>
+                  <Link href="/contact-us">Apply Now</Link>
                 </Button>
-                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary">
-                  Check Eligibility
+                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary" asChild>
+                  <Link href="/contact-us">Check Eligibility</Link>
                 </Button>
               </div>
             </div>
@@ -254,11 +255,11 @@ export default function SelfEmployedLoanPage() {
               Apply for MNS Bank self-employed loan today and get competitive interest rates, quick approval, and flexible repayment options for your business growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
-                Apply Now
+              <Button variant="primary" size="lg" className="px-8" asChild>
+                <Link href="/contact-us">Apply Now</Link>
               </Button>
               <Button variant="outline" size="lg" className="px-8" asChild>
-                <a href="/download-forms">Download Forms</a>
+                <Link href="/download-forms">Download Forms</Link>
               </Button>
             </div>
           </CardContent>

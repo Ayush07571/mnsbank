@@ -1,5 +1,6 @@
-﻿import { Metadata } from 'next';
+import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
 export const metadata: Metadata = {
@@ -22,11 +23,11 @@ export default function BizRecurringDepositPage() {
                 Build your business savings systematically with MNS Bank&apos;s business recurring deposit scheme. Enjoy attractive interest rates, flexible monthly deposits, and disciplined savings for your business financial goals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="px-8">
-                  Apply Now
+                <Button variant="secondary" size="lg" className="px-8" asChild>
+                  <Link href="/contact-us">Apply Now</Link>
                 </Button>
-                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary">
-                  Calculate Savings
+                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary" asChild>
+                  <Link href="/contact-us">Calculate Savings</Link>
                 </Button>
               </div>
             </div>
@@ -321,11 +322,11 @@ export default function BizRecurringDepositPage() {
               Open a MNS Bank business recurring deposit today and build your business savings systematically with attractive interest rates and disciplined monthly deposits.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
-                Apply Now
+              <Button variant="primary" size="lg" className="px-8" asChild>
+                <Link href="/contact-us">Apply Now</Link>
               </Button>
               <Button variant="outline" size="lg" className="px-8" asChild>
-                <a href="/download-forms">Download Forms</a>
+                <Link href="/download-forms">Download Forms</Link>
               </Button>
             </div>
           </CardContent>

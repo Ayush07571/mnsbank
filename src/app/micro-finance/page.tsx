@@ -1,5 +1,6 @@
-﻿import { Metadata } from 'next';
+import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
 export const metadata: Metadata = {
@@ -19,14 +20,14 @@ export default function MicroFinancePage() {
                 Micro Finance
               </h1>
               <p className="text-xl mb-8 text-white/90">
-                Empower your small business with MNS Bank's micro finance solutions. Get competitive interest rates, quick approval, and flexible repayment options for micro enterprises and self-help groups.
+                Empower your small business with MNS Bank&apos;s micro finance solutions. Get competitive interest rates, quick approval, and flexible repayment options for micro enterprises and self-help groups.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="px-8">
-                  Apply Now
+                <Button variant="secondary" size="lg" className="px-8" asChild>
+                  <Link href="/contact-us">Apply Now</Link>
                 </Button>
-                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary">
-                  Check Eligibility
+                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary" asChild>
+                  <Link href="/contact-us">Check Eligibility</Link>
                 </Button>
               </div>
             </div>
@@ -149,7 +150,7 @@ export default function MicroFinancePage() {
                   </svg>
                 </div>
                 <h3 className="font-semibold text-text-primary mb-2">Self-Help Groups</h3>
-                <p className="text-text-secondary text-sm">Women's groups, community groups</p>
+                <p className="text-text-secondary text-sm">Women&apos;s groups, community groups</p>
               </div>
               <div className="text-center p-6 border border-border rounded-lg">
                 <div className="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -245,11 +246,11 @@ export default function MicroFinancePage() {
               Apply for MNS Bank micro finance today and get competitive interest rates, quick approval, and flexible repayment options for your micro enterprise.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
-                Apply Now
+              <Button variant="primary" size="lg" className="px-8" asChild>
+                <Link href="/contact-us">Apply Now</Link>
               </Button>
               <Button variant="outline" size="lg" className="px-8" asChild>
-                <a href="/download-forms">Download Forms</a>
+                <Link href="/download-forms">Download Forms</Link>
               </Button>
             </div>
           </CardContent>

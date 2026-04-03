@@ -1,5 +1,6 @@
-﻿import { Metadata } from 'next';
+import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
 export const metadata: Metadata = {
@@ -19,14 +20,14 @@ export default function LoanAgainstPropertyPage() {
                 Loan Against Property
               </h1>
               <p className="text-xl mb-8 text-white/90">
-                Unlock the value of your property with MNS Bank's loan against property. Get competitive interest rates, high loan amounts, and flexible repayment options.
+                Unlock the value of your property with MNS Bank&apos;s loan against property. Get competitive interest rates, high loan amounts, and flexible repayment options.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="px-8">
-                  Apply Now
+                <Button variant="secondary" size="lg" className="px-8" asChild>
+                  <Link href="/contact-us">Apply Now</Link>
                 </Button>
-                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary">
-                  Check Eligibility
+                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary" asChild>
+                  <Link href="/contact-us">Check Eligibility</Link>
                 </Button>
               </div>
             </div>
@@ -241,17 +242,17 @@ export default function LoanAgainstPropertyPage() {
         <Card>
           <CardContent className="py-12 text-center">
             <h2 className="font-heading text-2xl font-bold text-text-primary mb-4">
-              Ready to Unlock Your Property's Value?
+              Ready to Unlock Your Property&apos;s Value?
             </h2>
             <p className="text-text-secondary mb-8 max-w-2xl mx-auto">
               Apply for MNS Bank loan against property today and get competitive interest rates, high loan amounts, and flexible repayment options.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
-                Apply Now
+              <Button variant="primary" size="lg" className="px-8" asChild>
+                <Link href="/contact-us">Apply Now</Link>
               </Button>
               <Button variant="outline" size="lg" className="px-8" asChild>
-                <a href="/download-forms">Download Forms</a>
+                <Link href="/download-forms">Download Forms</Link>
               </Button>
             </div>
           </CardContent>

@@ -238,11 +238,11 @@ export default function EMICalculatorPage() {
               Calculate your EMI and apply for a loan with MNS Bank. Get competitive interest rates, quick approval, and flexible repayment options.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
-                Apply Now
+              <Button variant="primary" size="lg" className="px-8" asChild>
+                <Link href="/contact-us">Apply Now</Link>
               </Button>
-              <Button variant="outline" size="lg" className="px-8">
-                Contact Advisor
+              <Button variant="outline" size="lg" className="px-8" asChild>
+                <Link href="/contact-us">Contact Advisor</Link>
               </Button>
             </div>
           </CardContent>

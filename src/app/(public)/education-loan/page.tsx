@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/Button';
+import Link from 'next/link';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { EMICalculator } from '@/components/product/EMICalculator';
@@ -24,11 +25,11 @@ export default function EducationLoanPage() {
                 {t('hero.educationLoanDesc')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="px-8">
-                  {t('sections.applyNow')}
+                <Button variant="secondary" size="lg" className="px-8" asChild>
+                  <Link href="/contact-us">{t('sections.applyNow')}</Link>
                 </Button>
                 <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary" asChild>
-                  <a href="#calculator">{t('sections.checkEmi')}</a>
+                  <Link href="#calculator">{t('sections.checkEmi')}</Link>
                 </Button>
               </div>
             </div>
@@ -234,11 +235,11 @@ export default function EducationLoanPage() {
               Apply for MNS Bank education loan today and get moratorium facility, competitive interest rates, and flexible repayment options for your educational journey.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
-                Apply Now
+              <Button variant="primary" size="lg" className="px-8" asChild>
+                <Link href="/contact-us">Apply Now</Link>
               </Button>
               <Button variant="outline" size="lg" className="px-8" asChild>
-                <a href="/download-forms">Download Forms</a>
+                <Link href="/download-forms">Download Forms</Link>
               </Button>
             </div>
           </CardContent>

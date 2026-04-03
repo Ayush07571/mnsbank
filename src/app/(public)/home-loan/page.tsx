@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/Button';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import Image from 'next/image';
 import { EMICalculator } from '@/components/product/EMICalculator';
@@ -24,11 +25,11 @@ export default function HomeLoanPage() {
                 {t('hero.homeLoanDesc')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="px-8">
-                  {t('sections.applyNow')}
+                <Button variant="secondary" size="lg" className="px-8" asChild>
+                  <Link href="/contact-us">{t('sections.applyNow')}</Link>
                 </Button>
                 <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary" asChild>
-                  <a href="#calculator">{t('sections.checkEmi')}</a>
+                  <Link href="#calculator">{t('sections.checkEmi')}</Link>
                 </Button>
               </div>
             </div>

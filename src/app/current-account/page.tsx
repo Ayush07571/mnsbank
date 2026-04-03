@@ -1,5 +1,6 @@
-﻿import { Metadata } from 'next';
+import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
 export const metadata: Metadata = {
@@ -22,11 +23,11 @@ export default function CurrentAccountPage() {
                 Manage your business finances with MNS Bank&apos;s current account. Enjoy unlimited transactions, overdraft facility, and comprehensive business banking services.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="px-8">
-                  Apply Now
+                <Button variant="secondary" size="lg" className="px-8" asChild>
+                  <Link href="/contact-us">Apply Now</Link>
                 </Button>
-                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary">
-                  Compare Accounts
+                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary" asChild>
+                  <Link href="/savings-account">Compare Accounts</Link>
                 </Button>
               </div>
             </div>
@@ -299,11 +300,11 @@ export default function CurrentAccountPage() {
               Open a MNS Bank current account today and enjoy unlimited transactions, overdraft facility, and comprehensive business banking services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
-                Open Account Now
+              <Button variant="primary" size="lg" className="px-8" asChild>
+                <Link href="/contact-us">Open Account Now</Link>
               </Button>
               <Button variant="outline" size="lg" className="px-8" asChild>
-                <a href="/download-forms">Download Forms</a>
+                <Link href="/download-forms">Download Forms</Link>
               </Button>
             </div>
           </CardContent>

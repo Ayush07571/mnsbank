@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
 export const metadata: Metadata = {
@@ -390,11 +391,11 @@ export default function InsurancePage() {
               Secure your future with comprehensive insurance solutions. Visit your nearest branch or contact our insurance experts.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
-                Apply Now
+              <Button variant="primary" size="lg" className="px-8" asChild>
+                <Link href="/contact-us">Apply Now</Link>
               </Button>
-              <Button variant="outline" size="lg" className="px-8">
-                Get Quote
+              <Button variant="outline" size="lg" className="px-8" asChild>
+                <Link href="/contact-us">Get Quote</Link>
               </Button>
             </div>
           </CardContent>

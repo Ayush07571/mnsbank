@@ -15,7 +15,6 @@ interface FormDocument {
 }
 
 const formDocuments: FormDocument[] = [
-  // Account Opening Forms
   {
     id: 'savings-account',
     title: 'Savings Account Opening Form',
@@ -23,41 +22,9 @@ const formDocuments: FormDocument[] = [
     category: 'Account Opening',
     lastUpdated: '2024-03-01',
     size: '245 KB',
-    downloadUrl: '/forms/savings-account.pdf',
+    downloadUrl: '/forms/sample.pdf',
     format: 'PDF',
   },
-  {
-    id: 'current-account',
-    title: 'Current Account Opening Form',
-    description: 'Form for opening a current account for business and professional use',
-    category: 'Account Opening',
-    lastUpdated: '2024-03-01',
-    size: '268 KB',
-    downloadUrl: '/forms/current-account.pdf',
-    format: 'PDF',
-  },
-  {
-    id: 'fixed-deposit',
-    title: 'Fixed Deposit Account Form',
-    description: 'Application form for opening fixed deposit accounts',
-    category: 'Account Opening',
-    lastUpdated: '2024-03-01',
-    size: '189 KB',
-    downloadUrl: '/forms/fixed-deposit.pdf',
-    format: 'PDF',
-  },
-  {
-    id: 'recurring-deposit',
-    title: 'Recurring Deposit Account Form',
-    description: 'Form for opening recurring deposit accounts',
-    category: 'Account Opening',
-    lastUpdated: '2024-03-01',
-    size: '195 KB',
-    downloadUrl: '/forms/recurring-deposit.pdf',
-    format: 'PDF',
-  },
-  
-  // Loan Application Forms
   {
     id: 'personal-loan',
     title: 'Personal Loan Application Form',
@@ -65,51 +32,9 @@ const formDocuments: FormDocument[] = [
     category: 'Loan Applications',
     lastUpdated: '2024-03-01',
     size: '312 KB',
-    downloadUrl: '/forms/personal-loan.pdf',
+    downloadUrl: '/forms/sample.pdf',
     format: 'PDF',
   },
-  {
-    id: 'home-loan',
-    title: 'Home Loan Application Form',
-    description: 'Comprehensive form for home loan applications',
-    category: 'Loan Applications',
-    lastUpdated: '2024-03-01',
-    size: '456 KB',
-    downloadUrl: '/forms/home-loan.pdf',
-    format: 'PDF',
-  },
-  {
-    id: 'car-loan',
-    title: 'Car Loan Application Form',
-    description: 'Application form for new and used car loans',
-    category: 'Loan Applications',
-    lastUpdated: '2024-03-01',
-    size: '289 KB',
-    downloadUrl: '/forms/car-loan.pdf',
-    format: 'PDF',
-  },
-  {
-    id: 'business-loan',
-    title: 'Business Loan Application Form',
-    description: 'Form for business and MSME loan applications',
-    category: 'Loan Applications',
-    lastUpdated: '2024-03-01',
-    size: '398 KB',
-    downloadUrl: '/forms/business-loan.pdf',
-    format: 'PDF',
-  },
-  {
-    id: 'gold-loan',
-    title: 'Gold Loan Application Form',
-    description: 'Quick application for gold loans against gold ornaments',
-    category: 'Loan Applications',
-    lastUpdated: '2024-03-01',
-    size: '234 KB',
-    downloadUrl: '/forms/gold-loan.pdf',
-    format: 'PDF',
-  },
-  
-  // KYC Forms
   {
     id: 'kyc-form',
     title: 'KYC Form',
@@ -117,49 +42,7 @@ const formDocuments: FormDocument[] = [
     category: 'KYC Forms',
     lastUpdated: '2024-03-01',
     size: '156 KB',
-    downloadUrl: '/forms/kyc-form.pdf',
-    format: 'PDF',
-  },
-  {
-    id: 'ckyc-form',
-    title: 'CKYC Form',
-    description: 'Central KYC form for unified KYC across financial institutions',
-    category: 'KYC Forms',
-    lastUpdated: '2024-03-01',
-    size: '178 KB',
-    downloadUrl: '/forms/ckyc-form.pdf',
-    format: 'PDF',
-  },
-  {
-    id: 'pan-update',
-    title: 'PAN Update Form',
-    description: 'Form for updating PAN details in bank records',
-    category: 'KYC Forms',
-    lastUpdated: '2024-03-01',
-    size: '98 KB',
-    downloadUrl: '/forms/pan-update.pdf',
-    format: 'PDF',
-  },
-  {
-    id: 'aadhaar-update',
-    title: 'Aadhaar Update Form',
-    description: 'Form for updating Aadhaar details in bank records',
-    category: 'KYC Forms',
-    lastUpdated: '2024-03-01',
-    size: '112 KB',
-    downloadUrl: '/forms/aadhaar-update.pdf',
-    format: 'PDF',
-  },
-  
-  // Service Forms
-  {
-    id: 'cheque-book',
-    title: 'Cheque Book Request Form',
-    description: 'Request form for new cheque book issuance',
-    category: 'Service Requests',
-    lastUpdated: '2024-03-01',
-    size: '67 KB',
-    downloadUrl: '/forms/cheque-book.pdf',
+    downloadUrl: '/forms/sample.pdf',
     format: 'PDF',
   },
   {
@@ -169,101 +52,7 @@ const formDocuments: FormDocument[] = [
     category: 'Service Requests',
     lastUpdated: '2024-03-01',
     size: '145 KB',
-    downloadUrl: '/forms/debit-card.pdf',
-    format: 'PDF',
-  },
-  {
-    id: 'credit-card',
-    title: 'Credit Card Application Form',
-    description: 'Application form for MNS Bank credit cards',
-    category: 'Service Requests',
-    lastUpdated: '2024-03-01',
-    size: '234 KB',
-    downloadUrl: '/forms/credit-card.pdf',
-    format: 'PDF',
-  },
-  {
-    id: 'internet-banking',
-    title: 'Internet Banking Registration Form',
-    description: 'Registration form for net banking services',
-    category: 'Service Requests',
-    lastUpdated: '2024-03-01',
-    size: '89 KB',
-    downloadUrl: '/forms/internet-banking.pdf',
-    format: 'PDF',
-  },
-  {
-    id: 'mobile-banking',
-    title: 'Mobile Banking Registration Form',
-    description: 'Form for registering mobile banking services',
-    category: 'Service Requests',
-    lastUpdated: '2024-03-01',
-    size: '78 KB',
-    downloadUrl: '/forms/mobile-banking.pdf',
-    format: 'PDF',
-  },
-  
-  // Government Schemes
-  {
-    id: 'pm-jan-dhan',
-    title: 'PM Jan Dhan Yojana Form',
-    description: 'Application form for Pradhan Mantri Jan Dhan Yojana',
-    category: 'Government Schemes',
-    lastUpdated: '2024-03-01',
-    size: '198 KB',
-    downloadUrl: '/forms/pm-jan-dhan.pdf',
-    format: 'PDF',
-  },
-  {
-    id: 'sukanya-samriddhi',
-    title: 'Sukanya Samriddhi Account Form',
-    description: 'Application form for Sukanya Samriddhi Yojana',
-    category: 'Government Schemes',
-    lastUpdated: '2024-03-01',
-    size: '167 KB',
-    downloadUrl: '/forms/sukanya-samriddhi.pdf',
-    format: 'PDF',
-  },
-  {
-    id: 'ppf-account',
-    title: 'PPF Account Opening Form',
-    description: 'Form for opening Public Provident Fund account',
-    category: 'Government Schemes',
-    lastUpdated: '2024-03-01',
-    size: '189 KB',
-    downloadUrl: '/forms/ppf-account.pdf',
-    format: 'PDF',
-  },
-  
-  // Miscellaneous
-  {
-    id: 'nomination',
-    title: 'Nomination Form',
-    description: 'Form for adding or updating nomination details',
-    category: 'Miscellaneous',
-    lastUpdated: '2024-03-01',
-    size: '76 KB',
-    downloadUrl: '/forms/nomination.pdf',
-    format: 'PDF',
-  },
-  {
-    id: 'joint-account',
-    title: 'Joint Account Opening Form',
-    description: 'Form for opening joint accounts with multiple holders',
-    category: 'Miscellaneous',
-    lastUpdated: '2024-03-01',
-    size: '234 KB',
-    downloadUrl: '/forms/joint-account.pdf',
-    format: 'PDF',
-  },
-  {
-    id: 'minor-account',
-    title: 'Minor Account Opening Form',
-    description: 'Form for opening accounts for minors',
-    category: 'Miscellaneous',
-    lastUpdated: '2024-03-01',
-    size: '156 KB',
-    downloadUrl: '/forms/minor-account.pdf',
+    downloadUrl: '/forms/sample.pdf',
     format: 'PDF',
   },
 ];
@@ -271,11 +60,6 @@ const formDocuments: FormDocument[] = [
 const categories = Array.from(new Set(formDocuments.map(form => form.category)));
 
 export default function DownloadFormsContent() {
-  const handleDownload = (form: FormDocument) => {
-    // In a real implementation, this would trigger the actual download
-    console.log(`Downloading: ${form.title}`);
-    alert(`Downloading: ${form.title}\n\nIn production, this would download the actual ${form.format} file.\n\nSize: ${form.size}`);
-  };
 
   return (
     <div className="min-h-screen bg-background py-8">
@@ -387,9 +171,11 @@ export default function DownloadFormsContent() {
                     variant="primary"
                     size="sm"
                     className="flex-1"
-                    onClick={() => handleDownload(form)}
+                    asChild
                   >
-                    Download {form.format}
+                    <a href={form.downloadUrl} download={`${form.id}.pdf`}>
+                      Download {form.format}
+                    </a>
                   </Button>
                   <span className="text-xs text-text-secondary">
                     {form.format}

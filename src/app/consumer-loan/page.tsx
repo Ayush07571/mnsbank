@@ -423,9 +423,6 @@ export default function ConsumerLoanPage() {
               <Button variant="primary" size="lg" className="px-8" asChild>
                 <Link href="/contact-us">Apply Now</Link>
               </Button>
-              <Button variant="outline" size="lg" className="px-8" asChild>
-                <a href="/download-forms">Download Forms</a>
-              </Button>
             </div>
           </CardContent>
         </Card>

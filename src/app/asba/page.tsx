@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
 export const metadata: Metadata = {
@@ -326,7 +327,9 @@ export default function AsbaPage() {
                     <p className="text-brand-accent font-semibold mb-2">IPO</p>
                     <p className="text-text-secondary text-sm mb-2">Leading technology solutions provider</p>
                   </div>
-                  <Button variant="outline" size="sm">Apply Now</Button>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link href="/contact-us">Apply Now</Link>
+                  </Button>
                 </div>
                 <div className="grid md:grid-cols-4 gap-4 text-sm">
                   <div>
@@ -354,7 +357,9 @@ export default function AsbaPage() {
                     <p className="text-brand-accent font-semibold mb-2">FPO</p>
                     <p className="text-text-secondary text-sm mb-2">Renewable energy sector company</p>
                   </div>
-                  <Button variant="outline" size="sm">Apply Now</Button>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link href="/contact-us">Apply Now</Link>
+                  </Button>
                 </div>
                 <div className="grid md:grid-cols-4 gap-4 text-sm">
                   <div>
@@ -459,11 +464,11 @@ export default function AsbaPage() {
               Apply for IPOs through ASBA facility at MNS Bank. Enjoy secure, convenient, and hassle-free IPO applications.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
-                Apply for IPO
+              <Button variant="primary" size="lg" className="px-8" asChild>
+                <Link href="/contact-us">Apply for IPO</Link>
               </Button>
-              <Button variant="outline" size="lg" className="px-8">
-                View Current IPOs
+              <Button variant="outline" size="lg" className="px-8" asChild>
+                <Link href="/contact-us">View Current IPOs</Link>
               </Button>
             </div>
           </CardContent>

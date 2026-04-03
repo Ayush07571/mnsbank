@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/Button';
+import Link from 'next/link';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { DepositCalculator } from '@/components/product/DepositCalculator';
@@ -22,11 +23,11 @@ export default function TimeDepositPage() {
                 {t('hero.timeDepositDesc')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="px-8">
-                  {t('sections.applyNow')}
+                <Button variant="secondary" size="lg" className="px-8" asChild>
+                  <Link href="/contact-us">{t('sections.applyNow')}</Link>
                 </Button>
                 <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary" asChild>
-                  <a href="#calculator">{t('sections.checkEmi', 'Calculate Interest')}</a>
+                  <Link href="#calculator">{t('sections.checkEmi', 'Calculate Interest')}</Link>
                 </Button>
               </div>
             </div>
@@ -279,11 +280,11 @@ export default function TimeDepositPage() {
               Open a MNS Bank time deposit today and enjoy attractive interest rates, flexible tenure options, and guaranteed returns for your financial goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
-                Apply Now
+              <Button variant="primary" size="lg" className="px-8" asChild>
+                <Link href="/contact-us">Apply Now</Link>
               </Button>
               <Button variant="outline" size="lg" className="px-8" asChild>
-                <a href="/download-forms">Download Forms</a>
+                <Link href="/download-forms">Download Forms</Link>
               </Button>
             </div>
           </CardContent>

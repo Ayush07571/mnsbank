@@ -165,7 +165,7 @@ export default function GoldLoanPage() {
                 <Button variant="primary" size="lg" className="px-8">Apply Now</Button>
               </Link>
               <Button variant="outline" size="lg" className="px-8" asChild>
-                <a href="/download-forms">Download Forms</a>
+                <Link href="/download-forms">Download Forms</Link>
               </Button>
             </div>
           </CardContent>
