@@ -23,9 +23,6 @@ export const InquirySubmissionSchema = z.object({
     .string()
     .max(250, 'Message must not exceed 250 characters')
     .optional(),
-  recaptchaToken: z
-    .string()
-    .min(1, 'reCAPTCHA verification is required'),
 });
 
 export type InquirySubmission = z.infer<typeof InquirySubmissionSchema>;

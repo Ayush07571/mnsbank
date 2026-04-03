@@ -4,12 +4,10 @@
   "framework": "nextjs",
   "regions": ["sin1"],
   "env": {
-    "NEXT_PUBLIC_RECAPTCHA_SITE_KEY": "@recaptcha-site-key",
     "NEXT_PUBLIC_GA_ID": "@ga-id"
   },
   "build": {
     "env": {
-      "NEXT_PUBLIC_RECAPTCHA_SITE_KEY": "@recaptcha-site-key",
       "NEXT_PUBLIC_GA_ID": "@ga-id"
     }
   },

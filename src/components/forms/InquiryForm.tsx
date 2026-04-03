@@ -43,21 +43,6 @@ export default function InquiryForm({
     },
   });
 
-  // reCAPTCHA temporarily disabled for testing
-  // useEffect(() => {
-  //   const loadReCAPTCHA = () => {
-  //     if (typeof window === 'undefined') return;
-  //       
-  //     const script = document.createElement('script');
-  //     script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
-  //     script.async = true;
-  //     script.onload = () => {
-  //       setRecaptchaLoaded(true);
-  //       };
-  //     script.onerror = () => {
-  //       console.error('Failed to load reCAPTCHA');
-  //       };
-  //     document.head.appendChild(script);
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
 
@@ -260,14 +245,4 @@ export default function InquiryForm({
       </form>
     </div>
   );
-}
-
-// Add TypeScript declaration for reCAPTCHA
-declare global {
-  interface Window {
-    grecaptcha?: {
-      ready: (callback: () => void) => void;
-      execute: (siteKey: string, options: { action: string }) => Promise<string>;
-    };
-  }
 }
