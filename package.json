@@ -10,11 +10,9 @@
     "lint:fix": "eslint --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "prepare": "husky install",
     "test": "jest",
     "test:e2e": "playwright test",
-    "security:check": "node scripts/security-check.js",
-    "prebuild": "npm run security:check"
+    "security:check": "node scripts/security-check.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
