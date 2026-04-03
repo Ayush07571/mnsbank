@@ -161,7 +161,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <LanguageProvider>
           <Suspense fallback={null}>
-            <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID} />
+            <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_ID} />
           </Suspense>
           <div id="root">
             {children}

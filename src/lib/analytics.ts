@@ -18,9 +18,11 @@ export class GoogleAnalytics {
   private static instance: GoogleAnalytics;
   private measurementId: string;
   private isInitialized = false;
+  private isDisabled = false;
 
   private constructor() {
-    this.measurementId = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID || '';
+    this.measurementId = process.env.NEXT_PUBLIC_GA_ID || '';
+    this.isDisabled = !this.measurementId || this.measurementId === 'G-XXXXXXXXXX';
   }
 
   public static getInstance(): GoogleAnalytics {
@@ -31,7 +33,7 @@ export class GoogleAnalytics {
   }
 
   public initialize(): void {
-    if (typeof window === 'undefined' || this.isInitialized || !this.measurementId) {
+    if (typeof window === 'undefined' || this.isDisabled) {
       return;
     }
 
