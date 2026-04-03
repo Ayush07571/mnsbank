@@ -16,11 +16,11 @@ export default function DoubleDepositPage() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">
+              <h1 className="font-heading text-4xl md:text-5xl mb-6">
                 Double Deposit Scheme
               </h1>
               <p className="text-xl mb-8 text-white/90">
-                Double your money with MNS Bank's attractive double deposit scheme. Enjoy guaranteed returns, flexible tenure options, and secure investment for your financial goals.
+                Double your money with MNS Bank&apos;s attractive double deposit scheme. Enjoy guaranteed returns, flexible tenure options, and secure investment for your financial goals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="secondary" size="lg" className="px-8" asChild>
@@ -39,7 +39,7 @@ export default function DoubleDepositPage() {
                     <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
                   </svg>
                 </div>
-                <h3 className="font-heading text-xl font-semibold mb-2">Double Returns</h3>
+                <h3 className="font-heading text-xl mb-2">Double Returns</h3>
                 <p className="text-white/80">Double your investment</p>
               </div>
               <div className="text-center">
@@ -48,7 +48,7 @@ export default function DoubleDepositPage() {
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <h3 className="font-heading text-xl font-semibold mb-2">Guaranteed</h3>
+                <h3 className="font-heading text-xl mb-2">Guaranteed</h3>
                 <p className="text-white/80">Assured returns on maturity</p>
               </div>
               <div className="text-center">
@@ -57,7 +57,7 @@ export default function DoubleDepositPage() {
                     <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm1 2a1 1 0 000 2h6a1 1 0 100-2H7zm6 7a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-3 3a1 1 0 100 2h.01a1 1 0 100-2H10zm-4 1a1 1 0 011-1h.01a1 1 0 110 2H7a1 1 0 01-1-1zm1-4a1 1 0 100 2h.01a1 1 0 100-2H7zm2 1a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm4-2a1 1 0 100 2h.01a1 1 0 100-2H13z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <h3 className="font-heading text-xl font-semibold mb-2">Flexible Tenure</h3>
+                <h3 className="font-heading text-xl mb-2">Flexible Tenure</h3>
                 <p className="text-white/80">Choose your preferred duration</p>
               </div>
             </div>
@@ -240,8 +240,8 @@ export default function DoubleDepositPage() {
                   <li>• Age: Below 18 years</li>
                   <li>• Guardian required</li>
                   <li>• Birth certificate</li>
-                  <li>• Guardian's identity proof</li>
-                  <li>• Guardian's address proof</li>
+                  <li>• Guardian&apos;s identity proof</li>
+                  <li>• Guardian&apos;s address proof</li>
                 </ul>
               </div>
             </div>
@@ -321,7 +321,7 @@ export default function DoubleDepositPage() {
         {/* CTA Section */}
         <Card>
           <CardContent className="py-12 text-center">
-            <h2 className="font-heading text-2xl font-bold text-text-primary mb-4">
+            <h2 className="font-heading text-2xl text-text-primary mb-4">
               Ready to Double Your Investment?
             </h2>
             <p className="text-text-secondary mb-8 max-w-2xl mx-auto">

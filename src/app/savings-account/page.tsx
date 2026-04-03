@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
@@ -16,18 +17,18 @@ export default function SavingsAccountPage() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">
+              <h1 className="font-heading text-4xl md:text-5xl mb-6">
                 Savings Account
               </h1>
               <p className="text-xl mb-8 text-white/90 leading-relaxed">
                 Start your financial journey with MNS Bank&apos;s savings account. Enjoy competitive interest rates, digital banking services, and exclusive benefits for your everyday banking needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="px-8 font-semibold shadow-lg shadow-black/10">
-                  Open Account
+                <Button variant="secondary" size="lg" className="px-8 font-semibold shadow-lg shadow-black/10" asChild>
+                  <Link href="/contact-us">Open Account</Link>
                 </Button>
-                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary font-semibold transition-all">
-                  Compare Accounts
+                <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary font-semibold transition-all" asChild>
+                  <Link href="/current-account">Compare Accounts</Link>
                 </Button>
               </div>
             </div>
@@ -192,8 +193,8 @@ export default function SavingsAccountPage() {
                   <li>• Age: Below 18 years</li>
                   <li>• Guardian required</li>
                   <li>• Birth certificate</li>
-                  <li>• Guardian's identity proof</li>
-                  <li>• Guardian's address proof</li>
+                  <li>• Guardian&apos;s identity proof</li>
+                  <li>• Guardian&apos;s address proof</li>
                 </ul>
               </div>
             </div>
@@ -273,18 +274,18 @@ export default function SavingsAccountPage() {
         {/* CTA Section */}
         <Card>
           <CardContent className="py-12 text-center">
-            <h2 className="font-heading text-2xl font-bold text-text-primary mb-4">
+            <h2 className="font-heading text-2xl text-text-primary mb-4">
               Ready to Open Your Savings Account?
             </h2>
             <p className="text-text-secondary mb-8 max-w-2xl mx-auto">
               Open a MNS Bank savings account today and enjoy competitive interest rates, digital banking services, and exclusive benefits for your financial growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
-                Open Account Now
+              <Button variant="primary" size="lg" className="px-8" asChild>
+                <Link href="/contact-us">Open Account Now</Link>
               </Button>
               <Button variant="outline" size="lg" className="px-8" asChild>
-                <a href="/download-forms">Download Forms</a>
+                <Link href="/download-forms">Download Forms</Link>
               </Button>
             </div>
           </CardContent>

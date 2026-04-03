@@ -1,4 +1,5 @@
-﻿import { Metadata } from 'next';
+import { Metadata } from 'next';
+import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
@@ -400,11 +401,11 @@ export default function DematPage() {
               Open a demat account with MNS Bank and start investing in stocks, mutual funds, and more. Enjoy low brokerage and expert support.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" className="px-8">
-                Open Account Now
+              <Button variant="primary" size="lg" className="px-8" asChild>
+                <Link href="/contact-us">Open Account Now</Link>
               </Button>
-              <Button variant="outline" size="lg" className="px-8">
-                Schedule Appointment
+              <Button variant="outline" size="lg" className="px-8" asChild>
+                <Link href="/contact-us">Schedule Appointment</Link>
               </Button>
             </div>
           </CardContent>
