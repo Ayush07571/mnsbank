@@ -347,7 +347,3 @@ export default function BizDoubleDepositPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

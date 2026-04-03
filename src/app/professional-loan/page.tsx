@@ -277,7 +277,3 @@ export default function ProfessionalLoanPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

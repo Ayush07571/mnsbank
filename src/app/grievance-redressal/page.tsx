@@ -10,4 +10,3 @@ export default function GrievanceRedressalPage() {
   return <GrievanceRedressalContent />;
 }
 
-

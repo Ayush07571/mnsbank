@@ -10,8 +10,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
 export const metadata: Metadata = createPageMetadata(SEO_CONFIGS.HOME);
 
-
-
 export default function HomePage() {
   return (
     <div className="min-h-screen">

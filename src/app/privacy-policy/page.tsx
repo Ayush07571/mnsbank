@@ -382,7 +382,3 @@ export default function PrivacyPolicyPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

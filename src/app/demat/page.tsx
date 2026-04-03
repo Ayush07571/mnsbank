@@ -414,7 +414,3 @@ export default function DematPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

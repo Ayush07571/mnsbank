@@ -448,7 +448,3 @@ export default function CyberAwarenessPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

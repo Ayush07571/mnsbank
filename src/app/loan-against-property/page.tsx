@@ -261,7 +261,3 @@ export default function LoanAgainstPropertyPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

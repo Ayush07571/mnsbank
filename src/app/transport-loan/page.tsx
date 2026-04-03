@@ -263,7 +263,3 @@ export default function TransportLoanPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

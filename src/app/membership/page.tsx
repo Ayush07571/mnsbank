@@ -479,7 +479,3 @@ export default function MembershipPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

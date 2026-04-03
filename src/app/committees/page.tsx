@@ -363,7 +363,3 @@ export default function CommitteesPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

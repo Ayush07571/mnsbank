@@ -256,7 +256,3 @@ export default function ConsumerLoanPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

@@ -441,7 +441,3 @@ export default function UPIQRPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

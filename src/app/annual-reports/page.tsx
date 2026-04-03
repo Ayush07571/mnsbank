@@ -469,7 +469,3 @@ export default function AnnualReportsPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

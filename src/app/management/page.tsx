@@ -416,7 +416,3 @@ export default function ManagementPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

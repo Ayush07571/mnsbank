@@ -335,7 +335,3 @@ export default function BizRecurringDepositPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

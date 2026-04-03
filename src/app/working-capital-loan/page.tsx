@@ -316,7 +316,3 @@ export default function WorkingCapitalLoanPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

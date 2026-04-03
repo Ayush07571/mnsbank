@@ -438,7 +438,3 @@ export default function CareersPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

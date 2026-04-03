@@ -382,7 +382,3 @@ export default function BizTimeDepositPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

@@ -313,7 +313,3 @@ export default function SavingsAccountPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

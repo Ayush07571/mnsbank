@@ -268,7 +268,3 @@ export default function SelfEmployedLoanPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

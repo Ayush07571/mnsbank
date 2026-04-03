@@ -259,7 +259,3 @@ export default function MicroFinancePage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

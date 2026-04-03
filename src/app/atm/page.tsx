@@ -393,7 +393,3 @@ export default function ATMPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

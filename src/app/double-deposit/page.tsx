@@ -341,7 +341,3 @@ export default function DoubleDepositPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

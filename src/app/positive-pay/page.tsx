@@ -442,7 +442,3 @@ export default function PositivePayPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};

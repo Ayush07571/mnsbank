@@ -298,7 +298,3 @@ export default function MortgageOverdraftPage() {
   );
 }
 
-
-export const unstable_instant = {
-  prefetch: 'static',
-};
