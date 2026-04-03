@@ -41,7 +41,7 @@ const sampleLocations: Location[] = [
       lat: 23.2599,
       lng: 77.4126
     },
-    services: ['Personal Banking', 'Business Banking', 'Loans', ' Deposits', 'Forex'],
+    services: ['Personal Banking', 'Business Banking', 'Loans', 'Deposits', 'Forex'],
     timings: {
       weekdays: '9:30 AM - 4:30 PM',
       saturday: '9:30 AM - 2:00 PM',
@@ -50,102 +50,44 @@ const sampleLocations: Location[] = [
   },
   {
     id: '2',
-    name: 'MNS Bank - MP Nagar',
-    type: 'branch',
-    address: '456, Commercial Area',
+    name: 'MNS Bank - ATM - New Market',
+    type: 'atm',
+    address: '456, Market Road',
     city: 'Bhopal',
     state: 'Madhya Pradesh',
-    pincode: '462011',
+    pincode: '462002',
     phone: '0755-234-5678',
     coordinates: {
-      lat: 23.2270,
-      lng: 77.4375
-    },
-    services: ['Personal Banking', 'Business Banking', 'Loans'],
-    timings: {
-      weekdays: '9:30 AM - 4:30 PM',
-      saturday: '9:30 AM - 2:00 PM',
-      sunday: 'Closed'
+      lat: 23.2499,
+      lng: 77.4026
     }
   },
   {
     id: '3',
-    name: 'MNS Bank - Habibganj',
+    name: 'MNS Bank - Branch - MP Nagar',
     type: 'branch',
-    address: '789, Station Road',
-    city: 'Bhopal',
-    state: 'Madhya Pradesh',
-    pincode: '462016',
-    phone: '0755-345-6789',
-    coordinates: {
-      lat: 23.2315,
-      lng: 77.4344
-    },
-    services: ['Personal Banking', 'Loans', 'Deposits'],
-    timings: {
-      weekdays: '9:30 AM - 4:30 PM',
-      saturday: '9:30 AM - 2:00 PM',
-      sunday: 'Closed'
-    }
-  },
-  {
-    id: '4',
-    name: 'MNS Bank - New Market',
-    type: 'branch',
-    address: '321, Market Complex',
+    address: '789, Civil Lines',
     city: 'Bhopal',
     state: 'Madhya Pradesh',
     pincode: '462003',
-    phone: '0755-456-7890',
+    phone: '0755-345-6789',
+    email: 'mpnagar@mnsbank.com',
     coordinates: {
-      lat: 23.2443,
-      lng: 77.4019
+      lat: 23.2699,
+      lng: 77.4226
     },
-    services: ['Personal Banking', 'Business Banking'],
+    services: ['Personal Banking', 'Business Banking', 'Deposits'],
     timings: {
       weekdays: '9:30 AM - 4:30 PM',
       saturday: '9:30 AM - 2:00 PM',
       sunday: 'Closed'
     }
-  },
-  {
-    id: '5',
-    name: 'MNS ATM - Habibganj',
-    type: 'atm',
-    address: 'Near Railway Station',
-    city: 'Bhopal',
-    state: 'Madhya Pradesh',
-    pincode: '462016',
-    phone: '0755-345-6789',
-    coordinates: {
-      lat: 23.2325,
-      lng: 77.4354
-    },
-    services: ['24/7 ATM', 'Cash Deposit', 'Mini Statement']
-  },
-  {
-    id: '6',
-    name: 'MNS ATM - MP Nagar',
-    type: 'atm',
-    address: 'Near Commercial Area',
-    city: 'Bhopal',
-    state: 'Madhya Pradesh',
-    pincode: '462011',
-    phone: '0755-234-5678',
-    coordinates: {
-      lat: 23.2260,
-      lng: 77.4385
-    },
-    services: ['24/7 ATM', 'Cash Deposit', 'Mini Statement']
   }
 ];
 
 interface LocatorMapProps {
   locations?: Location[];
-  center?: {
-    lat: number;
-    lng: number;
-  };
+  center?: { lat: number; lng: number };
   zoom?: number;
   height?: string;
   showControls?: boolean;
@@ -164,320 +106,312 @@ export function LocatorMap({
 }: LocatorMapProps) {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<any>(null);
-  const [map, setMap] = useState<any>(null);
+  const markersRef = useRef<any[]>([]);
   const [selectedLocation, setSelectedLocation] = useState<Location | null>(null);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [mapLoaded, setMapLoaded] = useState(false);
   const [currentFilter, setCurrentFilter] = useState(filterType);
+  const [currentZoom, setCurrentZoom] = useState(zoom);
 
+  // Load Leaflet CSS and JS
   useEffect(() => {
-    // Dynamically import Leaflet to avoid SSR issues
-    const loadMap = async () => {
-      if (typeof window === 'undefined' || !mapRef.current) return;
-
+    const loadLeaflet = async () => {
       try {
-        const L = await import('leaflet');
-        
-        // Fix for default markers in Leaflet with webpack
-        delete (L.Icon.Default.prototype as any)._getIconUrl;
-        L.Icon.Default.mergeOptions({
-          iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
-          iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
-          shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
-        });
+        // Load Leaflet CSS
+        const leafletCSS = document.createElement('link');
+        leafletCSS.rel = 'stylesheet';
+        leafletCSS.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+        document.head.appendChild(leafletCSS);
 
-        // Check if map container is already initialized
-        if (mapInstanceRef.current) {
-          // Remove existing map instance
-          mapInstanceRef.current.remove();
-          // Clear the container
-          mapRef.current.innerHTML = '';
-          // Reset the reference
-          mapInstanceRef.current = null;
-        }
+        // Load Leaflet JS
+        const leafletJS = document.createElement('script');
+        leafletJS.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+        leafletJS.onload = () => {
+          setTimeout(() => initializeMap(), 100);
+        };
+        document.head.appendChild(leafletJS);
 
-        const leafletMap = L.map(mapRef.current).setView([center.lat, center.lng], zoom);
-
-        // Store map reference for cleanup
-        mapInstanceRef.current = leafletMap;
-
-        // Add OpenStreetMap tiles
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: '© OpenStreetMap contributors',
-          maxZoom: 19,
-        }).addTo(leafletMap);
-
-        setMap(leafletMap);
+        setMapLoaded(true);
       } catch (error) {
-        console.error('Error loading map:', error);
+        console.error('Error loading Leaflet:', error);
       }
     };
 
-    loadMap();
-    
+    loadLeaflet();
+
     // Cleanup function
     return () => {
       if (mapInstanceRef.current) {
         mapInstanceRef.current.remove();
         mapInstanceRef.current = null;
-        if (mapRef.current) {
-          mapRef.current.innerHTML = '';
-        }
       }
     };
-  }, [center, zoom]);
+  }, []);
 
-  useEffect(() => {
-    if (!map) return;
+  const initializeMap = () => {
+    if (!mapRef.current || !window.L) return;
 
-    // Clear existing markers
-    map.eachLayer((layer: any) => {
-      if (layer instanceof (window as any).L.Marker) {
-        map.removeLayer(layer);
+    try {
+      // Check if map container is already initialized
+      if (mapInstanceRef.current) {
+        // Remove existing map instance
+        mapInstanceRef.current.remove();
+        mapInstanceRef.current = null;
       }
-    });
 
-    // Filter locations based on current filter
+      // Clear any existing content in the container
+      if (mapRef.current) {
+        mapRef.current.innerHTML = '';
+      }
+
+      // Create map
+      const map = window.L.map(mapRef.current).setView([center.lat, center.lng], zoom);
+
+      // Add OpenStreetMap tiles
+      window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors',
+        maxZoom: 19,
+      }).addTo(map);
+
+      // Disable default zoom controls
+      map.zoomControl.remove();
+
+      mapInstanceRef.current = map;
+      addMarkers(map);
+
+      // Update zoom state when zoom changes
+      map.on('zoomend', () => {
+        setCurrentZoom(map.getZoom());
+      });
+    } catch (error) {
+      console.error('Error initializing map:', error);
+    }
+  };
+
+  const addMarkers = (map: any) => {
+    // Clear existing markers
+    markersRef.current.forEach(marker => map.removeLayer(marker));
+    markersRef.current = [];
+
+    // Filter locations
     const filteredLocations = currentFilter === 'all' 
       ? locations 
       : locations.filter(loc => loc.type === currentFilter);
 
-    // Add markers for filtered locations
+    // Add markers
     filteredLocations.forEach((location) => {
-      const L = (window as any).L;
-      
-      // Create custom icon based on location type
-      const customIcon = L.divIcon({
+      const icon = window.L.divIcon({
         html: `
-          <div class="custom-marker ${location.type}">
-            <div class="marker-icon">
-              ${location.type === 'branch' ? 
-                '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>' :
-                '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>'
-              }
+          <div style="
+            background: ${location.type === 'branch' ? '#2563eb' : '#10b981'};
+            width: 32px;
+            height: 32px;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          ">
+            <div style="
+              transform: rotate(45deg);
+              color: white;
+              font-size: 14px;
+              font-weight: bold;
+            ">
+              ${location.type === 'branch' ? '🏦' : '🏧'}
             </div>
           </div>
         `,
-        className: 'custom-div-icon',
+        className: 'custom-marker',
         iconSize: [32, 32],
         iconAnchor: [16, 32],
-        popupAnchor: [0, -32],
+        popupAnchor: [0, -32]
       });
 
-      const marker = L.marker([location.coordinates.lat, location.coordinates.lng], {
-        icon: customIcon
-      }).addTo(map);
+      const marker = window.L.marker([location.coordinates.lat, location.coordinates.lng], { icon })
+        .addTo(map);
 
-      // Create popup content
+      // Create popup
       const popupContent = `
-        <div class="map-popup">
-          <h3>${location.name}</h3>
-          <p><strong>Type:</strong> ${location.type === 'branch' ? 'Branch' : 'ATM'}</p>
-          <p><strong>Address:</strong> ${location.address}, ${location.city}, ${location.state} - ${location.pincode}</p>
-          <p><strong>Phone:</strong> ${location.phone}</p>
-          ${location.email ? `<p><strong>Email:</strong> ${location.email}</p>` : ''}
-          ${location.services ? `<p><strong>Services:</strong> ${location.services.join(', ')}</p>` : ''}
-          ${location.timings ? `
-            <p><strong>Timings:</strong></p>
-            <p>Weekdays: ${location.timings.weekdays}</p>
-            <p>Saturday: ${location.timings.saturday}</p>
-            <p>Sunday: ${location.timings.sunday}</p>
-          ` : ''}
+        <div style="padding: 8px; min-width: 200px;">
+          <h3 style="margin: 0 0 8px 0; font-size: 16px; font-weight: bold; color: #1f2937;">${location.name}</h3>
+          <p style="margin: 0 0 4px 0; font-size: 14px; color: #6b7280;">${location.address}</p>
+          <p style="margin: 0 0 4px 0; font-size: 12px; color: #6b7280;">${location.city}, ${location.state} - ${location.pincode}</p>
+          <p style="margin: 0 0 4px 0; font-size: 12px; color: #6b7280;">📞 ${location.phone}</p>
+          ${location.timings ? `<p style="margin: 0 0 4px 0; font-size: 12px; color: #6b7280;">🕒 ${location.timings.weekdays}</p>` : ''}
+          <p style="margin: 8px 0 0 0; font-size: 12px; font-weight: bold; color: ${location.type === 'branch' ? '#2563eb' : '#10b981'};">
+            ${location.type === 'branch' ? '🏦 Branch' : '🏧 ATM'}
+          </p>
         </div>
       `;
 
       marker.bindPopup(popupContent);
-      
+
       marker.on('click', () => {
         setSelectedLocation(location);
-        onLocationSelect?.(location);
+        if (onLocationSelect) {
+          onLocationSelect(location);
+        }
       });
+
+      markersRef.current.push(marker);
     });
+  };
 
-  }, [map, locations, currentFilter, onLocationSelect]);
+  // Update markers when filter changes
+  useEffect(() => {
+    if (mapInstanceRef.current) {
+      addMarkers(mapInstanceRef.current);
+    }
+  }, [currentFilter, locations]);
 
-  const filteredLocations = currentFilter === 'all' 
-    ? locations 
-    : locations.filter(loc => loc.type === currentFilter);
-
-  const searchFilteredLocations = searchQuery
-    ? filteredLocations.filter(loc => 
-        loc.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        loc.address.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        loc.city.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-    : filteredLocations;
+  if (!mapLoaded) {
+    return (
+      <div className="relative w-full" style={{ height }}>
+        <div className="flex items-center justify-center h-full bg-gray-100 rounded-lg">
+          <div className="text-center p-8">
+            <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-gray-500 animate-spin" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold text-gray-700 mb-2">Loading Map...</h3>
+            <p className="text-gray-500">Please wait while we load the map</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className="w-full">
-      {/* Map Controls */}
+    <div className="relative w-full" style={{ height }}>
+      <div ref={mapRef} className="w-full h-full rounded-lg" style={{ minHeight: '400px' }} />
+      
       {showControls && (
-        <div className="mb-4 flex flex-col sm:flex-row gap-4">
-          {/* Search */}
-          <div className="flex-1">
-            <input
-              type="text"
-              placeholder="Search locations..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary"
-            />
-          </div>
-          
-          {/* Filter Buttons */}
+        <div className="absolute top-4 left-4 z-[1000] bg-white rounded-lg shadow-lg p-2">
           <div className="flex gap-2">
             <Button
               variant={currentFilter === 'all' ? 'primary' : 'outline'}
               size="sm"
               onClick={() => setCurrentFilter('all')}
             >
-              All
+              All ({locations.length})
             </Button>
             <Button
               variant={currentFilter === 'branch' ? 'primary' : 'outline'}
               size="sm"
               onClick={() => setCurrentFilter('branch')}
             >
-              Branches
+              🏦 Branches ({locations.filter(l => l.type === 'branch').length})
             </Button>
             <Button
               variant={currentFilter === 'atm' ? 'primary' : 'outline'}
               size="sm"
               onClick={() => setCurrentFilter('atm')}
             >
-              ATMs
+              🏧 ATMs ({locations.filter(l => l.type === 'atm').length})
             </Button>
           </div>
         </div>
       )}
 
-      <div className="grid lg:grid-cols-3 gap-6">
-        {/* Map */}
-        <div className="lg:col-span-2">
-          <Card>
-            <CardContent className="p-0">
-              <div
-                ref={mapRef}
-                style={{ height, minHeight: '400px' }}
-                className="w-full rounded-lg"
-              />
-            </CardContent>
-          </Card>
+      {/* Custom Zoom Controls */}
+      {showControls && (
+        <div className="absolute top-4 right-4 z-[1000] bg-white rounded-lg shadow-lg p-1">
+          <div className="flex flex-col gap-1">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => {
+                if (mapInstanceRef.current && currentZoom < 19) {
+                  mapInstanceRef.current.setZoom(currentZoom + 1);
+                }
+              }}
+              disabled={currentZoom >= 19}
+              className="w-8 h-8 p-0"
+            >
+              +
+            </Button>
+            <div className="text-xs text-center font-medium text-gray-600">
+              {currentZoom}
+            </div>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => {
+                if (mapInstanceRef.current && currentZoom > 1) {
+                  mapInstanceRef.current.setZoom(currentZoom - 1);
+                }
+              }}
+              disabled={currentZoom <= 1}
+              className="w-8 h-8 p-0"
+            >
+              −
+            </Button>
+          </div>
         </div>
+      )}
 
-        {/* Location List */}
-        <div className="lg:col-span-1">
-          <Card>
-            <CardContent className="p-4">
-              <h3 className="font-semibold text-text-primary mb-4">
-                Locations ({searchFilteredLocations.length})
-              </h3>
-              <div className="space-y-3 max-h-96 overflow-y-auto">
-                {searchFilteredLocations.map((location) => (
-                  <div
-                    key={location.id}
-                    className={`p-3 border border-border rounded-lg cursor-pointer transition-colors hover:bg-gray-50 ${
-                      selectedLocation?.id === location.id ? 'bg-brand-primary/10 border-brand-primary' : ''
-                    }`}
-                    onClick={() => {
-                      setSelectedLocation(location);
-                      onLocationSelect?.(location);
-                      // Center map on selected location
-                      if (map) {
-                        map.setView([location.coordinates.lat, location.coordinates.lng], 15);
-                      }
-                    }}
-                  >
-                    <div className="flex items-start space-x-3">
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                        location.type === 'branch' ? 'bg-brand-primary text-white' : 'bg-green-500 text-white'
-                      }`}>
-                        {location.type === 'branch' ? 'B' : 'A'}
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-medium text-text-primary text-sm">
-                          {location.name}
-                        </h4>
-                        <p className="text-xs text-text-secondary mb-1">
-                          {location.address}, {location.city}
-                        </p>
-                        <p className="text-xs text-text-secondary">
-                          {location.phone}
-                        </p>
-                        {location.services && (
-                          <div className="mt-2">
-                            <div className="flex flex-wrap gap-1">
-                              {location.services.slice(0, 2).map((service, index) => (
-                                <span
-                                  key={index}
-                                  className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded"
-                                >
-                                  {service}
-                                </span>
-                              ))}
-                              {location.services.length > 2 && (
-                                <span className="text-xs text-gray-500">
-                                  +{location.services.length - 2} more
-                                </span>
-                              )}
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+      {selectedLocation && (
+        <div className="absolute bottom-4 right-4 z-[1000] bg-white rounded-lg shadow-lg p-4 max-w-sm">
+          <div className="flex justify-between items-start mb-2">
+            <h3 className="font-semibold text-gray-900">{selectedLocation.name}</h3>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setSelectedLocation(null)}
+            >
+              ✕
+            </Button>
+          </div>
+          <div className="text-sm text-gray-600 space-y-1">
+            <p>📍 {selectedLocation.address}</p>
+            <p>{selectedLocation.city}, {selectedLocation.state} - {selectedLocation.pincode}</p>
+            <p>📞 {selectedLocation.phone}</p>
+            {selectedLocation.timings && (
+              <p>🕒 {selectedLocation.timings.weekdays}</p>
+            )}
+            <p className="font-medium text-blue-600">
+              {selectedLocation.type === 'branch' ? '🏦 Branch' : '🏧 ATM'}
+            </p>
+          </div>
+          <div className="mt-3">
+            <Button
+              variant="primary"
+              size="sm"
+              onClick={() => {
+                try {
+                  // Open in Google Maps with the exact location
+                  const query = `${selectedLocation.name}, ${selectedLocation.address}, ${selectedLocation.city}, ${selectedLocation.state} ${selectedLocation.pincode}`;
+                  const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+                  
+                  console.log('Selected Location:', selectedLocation);
+                  console.log('Query:', query);
+                  console.log('Encoded URL:', url);
+                  
+                  // Try to open in new window
+                  const newWindow = window.open(url, '_blank');
+                  
+                  if (!newWindow) {
+                    console.error('Failed to open new window - popup might be blocked');
+                    // Fallback: try opening in same window
+                    window.location.href = url;
+                  } else {
+                    console.log('Successfully opened Google Maps');
+                  }
+                } catch (error) {
+                  console.error('Error opening Google Maps:', error);
+                  alert('Unable to open directions. Please check your browser settings.');
+                }
+              }}
+            >
+              🗺️ Get Directions
+            </Button>
+          </div>
         </div>
-      </div>
-
-      <style jsx>{`
-        .custom-marker {
-          position: relative;
-        }
-        
-        .marker-icon {
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-        }
-        
-        .custom-marker.branch .marker-icon {
-          background: #3b82f6;
-          color: white;
-        }
-        
-        .custom-marker.atm .marker-icon {
-          background: #10b981;
-          color: white;
-        }
-        
-        .map-popup {
-          font-family: system-ui, -apple-system, sans-serif;
-        }
-        
-        .map-popup h3 {
-          margin: 0 0 8px 0;
-          font-size: 16px;
-          font-weight: 600;
-          color: #1f2937;
-        }
-        
-        .map-popup p {
-          margin: 4px 0;
-          font-size: 14px;
-          color: #4b5563;
-        }
-        
-        .map-popup strong {
-          color: #1f2937;
-        }
-      `}</style>
+      )}
     </div>
   );
 }

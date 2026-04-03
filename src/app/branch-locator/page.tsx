@@ -1,14 +1,9 @@
-import { Metadata } from 'next';
+'use client';
+
 import { LocatorMapWrapper } from '@/components/maps/LocatorMapWrapper';
 import { Location } from '@/components/maps/LocatorMap';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-
-export const metadata: Metadata = {
-  title: 'Branch Locator - Find MNS Bank Branches Near You',
-  description: 'Find MNS Bank branches near you with our interactive branch locator. Get branch details, services, timings, and directions.',
-  keywords: 'branch locator, bank branch, MNS Bank branches, find branch near me, bank branch locations',
-};
 
 const branchLocations: Location[] = [
   {
@@ -391,10 +386,26 @@ export default function BranchLocatorPage() {
                             )}
                           </div>
                           <div className="flex space-x-2">
-                            <Button variant="outline" size="sm">
+                            <Button 
+                              variant="outline" 
+                              size="sm"
+                              onClick={() => {
+                                // Open Google Maps with branch location
+                                const query = `${branch.name}, ${branch.address}, ${branch.city}, ${branch.state} ${branch.pincode}`;
+                                const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+                                window.open(url, '_blank');
+                              }}
+                            >
                               Get Directions
                             </Button>
-                            <Button variant="outline" size="sm">
+                            <Button 
+                              variant="outline" 
+                              size="sm"
+                              onClick={() => {
+                                // Open phone dialer
+                                window.location.href = `tel:${branch.phone}`;
+                              }}
+                            >
                               Call Branch
                             </Button>
                           </div>
