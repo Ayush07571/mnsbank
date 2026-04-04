@@ -467,20 +467,17 @@ export function Header({ className }: HeaderProps) {
           {/* Top Bar */}
           <div className="flex items-center justify-between py-3">
             <div className="flex items-center space-x-8">
-              <Link href="/" className="flex items-center space-x-2 group/logo">
-                <div className="relative w-10 h-10 flex items-center justify-center rounded-lg bg-white shadow-sm border border-black/5 group-hover/logo:shadow-md transition-all duration-300">
+              <Link href="/" className="flex items-center group/logo">
+                <div className="relative h-12 flex items-center justify-center transition-all duration-300">
                   <Image
-                    src="/assets/favicon.png"
+                    src="/assets/logo.png"
                     alt="MNS Bank"
-                    width={28}
-                    height={28}
-                    className="w-7 h-7 object-contain"
+                    width={180}
+                    height={48}
+                    className="h-10 w-auto object-contain"
                     priority
                   />
                 </div>
-                <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-black via-gray-800 to-gray-600 bg-clip-text text-transparent group-hover/logo:from-brand-primary group-hover/logo:to-brand-accent transition-all duration-300 hidden sm:block">
-                  MNS Bank
-                </span>
               </Link>
             </div>
 

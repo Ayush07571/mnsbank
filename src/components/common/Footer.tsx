@@ -91,19 +91,16 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-12 max-w-7xl mx-auto">
           <div className="group">
             <Link href="/" className="flex items-center mb-8 group/logo w-fit">
-              <div className="relative w-12 h-12 flex items-center justify-center rounded-xl bg-white shadow-sm border border-black/5 group-hover/logo:shadow-md transition-all duration-300">
+              <div className="relative h-14 flex items-center justify-center transition-all duration-300">
                 <Image
-                  src="/assets/favicon.png"
+                  src="/assets/logo.png"
                   alt="MNS Bank"
-                  width={32}
-                  height={32}
-                  className="w-8 h-8 object-contain"
+                  width={220}
+                  height={60}
+                  className="h-12 w-auto object-contain"
                   priority
                 />
               </div>
-              <span className="ml-3 text-xl font-bold tracking-tight bg-gradient-to-r from-black via-gray-800 to-gray-600 bg-clip-text text-transparent group-hover/logo:from-brand-primary group-hover/logo:to-brand-accent transition-all duration-300">
-                MNS Bank
-              </span>
             </Link>
             <p className="text-gray-600 leading-relaxed mb-8">
               Your trusted banking partner providing comprehensive financial
