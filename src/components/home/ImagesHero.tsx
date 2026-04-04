@@ -1,9 +1,8 @@
 'use client';
 import { motion } from 'framer-motion';
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ImagesSlider } from '@/components/ui/images-slider';
 import { Button } from '@/components/ui/Button';
-import { Text3D, Button3D, FloatingIcon3D } from '@/components/ui/3d-elements';
 import Link from 'next/link';
 
 interface HeroSlide {
@@ -100,108 +99,83 @@ export function ImagesHero() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       <ImagesSlider
-        className="h-[600px]"
+        className="h-[650px] md:h-[800px]"
         images={images}
         autoplay={true}
         direction="up"
         onSlideChange={handleSlideChange}
       >
-        <motion.div
-          key={currentSlideIndex} // Key to trigger re-animation on slide change
-          initial={{
-            opacity: 0,
-            y: -80,
-            rotateX: 15,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-            rotateX: 0,
-          }}
-          transition={{
-            duration: 0.6,
-            type: 'spring',
-            stiffness: 100,
-          }}
-          className="z-50 flex flex-col justify-center items-center text-center px-4"
-          style={{ transformStyle: 'preserve-3d' }}
-        >
-          <motion.h1
-            className="font-bold text-4xl md:text-6xl lg:text-7xl mb-6"
-            initial={{ opacity: 0, scale: 0.8, rotateY: 90 }}
-            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, type: 'spring' }}
-            whileHover={{ scale: 1.05, rotateY: 5 }}
-          >
-            <Text3D depth={6}>
-              <span
-                className="text-gray-100 drop-shadow-2xl"
-                style={{
-                  textShadow:
-                    '2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 0px 2px 0 #000, 0px -2px 0 #000, 2px 0px 0 #000, -2px 0px 0 #000',
-                }}
-              >
-                {currentSlide.title}
-              </span>
-            </Text3D>
-          </motion.h1>
-
-          <motion.h2
-            className="text-2xl md:text-3xl mb-4"
-            initial={{ opacity: 0, y: 20, rotateX: 15 }}
-            animate={{ opacity: 1, y: 0, rotateX: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, type: 'spring' }}
-            whileHover={{ scale: 1.02 }}
-          >
-            <span className="text-gray-200 drop-shadow-lg">
-              {currentSlide.subtitle}
-            </span>
-          </motion.h2>
-
-          <motion.p
-            className="text-xl mb-8 max-w-2xl"
-            initial={{ opacity: 0, y: 20, rotateX: 10 }}
-            animate={{ opacity: 1, y: 0, rotateX: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, type: 'spring' }}
-          >
-            <span className="text-gray-300 drop-shadow-md">
-              {currentSlide.description}
-            </span>
-          </motion.p>
-
+        <div className="z-50 container mx-auto px-4 flex flex-col items-start justify-center h-full">
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 items-center"
-            initial={{ opacity: 0, y: 20, rotateX: 5 }}
-            animate={{ opacity: 1, y: 0, rotateX: 0 }}
-            transition={{ duration: 0.8, delay: 0.6, type: 'spring' }}
-            style={{ transformStyle: 'preserve-3d' }}
+            key={currentSlideIndex}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="glass p-8 md:p-14 rounded-[3rem] max-w-2xl text-left relative overflow-hidden border-white/20 bg-white/5 backdrop-blur-md"
           >
-            <Link href={currentSlide.primaryCta.href}>
-              <Button3D
-                depth={4}
-                className="px-8 py-3 text-lg font-semibold bg-brand-accent hover:bg-brand-accent/80 text-white border-0 shadow-lg hover:shadow-xl transition-all"
-              >
-                {currentSlide.primaryCta.text}
-              </Button3D>
-            </Link>
+            {/* Subtle light streak animation */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent -translate-x-full animate-shimmer pointer-events-none" />
 
-            {currentSlide.secondaryCta && (
-              <Link href={currentSlide.secondaryCta.href}>
-                <motion.div whileHover={{ y: -2 }} whileTap={{ y: 0 }}>
+            <motion.div
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="inline-block px-4 py-1.5 rounded-full bg-brand-accent/20 border border-brand-accent/30 mb-6"
+            >
+              <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.2em] text-brand-accent">
+                {currentSlide.subtitle}
+              </span>
+            </motion.div>
+
+            <motion.h1
+              className="font-heading text-4xl md:text-6xl font-black mb-6 leading-[1.1] tracking-tighter text-white"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              {currentSlide.title}
+            </motion.h1>
+
+            <motion.p
+              className="text-lg text-white/90 mb-10 leading-relaxed font-medium"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              {currentSlide.description}
+            </motion.p>
+
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-start items-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+            >
+              <Link href={currentSlide.primaryCta.href}>
+                <Button
+                  size="lg"
+                  className="px-10 py-7 rounded-full text-base font-black uppercase tracking-widest bg-brand-accent hover:bg-brand-accent/90 text-white shadow-xl shadow-brand-accent/20 border-0 transition-all duration-300 hover:scale-105 active:scale-95"
+                >
+                  {currentSlide.primaryCta.text}
+                </Button>
+              </Link>
+
+              {currentSlide.secondaryCta && (
+                <Link href={currentSlide.secondaryCta.href}>
                   <Button
                     variant="outline"
                     size="lg"
-                    className="px-8 py-3 text-lg font-semibold border-white text-white hover:bg-white/20 hover:text-white transition-all"
+                    className="px-10 py-7 rounded-full text-base font-black uppercase tracking-widest border-white/30 text-white hover:bg-white/10 hover:border-white/50 backdrop-blur-md transition-all duration-300 active:scale-95"
                   >
                     {currentSlide.secondaryCta.text}
                   </Button>
-                </motion.div>
-              </Link>
-            )}
+                </Link>
+              )}
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </ImagesSlider>
 
       {/* Dots positioned outside the ImagesSlider */}

@@ -167,81 +167,78 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Trust Bar */}
-        <div className="mt-16 pt-8 border-t border-black/10">
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <div className="flex items-center space-x-6">
+        <div className="mt-16 pt-8 border-t border-black/10 relative z-10">
+          {/* Watermark */}
+          <div className="absolute -bottom-4 right-0 pointer-events-none select-none overflow-hidden opacity-[0.03] dark:opacity-[0.05] hidden lg:block">
+            <h2 className="text-[12rem] font-black tracking-tighter leading-none translate-y-8 uppercase">
+              MNS BANK
+            </h2>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 relative z-10">
+            <div className="flex items-center space-x-8">
               {/* DICGC Badge */}
-              <div className="flex items-center space-x-2">
-                <Image
-                  src="/images/dicgc-insured.png"
-                  alt="DICGC Insured"
-                  width={48}
-                  height={48}
-                  className="w-12 h-12 object-contain"
-                  onError={e => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    const parent = target.parentElement;
-                    if (parent) {
-                      const textDiv = parent.querySelector('div');
-                      if (textDiv) {
-                        textDiv.classList.remove('ml-2');
-                      }
-                    }
-                  }}
-                />
+              <div className="flex items-center space-x-3 group/badge">
+                <div className="p-2 rounded-xl bg-white shadow-sm border border-black/5 group-hover/badge:shadow-md transition-all">
+                  <Image
+                    src="/images/dicgc-insured.png"
+                    alt="DICGC Insured"
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 object-contain"
+                  />
+                </div>
                 <div>
-                  <p className="text-sm font-medium text-text-primary">
+                  <p className="text-xs font-bold uppercase tracking-widest text-text-primary">
                     Deposits Insured
                   </p>
-                  <p className="text-xs text-gray-400">DICGC Protected</p>
+                  <p className="text-[10px] text-gray-400 font-medium">
+                    DICGC Protected
+                  </p>
                 </div>
               </div>
 
               {/* RBI Badge */}
-              <div className="flex items-center space-x-2">
-                <Image
-                  src="/images/rbi-regulated.png"
-                  alt="RBI Regulated"
-                  width={48}
-                  height={48}
-                  className="w-12 h-12 object-contain"
-                  onError={e => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    const parent = target.parentElement;
-                    if (parent) {
-                      const textDiv = parent.querySelector('div');
-                      if (textDiv) {
-                        textDiv.classList.remove('ml-2');
-                      }
-                    }
-                  }}
-                />
+              <div className="flex items-center space-x-3 group/badge">
+                <div className="p-2 rounded-xl bg-white shadow-sm border border-black/5 group-hover/badge:shadow-md transition-all">
+                  <Image
+                    src="/images/rbi-regulated.png"
+                    alt="RBI Regulated"
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 object-contain"
+                  />
+                </div>
                 <div>
-                  <p className="text-sm font-medium text-text-primary">
+                  <p className="text-xs font-bold uppercase tracking-widest text-text-primary">
                     Regulated Bank
                   </p>
-                  <p className="text-xs text-gray-400">RBI Authorized</p>
+                  <p className="text-[10px] text-gray-400 font-medium">
+                    RBI Authorized
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* Social Media Links */}
-            <div className="flex items-center space-x-4">
-              <span className="text-sm text-gray-400 mr-2">Follow Us:</span>
-              {socialLinks.map(social => (
-                <Link
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-brand-accent transition-colors"
-                  aria-label={social.name}
-                >
-                  <social.icon size={20} />
-                </Link>
-              ))}
+            <div className="flex items-center space-x-6">
+              <span className="text-[11px] font-bold uppercase tracking-widest text-gray-400">
+                CONNECT WITH US
+              </span>
+              <div className="flex items-center space-x-3">
+                {socialLinks.map(social => (
+                  <Link
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-xl bg-white border border-black/5 flex items-center justify-center text-gray-400 hover:bg-brand-primary hover:text-white hover:border-transparent transition-all duration-300 shadow-sm hover:shadow-lg translate-y-0 hover:-translate-y-1"
+                    aria-label={social.name}
+                  >
+                    <social.icon size={18} />
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>

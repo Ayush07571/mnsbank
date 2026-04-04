@@ -89,7 +89,7 @@
 
 @layer base {
   body {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Inter', 'Noto Sans', sans-serif;
     font-weight: 400;
     color: var(--text-primary);
     background-color: var(--background);
@@ -104,8 +104,28 @@
   h4,
   h5,
   h6 {
+    font-family: 'Satoshi', 'Inter', sans-serif;
     font-weight: 700;
     color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+
+  .dark .glass {
+    @apply bg-slate-900/70 backdrop-blur-md border border-slate-800/50 shadow-2xl;
+  }
+
+  .section-padding {
+    @apply py-24 md:py-32;
+  }
+
+  .container-tight {
+    @apply max-w-5xl mx-auto px-4 md:px-6;
   }
 }
 

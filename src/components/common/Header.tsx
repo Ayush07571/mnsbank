@@ -253,13 +253,28 @@ function TopNavDropdown({
   label,
   items,
   tNav,
+  onMenuEnter,
 }: {
   label: string;
   items: { labelKey: string; href: string; defaultLabel: string }[];
   tNav: (key: string, defaultValue?: string) => string | React.ReactNode;
+  onMenuEnter?: () => void;
 }) {
   const [open, setOpen] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const ref = useRef<HTMLDivElement>(null);
+
+  const handleEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setOpen(true);
+    if (onMenuEnter) onMenuEnter();
+  };
+
+  const handleLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setOpen(false);
+    }, 150);
+  };
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
@@ -271,16 +286,29 @@ function TopNavDropdown({
   }, []);
 
   return (
-    <div ref={ref} className="relative">
+    <div
+      ref={ref}
+      className="relative"
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
+    >
       <button
         onClick={() => setOpen(p => !p)}
-        className="flex items-center gap-1 text-sm text-text-primary hover:text-brand-accent transition-colors py-2 font-medium"
+        className={cn(
+          'px-5 py-2.5 text-[11px] font-black uppercase tracking-widest rounded-full transition-all duration-300 flex items-center gap-2',
+          open
+            ? 'bg-brand-primary text-white shadow-lg shadow-brand-primary/20 scale-105'
+            : 'text-text-primary hover:bg-gray-100 dark:hover:bg-gray-800'
+        )}
         aria-expanded={open}
         aria-haspopup="true"
       >
         {label}
         <svg
-          className={cn('w-4 h-4 transition-transform', open && 'rotate-180')}
+          className={cn(
+            'w-3 h-3 transition-transform duration-300',
+            open && 'rotate-180'
+          )}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -288,23 +316,25 @@ function TopNavDropdown({
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeWidth={2}
+            strokeWidth={2.5}
             d="M19 9l-7 7-7-7"
           />
         </svg>
       </button>
       {open && (
-        <div className="absolute left-0 top-full z-50 mt-1 w-52 bg-background border border-border rounded-card shadow-lg py-2">
-          {items.map(item => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setOpen(false)}
-              className="block px-4 py-2 text-sm text-text-secondary hover:text-brand-accent hover:bg-surface transition-colors"
-            >
-              {tNav(item.labelKey, item.defaultLabel)}
-            </Link>
-          ))}
+        <div className="absolute left-0 top-full z-50 mt-2 w-64 bg-white/90 backdrop-blur-xl border border-black/5 rounded-[2rem] shadow-2xl py-4 animate-in fade-in slide-in-from-top-2 duration-300">
+          <div className="px-2 space-y-1">
+            {items.map(item => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="block px-6 py-2.5 text-[11px] font-bold uppercase tracking-widest text-text-secondary hover:text-brand-primary hover:bg-brand-primary/5 rounded-full transition-all duration-300"
+              >
+                {tNav(item.labelKey, item.defaultLabel)}
+              </Link>
+            ))}
+          </div>
         </div>
       )}
     </div>
@@ -330,25 +360,25 @@ function MegaMenuPanel({
 
   return (
     <div
-      className="absolute left-0 right-0 top-full z-50 bg-background border-t border-b border-border shadow-xl"
+      className="absolute left-0 right-0 top-full z-50 bg-white/95 backdrop-blur-xl border-t border-b border-black/5 shadow-2xl animate-in fade-in slide-in-from-top-2 duration-500"
       onMouseLeave={onClose}
     >
-      <div className="container mx-auto px-4 py-6 max-w-7xl">
-        <div className="grid grid-cols-5 gap-6">
+      <div className="container-tight py-12">
+        <div className="grid grid-cols-5 gap-10">
           {Object.entries(data).map(([category, links]) => (
-            <div key={category}>
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-brand-primary mb-3 pb-1 border-b border-border">
+            <div key={category} className="space-y-6">
+              <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-primary/60 border-b border-black/5 pb-3">
                 {tNav(
                   category.replace('navigation.categories.', 'categories.')
                 )}
               </h3>
-              <ul className="space-y-1.5">
+              <ul className="space-y-3">
                 {links.map(link => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
                       onClick={onClose}
-                      className="text-sm text-text-secondary hover:text-brand-accent transition-colors leading-snug block"
+                      className="text-[11px] font-bold uppercase tracking-widest text-text-secondary hover:text-brand-primary transition-all duration-300 block transform hover:translate-x-1"
                     >
                       {tNav(link.labelKey, link.defaultLabel)}
                     </Link>
@@ -386,71 +416,118 @@ export function Header({ className }: HeaderProps) {
 
   return (
     <>
+      <div className="bg-brand-primary text-white py-1.5 overflow-hidden whitespace-nowrap border-b border-white/10 hidden md:block">
+        <div className="flex items-center space-x-12 animate-marquee">
+          {[
+            { label: 'Savings', rate: '4.25%' },
+            { label: 'Fixed Deposit', rate: '7.50%' },
+            { label: 'Gold Loan', rate: '8.90%' },
+            { label: 'Home Loan', rate: '9.25%' },
+            { label: 'Personal Loan', rate: '11.50%' },
+            { label: 'Recurring Deposit', rate: '7.25%' },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="flex items-center space-x-2 text-[10px] font-bold uppercase tracking-widest"
+            >
+              <span className="text-white/60">{item.label}</span>
+              <span className="text-brand-accent">{item.rate}*</span>
+            </div>
+          ))}
+          {/* Duplicate for seamless loop */}
+          {[
+            { label: 'Savings', rate: '4.25%' },
+            { label: 'Fixed Deposit', rate: '7.50%' },
+            { label: 'Gold Loan', rate: '8.90%' },
+            { label: 'Home Loan', rate: '9.25%' },
+            { label: 'Personal Loan', rate: '11.50%' },
+            { label: 'Recurring Deposit', rate: '7.25%' },
+          ].map((item, i) => (
+            <div
+              key={`dup-${i}`}
+              className="flex items-center space-x-2 text-[10px] font-bold uppercase tracking-widest"
+            >
+              <span className="text-white/60">{item.label}</span>
+              <span className="text-brand-accent">{item.rate}*</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <header
         className={cn(
-          'sticky top-0 z-40 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60',
-          isScrolled && 'border-b border-border shadow-sm',
+          'sticky top-0 z-40 w-full transition-all duration-500',
+          isScrolled
+            ? 'glass border-b border-border shadow-soft'
+            : 'bg-background py-1',
           className
         )}
       >
         <div className="container mx-auto px-4">
           {/* Top Bar */}
-          <div className="flex items-center justify-between py-3 border-b border-border">
-            <div className="flex items-center space-x-4">
-              <Link href="/" className="flex items-center space-x-2">
-                <Image
-                  src="/assets/logo.png"
-                  alt="MNS Bank"
-                  width={150}
-                  height={40}
-                  className="h-10 w-auto object-contain"
-                  priority
-                />
+          <div className="flex items-center justify-between py-3">
+            <div className="flex items-center space-x-8">
+              <Link href="/" className="flex items-center space-x-2 group/logo">
+                <div className="relative w-10 h-10 flex items-center justify-center rounded-lg bg-white shadow-sm border border-black/5 group-hover/logo:shadow-md transition-all duration-300">
+                  <Image
+                    src="/assets/favicon.png"
+                    alt="MNS Bank"
+                    width={28}
+                    height={28}
+                    className="w-7 h-7 object-contain"
+                    priority
+                  />
+                </div>
+                <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-black via-gray-800 to-gray-600 bg-clip-text text-transparent group-hover/logo:from-brand-primary group-hover/logo:to-brand-accent transition-all duration-300 hidden sm:block">
+                  MNS Bank
+                </span>
               </Link>
             </div>
 
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-6">
               {/* Search */}
-              <div className="hidden lg:block">
+              <div className="hidden lg:block relative group">
                 <SiteSearch
                   placeholder={
-                    tCommon('search.placeholder', 'Search...') as string
+                    tCommon(
+                      'search.placeholder',
+                      'Search services...'
+                    ) as string
                   }
-                  className="w-64"
+                  className="w-48 group-hover:w-64 transition-all duration-500 ease-in-out"
                 />
               </div>
 
               {/* Language Toggle */}
-              <div className="hidden md:flex items-center space-x-2">
-                <span className="text-sm text-text-secondary">
-                  {tCommon('navigation.language')}:
-                </span>
-                <div className="flex rounded-input border border-border overflow-hidden">
-                  {languages.map(lang => (
-                    <button
-                      key={lang.code}
-                      onClick={() => changeLanguage(lang.code)}
-                      className={cn(
-                        'px-3 py-1 text-sm transition-colors',
-                        currentLanguage.code === lang.code
-                          ? 'bg-brand-accent text-white'
-                          : 'bg-background text-text-primary hover:bg-surface'
-                      )}
-                    >
-                      {lang.nativeName}
-                    </button>
-                  ))}
-                </div>
+              <div className="hidden md:flex items-center bg-gray-100 dark:bg-gray-800/50 rounded-full p-1 border border-border">
+                {languages.map(lang => (
+                  <button
+                    key={lang.code}
+                    onClick={() => changeLanguage(lang.code)}
+                    className={cn(
+                      'px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest rounded-full transition-all duration-300',
+                      currentLanguage.code === lang.code
+                        ? 'bg-white dark:bg-gray-700 text-brand-primary shadow-sm'
+                        : 'text-text-secondary hover:text-text-primary'
+                    )}
+                  >
+                    {lang.code === 'hi' ? 'हिंदी' : 'English'}
+                  </button>
+                ))}
               </div>
 
               {/* Net Banking CTA */}
               <Link href="/net-banking" target="_blank">
-                <Button variant="primary" size="sm" className="hidden sm:flex">
-                  {tNav('netBanking', 'Net Banking')}
+                <Button
+                  variant="primary"
+                  size="sm"
+                  className="hidden sm:flex rounded-full px-6 bg-brand-primary hover:bg-brand-primary/90 shadow-lg shadow-brand-primary/20 transition-all duration-300 hover:scale-105"
+                >
+                  {tNav('netBanking', 'Digital Portal')}
                 </Button>
               </Link>
 
-              {/* Placeholder to preserve layout space where the floating button sits */}
+              {/* Mobile Toggle Placeholder */}
               <div className="md:hidden w-[44px] h-[44px]" />
             </div>
           </div>
@@ -459,45 +536,48 @@ export function Header({ className }: HeaderProps) {
           <nav className="hidden md:block relative" ref={megaRef}>
             <div className="flex items-center justify-between py-2">
               <div className="flex items-center space-x-1">
-                {(['personal', 'business'] as const).map(tab => (
-                  <button
-                    key={tab}
-                    onMouseEnter={() => {
-                      setActiveTab(tab);
-                      setMegaOpen(true);
-                    }}
-                    onClick={() => {
-                      setActiveTab(tab);
-                      setMegaOpen(p => !p);
-                    }}
-                    className={cn(
-                      'px-4 py-2 text-sm font-medium rounded-input transition-colors',
-                      activeTab === tab && megaOpen
-                        ? 'bg-brand-primary text-white'
-                        : 'text-text-primary hover:bg-surface'
-                    )}
-                  >
-                    {tab === 'personal'
-                      ? tNav('personalBanking', 'Personal Banking')
-                      : tNav('businessBanking', 'Business Banking')}
-                    <svg
+                {(['personal', 'business'] as const).map(tab => {
+                  const isOpen = activeTab === tab && megaOpen;
+                  return (
+                    <button
+                      key={tab}
+                      onMouseEnter={() => {
+                        setActiveTab(tab);
+                        setMegaOpen(true);
+                      }}
+                      onClick={() => {
+                        setActiveTab(tab);
+                        setMegaOpen(p => !p);
+                      }}
                       className={cn(
-                        'inline w-3 h-3 ml-1 transition-transform',
-                        activeTab === tab && megaOpen && 'rotate-180'
+                        'px-6 py-2.5 text-[11px] font-black uppercase tracking-widest rounded-full transition-all duration-300 flex items-center gap-2',
+                        isOpen
+                          ? 'bg-brand-primary text-white shadow-lg shadow-brand-primary/20 scale-105'
+                          : 'text-text-primary hover:bg-gray-100 dark:hover:bg-gray-800'
                       )}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
-                ))}
+                      {tab === 'personal'
+                        ? tNav('personalBanking', 'Personal')
+                        : tNav('businessBanking', 'Business')}
+                      <svg
+                        className={cn(
+                          'w-3 h-3 transition-transform duration-300',
+                          isOpen && 'rotate-180'
+                        )}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2.5}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                  );
+                })}
 
                 <div className="h-5 w-px bg-border mx-2" />
 
@@ -505,6 +585,7 @@ export function Header({ className }: HeaderProps) {
                   label={tCommon('navigation.aboutUs', 'About Us') as string}
                   items={aboutMenu}
                   tNav={tNav}
+                  onMenuEnter={() => setMegaOpen(false)}
                 />
 
                 <div className="h-5 w-px bg-border mx-2" />
@@ -518,27 +599,31 @@ export function Header({ className }: HeaderProps) {
                   }
                   items={complianceMenu}
                   tNav={tNav}
+                  onMenuEnter={() => setMegaOpen(false)}
                 />
               </div>
 
-              <div className="flex items-center space-x-4 text-sm">
+              <div
+                className="flex items-center space-x-1"
+                onMouseEnter={() => setMegaOpen(false)}
+              >
                 <Link
                   href="/interest-rates"
-                  className="text-text-secondary hover:text-brand-accent transition-colors"
+                  className="px-5 py-2.5 text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-brand-primary hover:bg-brand-primary/5 rounded-full transition-all duration-300"
                 >
-                  {tNav('deposits.rates', 'Interest Rates')}
+                  {tNav('deposits.rates', 'Rates')}
                 </Link>
                 <Link
                   href="/branch-locator"
-                  className="text-text-secondary hover:text-brand-accent transition-colors"
+                  className="px-5 py-2.5 text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-brand-primary hover:bg-brand-primary/5 rounded-full transition-all duration-300"
                 >
-                  {tNav('stayConnected.branches', 'Branch Locator')}
+                  {tNav('stayConnected.branches', 'Branches')}
                 </Link>
                 <Link
                   href="/emi-calculator"
-                  className="text-text-secondary hover:text-brand-accent transition-colors"
+                  className="px-5 py-2.5 text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-brand-primary hover:bg-brand-primary/5 rounded-full transition-all duration-300"
                 >
-                  {tNav('stayConnected.calculator', 'EMI Calculator')}
+                  {tNav('stayConnected.calculator', 'EMI')}
                 </Link>
               </div>
             </div>

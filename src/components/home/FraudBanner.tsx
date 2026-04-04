@@ -2,19 +2,18 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/Button';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export function FraudBanner() {
   const [isVisible, setIsVisible] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
 
   useEffect(() => {
-    // Check if the banner was dismissed in this session
     const dismissed = sessionStorage.getItem('fraud-banner-dismissed');
     if (!dismissed) {
-      // Show banner after a short delay to allow page to load
       const timer = setTimeout(() => {
         setIsVisible(true);
-      }, 2000);
+      }, 1500);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -26,81 +25,105 @@ export function FraudBanner() {
   };
 
   const handleLearnMore = () => {
-    // Navigate to fraud awareness page or open modal
     window.open('/fraud-awareness', '_blank');
   };
 
-  if (isDismissed || !isVisible) {
-    return null;
-  }
-
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-red-600 text-white shadow-lg">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="flex items-center justify-between py-3">
-          <div className="flex items-center space-x-4">
-            {/* Alert Icon */}
-            <div className="flex-shrink-0">
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-              </svg>
-            </div>
-            
-            {/* Alert Message */}
-            <div className="flex-1">
-              <div className="text-sm font-medium">
-                ⚠️ Important: Fraud Alert
+    <AnimatePresence>
+      {isVisible && !isDismissed && (
+        <motion.div
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -100, opacity: 0 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="fixed top-0 left-0 right-0 z-[100] p-4 pointer-events-none"
+        >
+          <div className="container mx-auto max-w-6xl pointer-events-auto">
+            <div className="relative group overflow-hidden glass border-red-500/30 bg-red-600/90 backdrop-blur-xl text-white rounded-[2rem] shadow-[0_20px_50px_-20px_rgba(220,38,38,0.5)] border">
+              {/* Animated background pulse */}
+              <div className="absolute inset-0 bg-gradient-to-r from-red-600/0 via-red-500/20 to-red-600/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
+
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6 px-10 py-6 relative z-10">
+                <div className="flex items-center gap-6">
+                  {/* Alert Icon with Ring */}
+                  <div className="relative flex-shrink-0">
+                    <div className="absolute inset-0 bg-white/20 blur-xl rounded-full animate-pulse" />
+                    <div className="relative w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-lg shadow-black/10">
+                      <svg
+                        className="w-6 h-6 text-red-600"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2.5"
+                          d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Alert Message */}
+                  <div className="text-center md:text-left">
+                    <h3 className="font-heading text-lg font-black uppercase tracking-[0.15em] mb-1 text-white">
+                      Critical Security Alert
+                    </h3>
+                    <p className="text-sm font-medium text-white/90 leading-relaxed max-w-xl">
+                      MNS Bank{' '}
+                      <span className="underline decoration-white/30 underline-offset-4">
+                        never
+                      </span>{' '}
+                      requests your PIN, OTP, or Password. Stay vigilant against
+                      phishing.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex items-center gap-4">
+                  <Button
+                    variant="outline"
+                    className="rounded-full px-8 py-6 font-black uppercase tracking-widest text-[10px] bg-white text-red-600 border-0 hover:bg-red-50 hover:scale-105 transition-all shadow-lg shadow-black/10"
+                    onClick={handleLearnMore}
+                  >
+                    Get Protected
+                  </Button>
+
+                  <button
+                    onClick={handleDismiss}
+                    className="p-3 bg-black/10 hover:bg-black/20 text-white rounded-2xl transition-all hover:scale-110 active:scale-95"
+                    aria-label="Dismiss alert"
+                  >
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2.5"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
-              <div className="text-xs text-red-100 mt-1">
-                MNS Bank never asks for your OTP, password, or sensitive information. Be cautious of fraudulent calls and messages.
-              </div>
+
+              {/* Progress Bar (Timer indicator) */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 10, ease: 'linear' }}
+                className="absolute bottom-0 left-0 right-0 h-1 bg-white/20 origin-left"
+              />
             </div>
           </div>
-
-          {/* Action Buttons */}
-          <div className="flex items-center space-x-3">
-            <Button
-              variant="outline"
-              size="sm"
-              className="border-white text-white hover:bg-white hover:text-red-600"
-              onClick={handleLearnMore}
-            >
-              Learn More
-            </Button>
-            
-            {/* Dismiss Button */}
-            <button
-              onClick={handleDismiss}
-              className="text-white/80 hover:text-white p-1 rounded-full hover:bg-white/20 transition-colors"
-              aria-label="Dismiss fraud alert"
-            >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Progress Bar */}
-      <div className="h-1 bg-red-700">
-        <div className="h-full bg-red-400 animate-pulse" style={{ width: '100%' }} />
-      </div>
-
-      <style jsx>{`
-        @keyframes pulse {
-          0%, 100% {
-            opacity: 1;
-          }
-          50% {
-            opacity: 0.5;
-          }
-        }
-
-        .animate-pulse {
-          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-      `}</style>
-    </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
