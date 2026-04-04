@@ -4,7 +4,6 @@ import { createPageMetadata, SEO_CONFIGS } from '@/lib/page-metadata';
 import { ImagesHero } from '@/components/home/ImagesHero';
 import { WhatsNew } from '@/components/home/WhatsNew';
 import { FeaturedRates } from '@/components/home/FeaturedRates';
-import { FraudBanner } from '@/components/home/FraudBanner';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
@@ -14,9 +13,6 @@ export const metadata: Metadata = createPageMetadata(SEO_CONFIGS.HOME);
 export default function HomePage() {
   return (
     <div className="min-h-screen">
-      {/* Fraud Banner */}
-      <FraudBanner />
-
       {/* Hero Section */}
       <ImagesHero />
 

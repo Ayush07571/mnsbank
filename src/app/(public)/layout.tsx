@@ -2,6 +2,7 @@ import { Header } from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import Breadcrumb from '@/components/common/Breadcrumb';
 import { AccessibilityToolbar } from '@/components/ui/AccessibilityToolbar';
+import { FraudBanner } from '@/components/home/FraudBanner';
 import { Suspense } from 'react';
 
 export default function PublicLayout({
@@ -11,6 +12,7 @@ export default function PublicLayout({
 }>) {
   return (
     <div className="min-h-screen flex flex-col">
+      <FraudBanner />
       <AccessibilityToolbar />
       <Header />
       <Breadcrumb />
