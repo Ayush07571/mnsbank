@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { createPageMetadata, SEO_CONFIGS } from '@/lib/page-metadata';
-import { Carousel } from '@/components/home/Carousel';
+import { ImagesHero } from '@/components/home/ImagesHero';
 import { WhatsNew } from '@/components/home/WhatsNew';
 import { FeaturedRates } from '@/components/home/FeaturedRates';
 import { FraudBanner } from '@/components/home/FraudBanner';
@@ -15,9 +15,9 @@ export default function HomePage() {
     <div className="min-h-screen">
       {/* Fraud Banner */}
       <FraudBanner />
-      
-      {/* Hero Carousel */}
-      <Carousel />
+
+      {/* Hero Section */}
+      <ImagesHero />
 
       {/* Quick Actions */}
       <section className="py-16 bg-white">
@@ -30,20 +30,30 @@ export default function HomePage() {
               Access our most popular banking services instantly
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="hover:shadow-lg transition-shadow">
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-brand-primary" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-6 h-6 text-brand-primary"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path d="M2 10a8 8 0 018-8v8h8a8 8 0 01-16 0z" />
                     <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
                   </svg>
                 </div>
-                <h3 className="font-semibold text-text-primary mb-2">Open Account</h3>
-                <p className="text-text-secondary text-sm mb-4">Start your banking journey</p>
+                <h3 className="font-semibold text-text-primary mb-2">
+                  Open Account
+                </h3>
+                <p className="text-text-secondary text-sm mb-4">
+                  Start your banking journey
+                </p>
                 <Link href="/savings-account">
-                  <Button variant="outline" size="sm" className="w-full">Apply Now</Button>
+                  <Button variant="outline" size="sm" className="w-full">
+                    Apply Now
+                  </Button>
                 </Link>
               </CardContent>
             </Card>
@@ -51,14 +61,28 @@ export default function HomePage() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-brand-primary" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm1 2a1 1 0 000 2h6a1 1 0 100-2H7zm6 7a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-3 3a1 1 0 100 2h.01a1 1 0 100-2H10zm-4 1a1 1 0 011-1h.01a1 1 0 110 2H7a1 1 0 01-1-1zm1-4a1 1 0 100 2h.01a1 1 0 100-2H7zm2 1a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm4-2a1 1 0 100 2h.01a1 1 0 100-2H13z" clipRule="evenodd" />
+                  <svg
+                    className="w-6 h-6 text-brand-primary"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm1 2a1 1 0 000 2h6a1 1 0 100-2H7zm6 7a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-3 3a1 1 0 100 2h.01a1 1 0 100-2H10zm-4 1a1 1 0 011-1h.01a1 1 0 110 2H7a1 1 0 01-1-1zm1-4a1 1 0 100 2h.01a1 1 0 100-2H7zm2 1a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm4-2a1 1 0 100 2h.01a1 1 0 100-2H13z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                 </div>
-                <h3 className="font-semibold text-text-primary mb-2">Apply for Loan</h3>
-                <p className="text-text-secondary text-sm mb-4">Quick loan approval</p>
+                <h3 className="font-semibold text-text-primary mb-2">
+                  Apply for Loan
+                </h3>
+                <p className="text-text-secondary text-sm mb-4">
+                  Quick loan approval
+                </p>
                 <Link href="/personal-loan">
-                  <Button variant="outline" size="sm" className="w-full">Apply Now</Button>
+                  <Button variant="outline" size="sm" className="w-full">
+                    Apply Now
+                  </Button>
                 </Link>
               </CardContent>
             </Card>
@@ -66,14 +90,24 @@ export default function HomePage() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-brand-primary" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-6 h-6 text-brand-primary"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                   </svg>
                 </div>
-                <h3 className="font-semibold text-text-primary mb-2">Net Banking</h3>
-                <p className="text-text-secondary text-sm mb-4">Secure online banking</p>
+                <h3 className="font-semibold text-text-primary mb-2">
+                  Net Banking
+                </h3>
+                <p className="text-text-secondary text-sm mb-4">
+                  Secure online banking
+                </p>
                 <Link href="/net-banking">
-                  <Button variant="outline" size="sm" className="w-full">Login</Button>
+                  <Button variant="outline" size="sm" className="w-full">
+                    Login
+                  </Button>
                 </Link>
               </CardContent>
             </Card>
@@ -81,14 +115,28 @@ export default function HomePage() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-brand-primary" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" />
+                  <svg
+                    className="w-6 h-6 text-brand-primary"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                 </div>
-                <h3 className="font-semibold text-text-primary mb-2">Calculate EMI</h3>
-                <p className="text-text-secondary text-sm mb-4">Check loan eligibility</p>
+                <h3 className="font-semibold text-text-primary mb-2">
+                  Calculate EMI
+                </h3>
+                <p className="text-text-secondary text-sm mb-4">
+                  Check loan eligibility
+                </p>
                 <Link href="/emi-calculator">
-                  <Button variant="outline" size="sm" className="w-full">Calculate</Button>
+                  <Button variant="outline" size="sm" className="w-full">
+                    Calculate
+                  </Button>
                 </Link>
               </CardContent>
             </Card>
@@ -113,7 +161,7 @@ export default function HomePage() {
               Comprehensive banking solutions for individuals and businesses
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card>
               <CardHeader>
@@ -124,33 +172,65 @@ export default function HomePage() {
               <CardContent>
                 <ul className="space-y-3 text-text-secondary">
                   <li className="flex items-center space-x-2">
-                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="w-5 h-5 text-green-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     <span>Savings & Current Accounts</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="w-5 h-5 text-green-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     <span>Personal & Home Loans</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="w-5 h-5 text-green-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     <span>Digital Banking</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="w-5 h-5 text-green-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     <span>Investment Products</span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
-            
+
             <Card>
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-text-primary">
@@ -160,33 +240,65 @@ export default function HomePage() {
               <CardContent>
                 <ul className="space-y-3 text-text-secondary">
                   <li className="flex items-center space-x-2">
-                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="w-5 h-5 text-green-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     <span>Current Accounts</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="w-5 h-5 text-green-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     <span>Business Loans</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="w-5 h-5 text-green-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     <span>Trade Finance</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="w-5 h-5 text-green-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     <span>Cash Management</span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
-            
+
             <Card>
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-text-primary">
@@ -196,26 +308,58 @@ export default function HomePage() {
               <CardContent>
                 <ul className="space-y-3 text-text-secondary">
                   <li className="flex items-center space-x-2">
-                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="w-5 h-5 text-green-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     <span>Mobile Banking</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="w-5 h-5 text-green-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     <span>UPI & Payments</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="w-5 h-5 text-green-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     <span>Bill Payments</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="w-5 h-5 text-green-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     <span>e-Services</span>
                   </li>
@@ -223,10 +367,12 @@ export default function HomePage() {
               </CardContent>
             </Card>
           </div>
-          
+
           <div className="text-center mt-8">
             <Link href="/sitemap">
-              <Button variant="primary" size="lg" className="px-8">Explore All Services</Button>
+              <Button variant="primary" size="lg" className="px-8">
+                Explore All Services
+              </Button>
             </Link>
           </div>
         </div>
@@ -239,14 +385,23 @@ export default function HomePage() {
             Start Your Banking Journey with MNS Bank
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
-            Join thousands of satisfied customers who trust MNS Bank for their banking needs
+            Join thousands of satisfied customers who trust MNS Bank for their
+            banking needs
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/savings-account">
-              <Button variant="secondary" size="lg" className="px-8">Open Account Now</Button>
+              <Button variant="secondary" size="lg" className="px-8">
+                Open Account Now
+              </Button>
             </Link>
             <Link href="/branch-locator">
-              <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-brand-primary">Visit Branch</Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="px-8 border-white text-white hover:bg-white hover:text-brand-primary"
+              >
+                Visit Branch
+              </Button>
             </Link>
           </div>
         </div>
