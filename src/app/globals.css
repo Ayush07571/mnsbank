@@ -3,27 +3,27 @@
 @import 'tailwindcss/utilities';
 
 :root {
-  --brand-primary: #1a3a6b;
-  --brand-accent: #c8a84b;
-  --text-primary: #1a1a1a;
-  --text-secondary: #555555;
+  --brand-primary: #e11d48;
+  --brand-accent: #f9fafb;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
   --background: #ffffff;
-  --surface: #f5f7fa;
-  --border: #e0e4ec;
-  --success: #2e7d32;
-  --error: #c62828;
+  --surface: #f9fafb;
+  --border: #e5e7eb;
+  --success: #059669;
+  --error: #dc2626;
 }
 
 .dark {
-  --brand-primary: #3b82f6;
-  --brand-accent: #eab308;
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --background: #0f172a;
-  --surface: #1e293b;
-  --border: #334155;
-  --success: #4ade80;
-  --error: #f87171;
+  --brand-primary: #e11d48;
+  --brand-accent: #1f2937;
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --background: #030712;
+  --surface: #111827;
+  --border: #374151;
+  --success: #10b981;
+  --error: #ef4444;
 }
 
 .high-contrast {

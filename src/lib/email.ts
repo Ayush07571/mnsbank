@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer';
+import { InquirySubmission } from './validations/inquiry';
 
 interface EmailData {
   to: string;
@@ -7,9 +8,18 @@ interface EmailData {
   text?: string;
 }
 
-export async function sendEmail({ to, subject, html, text }: EmailData): Promise<boolean> {
+export async function sendEmail({
+  to,
+  subject,
+  html,
+  text,
+}: EmailData): Promise<boolean> {
   // Check if email configuration is available
-  if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
+  if (
+    !process.env.SMTP_HOST ||
+    !process.env.SMTP_USER ||
+    !process.env.SMTP_PASS
+  ) {
     console.error('SMTP configuration missing');
     return false;
   }
@@ -41,31 +51,33 @@ export async function sendEmail({ to, subject, html, text }: EmailData): Promise
 
     console.log('Email sent successfully:', info.messageId);
     return true;
-
   } catch (error) {
     console.error('Email sending failed:', error);
     return false;
   }
 }
 
-export async function sendInquiryEmail(data: any, referenceNumber: string): Promise<boolean> {
+export async function sendInquiryEmail(
+  data: InquirySubmission,
+  referenceNumber: string
+): Promise<boolean> {
   const bankEmail = process.env.BANK_EMAIL || 'inquiries@mnsbankbhopal.com';
-  
+
   const subject = `New Inquiry - ${referenceNumber}`;
-  
+
   const html = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-      <div style="background: #1A3A6B; color: white; padding: 20px; text-align: center;">
+      <div style="background: #E11D48; color: white; padding: 20px; text-align: center;">
         <h1>MNS Bank Bhopal</h1>
         <p>New Customer Inquiry</p>
       </div>
       
       <div style="padding: 20px; background: #f5f7fa;">
-        <h2 style="color: #1A3A6B;">Inquiry Details</h2>
+        <h2 style="color: #E11D48;">Inquiry Details</h2>
         <p><strong>Reference Number:</strong> ${referenceNumber}</p>
         <p><strong>Date:</strong> ${new Date().toLocaleString()}</p>
         
-        <h3 style="color: #1A3A6B; margin-top: 20px;">Customer Information</h3>
+        <h3 style="color: #E11D48; margin-top: 20px;">Customer Information</h3>
         <table style="width: 100%; border-collapse: collapse;">
           <tr>
             <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Name:</strong></td>
@@ -89,13 +101,13 @@ export async function sendInquiryEmail(data: any, referenceNumber: string): Prom
           </tr>
         </table>
         
-        <h3 style="color: #1A3A6B; margin-top: 20px;">Message</h3>
-        <div style="background: white; padding: 15px; border-radius: 5px; border-left: 4px solid #1A3A6B;">
+        <h3 style="color: #E11D48; margin-top: 20px;">Message</h3>
+        <div style="background: white; padding: 15px; border-radius: 5px; border-left: 4px solid #E11D48;">
           ${data.message}
         </div>
       </div>
       
-      <div style="background: #1A3A6B; color: white; padding: 20px; text-align: center; font-size: 12px;">
+      <div style="background: #E11D48; color: white; padding: 20px; text-align: center; font-size: 12px;">
         <p>&copy; 2024 MNS Bank Bhopal. All rights reserved.</p>
         <p>This is an automated email from the MNS Bank website.</p>
       </div>

@@ -17,9 +17,15 @@
 - Q: What happens when reCAPTCHA v3 is unavailable? → A: Block form submission and show friendly message: “Verification unavailable, please try again shortly.” No data is sent.
 - Q: Which CMS platform for content editing? → A: Built-in admin panel using password-protected Next.js routes with JSON/Markdown files — no external CMS service or subscription required.
 
+### Session 2026-04-04 (Rebrand)
+
+- Q: Primary Red Hex? → A: #E11D48 (Vibrant Red extracted from logo).
+- Q: Secondary Palette? → A: Strict Red, White, & Grey (with deep charcoal for text/depth).
+- Q: Dark Mode? → A: Vibrant Red accents on Deep Charcoal/Black backgrounds.
+
 ---
 
-## User Scenarios & Testing *(mandatory)*
+## User Scenarios & Testing _(mandatory)_
 
 ### User Story 1 — Fix All Navigation & Zero Broken Pages (Priority: P1)
 
@@ -85,7 +91,7 @@ As Ramesh (52, existing member, desktop), I want dedicated, content-rich pages f
 **Acceptance Scenarios**:
 
 1. **Given** a user opens any product SP, **When** the page loads, **Then** a 5-tab layout (Overview / Features / Eligibility / Documents / Apply) is displayed with tab switching that never causes a page reload.
-2. **Given** a user opens any of the 18 loan product pages, **When** they view the Apply tab, **Then** a prominently boxed KFS panel is present showing: indicative interest rate, processing fee, repayment tenure, estimated monthly EMI (example amount), total cost of credit, prepayment charges, and the static disclaimer: *"Rates are indicative. Actual terms determined at sanction based on applicant profile."*
+2. **Given** a user opens any of the 18 loan product pages, **When** they view the Apply tab, **Then** a prominently boxed KFS panel is present showing: indicative interest rate, processing fee, repayment tenure, estimated monthly EMI (example amount), total cost of credit, prepayment charges, and the static disclaimer: _"Rates are indicative. Actual terms determined at sanction based on applicant profile."_
 3. **Given** a user views any product SP, **When** they scroll to the inquiry form, **Then** the form shows pre-filled product name, branch dropdown (Bairagarhi HO / TT Nagar / Karond), and reCAPTCHA v3.
 4. **Given** a user submits the inquiry form with valid data, **When** the submission succeeds, **Then** an on-screen confirmation with a unique reference number is shown, and an email/SMS confirmation is sent to the customer.
 5. **Given** a user views any product SP, **When** they scroll to the bottom, **Then** 3–4 related product cards from the same category are displayed.
@@ -186,7 +192,7 @@ As any visitor including those with visual impairments, I want a sitewide access
 
 ---
 
-## Requirements *(mandatory)*
+## Requirements _(mandatory)_
 
 ### Functional Requirements
 
@@ -226,7 +232,7 @@ As any visitor including those with visual impairments, I want a sitewide access
 - **FR-PROD-03**: The Related Products grid must show 3–4 cards from the same product category.
 - **FR-LOAN-01**: KFS panel mandatory on all 18 loan product pages (gold-loan, car-loan, consumer-loan, personal-loan, festival-loan, education-loan, home-loan, house-construction-loan, loan-against-fd, loan-against-nsc, loan-against-property, mortgage-overdraft, working-capital-loan, transport-loan, professional-loan, micro-finance, self-employed-loan, overdraft-facility).
 - **FR-LOAN-02**: KFS panel must display: loan type, indicative interest rate (% p.a.), processing fee, repayment tenure, estimated monthly EMI (for a standard example amount), total cost of credit (example), and prepayment charges.
-- **FR-LOAN-03**: KFS panel must include the static disclaimer: *"Rates are indicative. Actual terms determined at sanction based on applicant profile."*
+- **FR-LOAN-03**: KFS panel must include the static disclaimer: _"Rates are indicative. Actual terms determined at sanction based on applicant profile."_
 
 #### Inline Inquiry Form (all product/service SPs)
 
@@ -294,75 +300,75 @@ As any visitor including those with visual impairments, I want a sitewide access
 
 ### Complete Page Inventory (67 pages)
 
-| Category | URL | Type | Phase |
-|---|---|---|---|
-| Root | / | SP | 1 |
-| About Us | /about-us | CP | 2 |
-| About Us | /board-of-directors | CP | 2 |
-| About Us | /committees | CP | 2 |
-| About Us | /management | CP | 2 |
-| About Us | /annual-reports | CP | 2 |
-| About Us | /membership | SP | 2 |
-| About Us | /careers | SP | 1 |
-| Personal | /savings-account | SP | 2 |
-| Personal | /double-deposit | SP | 2 |
-| Personal | /time-deposit | SP | 2 |
-| Personal | /recurring-deposit | SP | 2 |
-| Personal Loans | /gold-loan | SP | 2 |
-| Personal Loans | /car-loan | SP | 2 |
-| Personal Loans | /consumer-loan | SP | 2 |
-| Personal Loans | /personal-loan | SP | 2 |
-| Personal Loans | /festival-loan | SP | 2 |
-| Personal Loans | /education-loan | SP | 2 |
-| Personal Loans | /home-loan | SP | 2 |
-| Personal Loans | /house-construction-loan | SP | 2 |
-| Personal Loans | /loan-against-fd | SP | 2 |
-| Personal Loans | /loan-against-nsc | SP | 2 |
-| Personal Loans | /loan-against-property | SP | 2 |
-| Personal Loans | /mortgage-overdraft | SP | 2 |
-| Shared | /interest-rates | CP | 1 |
-| Shared | /service-charges | CP | 1 |
-| Shared | /emi-calculator | CP | 2 |
-| Shared | /offers | CP | 2 |
-| Business | /current-account | SP | 2 |
-| Business | /biz-double-deposit | SP | 2 |
-| Business | /biz-time-deposit | SP | 2 |
-| Business | /biz-recurring-deposit | SP | 2 |
-| Business Loans | /working-capital-loan | SP | 2 |
-| Business Loans | /transport-loan | SP | 2 |
-| Business Loans | /professional-loan | SP | 2 |
-| Business Loans | /micro-finance | SP | 2 |
-| Business Loans | /self-employed-loan | SP | 2 |
-| Business Loans | /overdraft-facility | SP | 2 |
-| Digital | /net-banking | SP | 1 |
-| Digital | /mobile-banking | SP | 1 |
-| Digital | /atm | SP | 2 |
-| Digital | /debit-cards | SP | 2 |
-| Digital | /upi-qr | SP | 2 |
-| Digital | /imps | SP | 2 |
-| Digital | /bbps | SP | 2 |
-| Digital | /sms-banking | SP | 2 |
-| Digital | /pan | SP | 2 |
-| Digital | /locker | SP | 2 |
-| Digital | /neft-rtgs | SP | 2 |
-| Digital | /pm-jeevan-yojana | SP | 2 |
-| Digital | /pm-suraksha-yojana | SP | 2 |
-| Stay Connected | /locate-us | CP | 3 |
-| Stay Connected | /branch-locator | CP | 3 |
-| Stay Connected | /atm-locator | CP | 3 |
-| Stay Connected | /ifsc-codes | CP | 2 |
-| Stay Connected | /tenders | CP | 1 |
-| Stay Connected | /feedback | CP | 3 |
-| Stay Connected | /contact-us | CP | 1 |
-| Compliance | /deaf-unclaimed-deposits | SP | 1 |
-| Compliance | /privacy-policy | SP | 1 |
-| Compliance | /grievance-redressal | SP | 1 |
-| Compliance | /policy-centre | CP | 2 |
-| Compliance | /kyc-ckyc | SP | 2 |
-| Compliance | /cyber-awareness | SP | 2 |
-| Compliance | /positive-pay | SP | 2 |
-| Compliance | /download-forms | CP | 1 |
-| Compliance | /sitemap | SP | 2 |
+| Category       | URL                      | Type | Phase |
+| -------------- | ------------------------ | ---- | ----- |
+| Root           | /                        | SP   | 1     |
+| About Us       | /about-us                | CP   | 2     |
+| About Us       | /board-of-directors      | CP   | 2     |
+| About Us       | /committees              | CP   | 2     |
+| About Us       | /management              | CP   | 2     |
+| About Us       | /annual-reports          | CP   | 2     |
+| About Us       | /membership              | SP   | 2     |
+| About Us       | /careers                 | SP   | 1     |
+| Personal       | /savings-account         | SP   | 2     |
+| Personal       | /double-deposit          | SP   | 2     |
+| Personal       | /time-deposit            | SP   | 2     |
+| Personal       | /recurring-deposit       | SP   | 2     |
+| Personal Loans | /gold-loan               | SP   | 2     |
+| Personal Loans | /car-loan                | SP   | 2     |
+| Personal Loans | /consumer-loan           | SP   | 2     |
+| Personal Loans | /personal-loan           | SP   | 2     |
+| Personal Loans | /festival-loan           | SP   | 2     |
+| Personal Loans | /education-loan          | SP   | 2     |
+| Personal Loans | /home-loan               | SP   | 2     |
+| Personal Loans | /house-construction-loan | SP   | 2     |
+| Personal Loans | /loan-against-fd         | SP   | 2     |
+| Personal Loans | /loan-against-nsc        | SP   | 2     |
+| Personal Loans | /loan-against-property   | SP   | 2     |
+| Personal Loans | /mortgage-overdraft      | SP   | 2     |
+| Shared         | /interest-rates          | CP   | 1     |
+| Shared         | /service-charges         | CP   | 1     |
+| Shared         | /emi-calculator          | CP   | 2     |
+| Shared         | /offers                  | CP   | 2     |
+| Business       | /current-account         | SP   | 2     |
+| Business       | /biz-double-deposit      | SP   | 2     |
+| Business       | /biz-time-deposit        | SP   | 2     |
+| Business       | /biz-recurring-deposit   | SP   | 2     |
+| Business Loans | /working-capital-loan    | SP   | 2     |
+| Business Loans | /transport-loan          | SP   | 2     |
+| Business Loans | /professional-loan       | SP   | 2     |
+| Business Loans | /micro-finance           | SP   | 2     |
+| Business Loans | /self-employed-loan      | SP   | 2     |
+| Business Loans | /overdraft-facility      | SP   | 2     |
+| Digital        | /net-banking             | SP   | 1     |
+| Digital        | /mobile-banking          | SP   | 1     |
+| Digital        | /atm                     | SP   | 2     |
+| Digital        | /debit-cards             | SP   | 2     |
+| Digital        | /upi-qr                  | SP   | 2     |
+| Digital        | /imps                    | SP   | 2     |
+| Digital        | /bbps                    | SP   | 2     |
+| Digital        | /sms-banking             | SP   | 2     |
+| Digital        | /pan                     | SP   | 2     |
+| Digital        | /locker                  | SP   | 2     |
+| Digital        | /neft-rtgs               | SP   | 2     |
+| Digital        | /pm-jeevan-yojana        | SP   | 2     |
+| Digital        | /pm-suraksha-yojana      | SP   | 2     |
+| Stay Connected | /locate-us               | CP   | 3     |
+| Stay Connected | /branch-locator          | CP   | 3     |
+| Stay Connected | /atm-locator             | CP   | 3     |
+| Stay Connected | /ifsc-codes              | CP   | 2     |
+| Stay Connected | /tenders                 | CP   | 1     |
+| Stay Connected | /feedback                | CP   | 3     |
+| Stay Connected | /contact-us              | CP   | 1     |
+| Compliance     | /deaf-unclaimed-deposits | SP   | 1     |
+| Compliance     | /privacy-policy          | SP   | 1     |
+| Compliance     | /grievance-redressal     | SP   | 1     |
+| Compliance     | /policy-centre           | CP   | 2     |
+| Compliance     | /kyc-ckyc                | SP   | 2     |
+| Compliance     | /cyber-awareness         | SP   | 2     |
+| Compliance     | /positive-pay            | SP   | 2     |
+| Compliance     | /download-forms          | CP   | 1     |
+| Compliance     | /sitemap                 | SP   | 2     |
 
 ### Key Entities
 
@@ -375,7 +381,7 @@ As any visitor including those with visual impairments, I want a sitewide access
 
 ---
 
-## Success Criteria *(mandatory)*
+## Success Criteria _(mandatory)_
 
 ### Measurable Outcomes
 
@@ -408,7 +414,7 @@ As any visitor including those with visual impairments, I want a sitewide access
 - CMS platform: A built-in admin panel using password-protected Next.js routes with JSON/Markdown files is the selected approach. No external CMS service or subscription is needed.
 - Branch data (Bairagarhi HO, TT Nagar, Karond) with addresses, phones, and hours will be supplied by bank management.
 - Hindi translator is engaged and briefed by start of Phase 2.
-- The reference design template (tjsbbank.co.in) is a UX/layout reference only. MNS Bank's own brand identity (#1A3A6B navy, #C8A84B gold, Noto Sans) is used throughout.
+- The reference design template (tjsbbank.co.in) is a UX/layout reference only. MNS Bank's own brand identity (#E11D48 primary red, #111827 deep charcoal, Satoshi/Noto Sans) is used throughout.
 - Annual Reports (minimum 3 years) must be approved by Legal and Management before web publication.
 - Social media account URLs (Facebook, Instagram, Twitter/X, LinkedIn, YouTube) will be provided by bank management.
 - reCAPTCHA v3 keys (site key + secret key) will be provisioned by the IT team for integration.

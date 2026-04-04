@@ -84,7 +84,7 @@ export default function HomePage() {
                         {item.icon2 && <path d={item.icon2} />}
                       </svg>
                     </div>
-                    <h3 className="font-heading text-xl font-black text-text-primary mb-3">
+                    <h3 className="font-heading text-xl font-black text-text-primary group-hover:text-brand-primary transition-colors mb-3">
                       {item.title}
                     </h3>
                     <p className="text-text-secondary text-sm mb-8 font-medium">

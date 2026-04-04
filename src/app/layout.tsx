@@ -97,8 +97,8 @@ export default function RootLayout({
         <link rel="icon" href="/assets/favicon.png" sizes="16x16" />
         <link rel="apple-touch-icon" href="/assets/favicon.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#1A3A6B" />
-        <meta name="msapplication-TileColor" content="#1A3A6B" />
+        <meta name="theme-color" content="#E11D48" />
+        <meta name="msapplication-TileColor" content="#E11D48" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
 
         {/* JSON-LD Structured Data for Bank */}

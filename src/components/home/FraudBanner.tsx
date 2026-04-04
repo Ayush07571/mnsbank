@@ -24,7 +24,7 @@ export function FraudBanner() {
   };
 
   const handleLearnMore = () => {
-    window.open('/fraud-awareness', '_blank');
+    window.open('/cyber-awareness', '_blank');
   };
 
   return (

@@ -6,11 +6,13 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: 'bg-brand-accent text-white hover:bg-brand-accent/90',
-        secondary: 'bg-surface border border-border text-text-primary hover:bg-surface/80',
-        outline: 'border border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-white',
+        primary: 'bg-brand-primary text-white hover:bg-brand-primary/90',
+        secondary:
+          'bg-surface border border-border text-text-primary hover:bg-surface/80',
+        outline:
+          'border border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white',
         ghost: 'text-text-primary hover:bg-surface hover:text-text-primary',
-        link: 'text-brand-accent underline-offset-4 hover:underline',
+        link: 'text-brand-primary underline-offset-4 hover:underline',
       },
       size: {
         default: 'h-10 px-6 py-2',
@@ -27,13 +29,14 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
+  extends
+    ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, variant, size, ...props }, ref) => {
     return (
       <button
         className={buttonVariants({ variant, size, className })}
